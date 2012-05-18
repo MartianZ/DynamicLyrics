@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'LyricX' target in the 'LyricX' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
