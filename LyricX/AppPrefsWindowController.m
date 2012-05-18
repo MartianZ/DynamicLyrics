@@ -14,7 +14,7 @@
 {
 	[self addView:generalPreferenceView label:@"General"];
 	[self addView:advancedPreferenceView label:@"Advanced"];
-	
+	[self addView:donatePreferenceView label:@"Donate"];
 	[self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];
 	[self setShiftSlowsAnimation:[[NSUserDefaults standardUserDefaults] boolForKey:@"shiftSlowsAnimation"]];
     
@@ -75,4 +75,21 @@
     [fp makeKeyAndOrderFront:self];
     [fp setDelegate:self];
 }
+
+- (IBAction)DonatePaypal:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fzyadmin%40gmail%2ecom&item_name=Support%20future%20development%20of%204321.La%20app&no_shipping=1&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+- (IBAction)DonateAlipay:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"https://me.alipay.com/martian"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+- (IBAction)DonateAmazon:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
 @end
