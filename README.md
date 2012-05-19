@@ -20,7 +20,11 @@
 ![Imgur](http://i.imgur.com/gv9FK.png)
 
 ## More Details
-
+* Xcode Version 4.3.2 (4E2002)
 * Song lyrics will be automatically downloaded, no need to add manually
 * Automatically write lyrics to iTunes
 * Automatically translate Simplified Chinese into Traditional Chinese
+
+## License
+
+Code in the DynamicLyrics project is licensed under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html).
