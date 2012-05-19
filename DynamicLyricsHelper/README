@@ -1,0 +1,6 @@
+DynamicLyricsHelper
+
+DynamicLyrics的守护Daemon
+
+功能：随开机启动，监视iTunes的启动退出，根据需要操作DynamicLyrics随之启动退出。
+
