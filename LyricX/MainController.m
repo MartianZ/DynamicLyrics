@@ -27,7 +27,7 @@
         dnc = [NSDistributedNotificationCenter defaultCenter];
         userDefaults = [NSUserDefaults standardUserDefaults];
         
-        [dnc addObserver:self selector:@selector(iTunesPlayerInfo) name:@"com.apple.iTunes.playerInfo" object:nil];
+        [dnc addObserver:self selector:@selector(iTunesPlayerInfo:) name:@"com.apple.iTunes.playerInfo" object:nil];
         [nc addObserver:self selector:@selector(UserLyricsChanged:) name:@"UserLyricsChanged" object:nil];
         
         //if iTunes is running when the application launched
@@ -66,9 +66,14 @@
     [super dealloc];
 }
 
-- (void) iTunesPlayerInfo
+- (void) iTunesPlayerInfo:(NSNotification *)note
 {
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    NSLog(@"%@",[note userInfo]);
+    if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
+        [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
+        return;
+    }
     self.iTunesCurrentTrack = [iTunes currentTrack];
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -271,7 +276,7 @@
     unsigned long PlayerPosition = 0;   
     while (true) {
         currentPlayerPosition += 100;
-        usleep(150000); //1000微秒 = 1毫秒
+        usleep(100000); //1000微秒 = 1毫秒
         
         PlayerPosition = [iTunes playerPosition];
         if ((currentPlayerPosition / 1000) != PlayerPosition)
