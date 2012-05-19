@@ -26,6 +26,7 @@
 -(IBAction)OpenAlbumfillerWindow:(id)sender;
 -(IBAction)CopyTotalTextLyrics:(id)sender;
 -(IBAction)WriteLyricsToiTunes:(id)sender;
+-(IBAction)WriteArtwork:(id)sender;
 
 - (IBAction)DisabledMenuBarLyrics:(id)sender;
 - (IBAction)DisabledDesktopLyrics:(id)sender;

@@ -22,7 +22,6 @@
 ## More Details
 * Xcode Version 4.3.2 (4E2002)
 * Song lyrics will be automatically downloaded, no need to add manually
-* Automatically write lyrics to iTunes
 * Automatically translate Simplified Chinese into Traditional Chinese
 
 ## TODO
@@ -31,7 +30,7 @@
 2. [NEW] Maybe a better icon?
 3. [NEW] Automatically translator
 4. [NEW] Export album artwork to desktop
-5. [NEW] Automatically write lyrics to iTunes
+5. [ABANDON] ~~Automatically write lyrics to iTunes(this may cost a lot of time before playing)~~
 6. [DONE] ~~Move some settings to menu, delete them from pref window.~~
 
 ## License
