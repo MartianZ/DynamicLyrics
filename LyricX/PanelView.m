@@ -59,7 +59,7 @@
     CGFloat w = [userDefaults floatForKey:@Pref_Lyrics_W];
     w = w <=0 ? self.bounds.size.width - (x*2) : w;
     CGFloat h = [userDefaults floatForKey:@Pref_Lyrics_H];
-    h = h <=0 ? 200 : h;
+    h = h <=0 ? 100 : h;
     
     
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(x, y, w, h) xRadius:15 yRadius:15];
@@ -82,7 +82,7 @@
     }
     float fontSize = [userDefaults floatForKey:@Pref_Lyrics_FontSize];
     if (fontSize <= 0) {
-        fontSize = 36;
+        fontSize = 28;
     }
     
     
