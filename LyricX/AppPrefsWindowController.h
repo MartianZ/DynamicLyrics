@@ -10,19 +10,18 @@
 #import "DBPrefsWindowController.h"
 #import "Constants.h"
 @interface AppPrefsWindowController : DBPrefsWindowController <NSWindowDelegate> {
-    IBOutlet NSView *generalPreferenceView;
+    //IBOutlet NSView *generalPreferenceView;
     IBOutlet NSView *advancedPreferenceView;
     IBOutlet NSView *donatePreferenceView;
 
 }
 
-- (IBAction)EnableMenuBarLyrics:(id)sender;
-- (IBAction)DesktopLyricsChanged:(id)sender;
 - (IBAction)openFontPanel:(id)sender;
 - (IBAction)DonatePaypal:(id)sender;
 - (IBAction)DonateAlipay:(id)sender;
 - (IBAction)DonateAmazon:(id)sender;
 
+- (IBAction)DesktopLyricsChanged:(id)sender;
 
 
 @end

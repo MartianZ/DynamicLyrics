@@ -13,7 +13,8 @@
 @synthesize iTunesCurrentTrack;
 @synthesize SongLyrics;
 @synthesize CurrentSongLyrics;
-@synthesize lyrics = lyrics;
+@synthesize lyrics;
+
 
 - (id)initWithMenu:(NSMenu *)AppMenu
 {
@@ -34,7 +35,7 @@
         iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
 
         if ([iTunes isRunning] && [[iTunes currentTrack] name]) {
-            [self iTunesPlayerInfo];
+            [self iTunesPlayerInfo:nil];
         }
         
         [NSThread detachNewThreadSelector:@selector(iTunesMonitoringThread) toTarget:self withObject:nil];
@@ -69,7 +70,7 @@
 - (void) iTunesPlayerInfo:(NSNotification *)note
 {
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-    NSLog(@"%@",[note userInfo]);
+    
     if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
         return;

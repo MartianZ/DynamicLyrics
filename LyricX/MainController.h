@@ -30,7 +30,7 @@
 }
 
 - (void)Anylize;
-- (void)iTunesPlayerInfo;
+- (void)iTunesPlayerInfo:(NSNotification *)note;
 - (void)WorkingThread:(NSMutableDictionary*)tmpDict;
 - (id)initWithMenu:(NSMenu *)AppMenu;
 

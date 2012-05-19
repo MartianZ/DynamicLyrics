@@ -89,6 +89,10 @@
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
+    if ([[[note userInfo] objectForKey:@"Lyrics"] isEqualToString:@NC_Changed_DesktopLyrics]) {
+        return;
+    }
+    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 
@@ -103,11 +107,13 @@
     
 
     if ([[[note userInfo] objectForKey:@"Lyrics"] isEqualToString:@NC_Disabled_MenuBarLyrics]) {
+        if (![ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
+            [_statusItem setAttributedTitle:nil];
+            [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+        } 
         return;
     }
-    if ([[[note userInfo] objectForKey:@"Lyrics"] isEqualToString:@NC_Changed_DesktopLyrics]) {
-        return;
-    }
+    
     
     
     self.CurrentSongLyrics = [[note userInfo] objectForKey:@"Lyrics"];

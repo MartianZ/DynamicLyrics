@@ -12,7 +12,7 @@
 
 - (void)setupToolbar
 {
-	[self addView:generalPreferenceView label:@"General"];
+	//[self addView:generalPreferenceView label:@"General"];
 	[self addView:advancedPreferenceView label:@"Advanced"];
 	[self addView:donatePreferenceView label:@"Donate"];
 	[self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];
@@ -23,18 +23,11 @@
 
 }
 
-- (IBAction)EnableMenuBarLyrics:(id)sender
-{
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:@NC_LyricsChanged object:self userInfo:[NSDictionary dictionaryWithObject:@NC_Disabled_MenuBarLyrics forKey:@"Lyrics"]];
-    
-}
-
-- (IBAction)DesktopLyricsChanged:(id)sender;
+- (IBAction)DesktopLyricsChanged:(id)sender
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:@NC_LyricsChanged object:self userInfo:[NSDictionary dictionaryWithObject:@NC_Changed_DesktopLyrics forKey:@"Lyrics"]];
-    
+
 }
 
 - (void)changeFont:(id)sender
