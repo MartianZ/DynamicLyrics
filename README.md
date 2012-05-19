@@ -25,6 +25,15 @@
 * Automatically write lyrics to iTunes
 * Automatically translate Simplified Chinese into Traditional Chinese
 
+## TODO
+
+1. [NEW] Add CheckUpdate system
+2. [NEW] Maybe a better icon?
+3. [NEW] Automatically translator
+4. [NEW] Export album artwork to desktop
+5. [NEW] Automatically write lyrics to iTunes
+6. [DONE] ~~Move some settings to menu, delete them from pref window.~~
+
 ## License
 
 Code in the DynamicLyrics project is licensed under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html).
