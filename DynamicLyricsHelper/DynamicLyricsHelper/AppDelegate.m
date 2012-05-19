@@ -24,26 +24,49 @@
 {
     
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    bool a = false;
     while (1) {
         while ([iTunes isRunning]) {
-            sleep(2);
+            a = true;
+            sleep(1);
+            
         }
-        //ITUNES EXIT
-        NSLog(@"%@",@"ITUNES EXIT");
-        
-        
-        
-        
-        
-        
+        if (a) {
+            //ITUNES EXIT
+            NSLog(@"%@",@"ITUNES EXIT");
+            
+            NSTask *task = [[NSTask alloc] init];
+            [task setLaunchPath:@"/bin/sh"];
+            [task setArguments:[NSArray arrayWithObjects:@"-c", @"killall DynamicLyrics", nil]];
+            [task launch];
+            [task waitUntilExit];
+            [task release];
+        }
         while (![iTunes isRunning]) {
-            sleep(2);
+            sleep(1);
         }
         //ITUNES START
         NSLog(@"%@",@"ITUNES START");
+        bool b = false;
+        ProcessSerialNumber psn = { kNoProcess, kNoProcess };
+        while (GetNextProcess(&psn) == noErr) {
+            CFDictionaryRef cfDict = ProcessInformationCopyDictionary(&psn,  kProcessDictionaryIncludeAllInformationMask);
+            if (cfDict) {
+                NSDictionary *dict = (NSDictionary *)cfDict;
+                if ([[dict objectForKey:(id)kCFBundleNameKey] isEqualToString:@"DynamicLyrics"]) {
+                    b = true;
+                }
+                CFRelease(cfDict);          
+            }
+        }
         
-        
-        
+        if (!b) {
+            NSUserDefaults* prefs = [ NSUserDefaults standardUserDefaults ];
+            NSDictionary* iAppsPrefs = [ prefs persistentDomainForName: @"Martian.DynamicLyrics" ];
+            [[NSWorkspace sharedWorkspace] launchApplication:[iAppsPrefs objectForKey:@"AppLocation"]];
+
+        }
+               
     }
 
     exit(0);

@@ -30,4 +30,6 @@
 #define Pref_Desktop_Text_Color "PrefDesktopTextColor"
 #define Pref_Desktop_Background_Color "PrefDesktopBackgroundColor"
 
+#define Pref_Launch_Quit_With_iTunes "PrefLaunchQuitWithiTunes"
+
 #endif

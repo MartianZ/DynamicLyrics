@@ -13,7 +13,7 @@
     //IBOutlet NSView *generalPreferenceView;
     IBOutlet NSView *advancedPreferenceView;
     IBOutlet NSView *donatePreferenceView;
-
+    
 }
 
 - (IBAction)openFontPanel:(id)sender;
@@ -22,6 +22,6 @@
 - (IBAction)DonateAmazon:(id)sender;
 
 - (IBAction)DesktopLyricsChanged:(id)sender;
-
+- (IBAction)LaunchAndQuitWithiTunes:(id)sender;
 
 @end

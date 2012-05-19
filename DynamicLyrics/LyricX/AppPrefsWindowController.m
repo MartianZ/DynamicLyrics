@@ -79,10 +79,94 @@
     NSURL *url = [NSURL URLWithString:@"https://me.alipay.com/martian"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
+
 - (IBAction)DonateAmazon:(id)sender
 {
     NSURL *url = [NSURL URLWithString:@"http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C"];
     [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (LSSharedFileListRef)loginItemsFileListRef {
+    LSSharedFileListRef loginItemsRef =
+    LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    return (LSSharedFileListRef)(loginItemsRef);
+}
+
+- (NSArray *)loginItemsArrayForFileListRef:(LSSharedFileListRef)fileListRef {
+    UInt32 seedValue;
+    CFArrayRef filelistArrayRef = LSSharedFileListCopySnapshot(fileListRef,
+                                                               &seedValue);
+    return (NSArray *)filelistArrayRef;
+}
+
+- (void)addPathToLoginItems:(NSString*)path hide:(BOOL)hide {
+    if (!path) return;
+    // make sure it isn't already there
+    // now append it
+    [self removeItemWithNameFromLoginItems:@"DynamicLyricsHelper"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    if (url) {
+        LSSharedFileListRef loginItemsRef = [self loginItemsFileListRef];
+        if (loginItemsRef) {
+            NSDictionary *setProperties =
+            [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:hide]
+                                        forKey:(id)kLSSharedFileListLoginItemHidden];
+            LSSharedFileListItemRef itemRef =
+            LSSharedFileListInsertItemURL(loginItemsRef,
+                                          kLSSharedFileListItemLast, NULL, NULL,
+                                          (CFURLRef)url,
+                                          (CFDictionaryRef)setProperties, NULL);
+            if (itemRef) CFRelease(itemRef);
+        }
+    }
+
+}
+
+- (void)removeItemWithNameFromLoginItems:(NSString *)name {
+    if ([name length] == 0) return;
+    LSSharedFileListRef loginItemsRef = [self loginItemsFileListRef];
+    if (loginItemsRef) {
+        NSArray *fileList = [self loginItemsArrayForFileListRef:loginItemsRef];
+        for (id item in fileList) {
+            LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)item;
+            CFStringRef itemNameRef = LSSharedFileListItemCopyDisplayName(itemRef);
+            if (itemNameRef) {
+                NSString *itemName =
+                [(NSString *)itemNameRef stringByDeletingPathExtension];
+                if ([itemName isEqual:name]) {
+                    LSSharedFileListItemRemove(loginItemsRef, itemRef);
+                }
+                CFRelease(itemNameRef);
+            }
+        }
+    }
+}
+
+- (IBAction)LaunchAndQuitWithiTunes:(id)sender
+{
+    
+    NSTask *task = [[NSTask alloc] init];
+    [task setLaunchPath:@"/bin/sh"];
+    [task setArguments:[NSArray arrayWithObjects:@"-c", @"killall DynamicLyricsHelper", nil]];
+    [task launch];
+    [task waitUntilExit];
+    [task release];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults boolForKey:@Pref_Launch_Quit_With_iTunes]) {
+        [userDefaults setObject:[NSString stringWithString:[[NSBundle mainBundle] bundlePath]] forKey:@"AppLocation"];        
+
+        NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath],@"DynamicLyricsHelper.app"];
+
+        [[NSWorkspace sharedWorkspace] launchApplication:path];
+        
+        //添加开机启动
+        [self addPathToLoginItems:path hide:0];
+        
+    } else {
+        
+        [self removeItemWithNameFromLoginItems:@"DynamicLyricsHelper"];
+    }
 }
 
 @end
