@@ -21,6 +21,8 @@
 {
     self = [super initWithWindowNibName:@"LyricsSearchWnd"];
     if (self){
+        if (!title)
+            return self;
         self.SongTitle = title;
         self.SongArtist = artist;
         self.window.level = NSFloatingWindowLevel;
@@ -44,12 +46,14 @@
         [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"LyricsServer"];
     
     [IB_ComboBox_Server selectItemAtIndex:[[NSUserDefaults standardUserDefaults] integerForKey:@"LyricsServer"]];
+
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file
 }
 
 
 -(IBAction)SearchLyrics:(id)sender
 {
+    
     [IB_Array_Controller removeObjects:[IB_Array_Controller arrangedObjects]];
     if ([[IB_Text_Title stringValue] isEqualToString:@""])
         return;
