@@ -26,9 +26,9 @@
 
 ## TODO
 
-1. [NEW] Add CheckUpdate system
+1. [DONE] ~~Add CheckUpdate system~~
 2. [NEW] Maybe a better icon?
-3. [NEW] Automatically translator
+3. [NEW] Automatical translator
 4. [DONE] ~~Export album artwork to desktop~~
 5. [ABANDON] ~~Automatically write lyrics to iTunes(this may cost a lot of time before playing)~~
 6. [DONE] ~~Move some settings to menu, delete them from pref window.~~

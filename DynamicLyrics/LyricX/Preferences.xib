@@ -579,9 +579,9 @@
 										<string key="NSReuseIdentifierKey">_NS:239</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="834197863">
-											<int key="NSCellFlags">-2080244224</int>
+											<int key="NSCellFlags">-1543373312</int>
 											<int key="NSCellFlags2">0</int>
-											<string key="NSContents">Automatically translate Simplified Chinese  into Traditional Chinese (developing)</string>
+											<string key="NSContents">Automatically translate Simplified Chinese  into Traditional Chinese (still under development ToT)</string>
 											<reference key="NSSupport" ref="669933472"/>
 											<string key="NSCellIdentifier">_NS:239</string>
 											<reference key="NSControlView" ref="874913024"/>
@@ -598,7 +598,7 @@
 									<object class="NSButton" id="691336134">
 										<reference key="NSNextResponder" ref="1055279510"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{16, 49}, {399, 38}}</string>
+										<string key="NSFrame">{{16, 49}, {201, 38}}</string>
 										<reference key="NSSuperview" ref="1055279510"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="874913024"/>

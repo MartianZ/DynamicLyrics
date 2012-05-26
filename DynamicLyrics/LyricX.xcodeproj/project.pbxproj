@@ -43,8 +43,24 @@
 		028861B1152BD60D00DA6B91 /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028861AF152BD60D00DA6B91 /* LyricsSearchWnd.xib */; };
 		028E17A8153051C6006CE85B /* VerticalButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17A7153051C6006CE85B /* VerticalButtonWindow.m */; };
 		028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17AB15305F02006CE85B /* DouBanAPI.m */; };
+		02912A2415710A0A00843F1A /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02912A2315710A0A00843F1A /* Sparkle.framework */; };
+		02912A2715710A7200843F1A /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02912A2315710A0A00843F1A /* Sparkle.framework */; };
+		02912A291571129A00843F1A /* dynamiclyrics2_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */; };
 		02ACCFB31566932D004CC95A /* Donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 02ACCFB21566932D004CC95A /* Donate.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		02912A2615710A5600843F1A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02912A2715710A7200843F1A /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02035AA21554367B00AB5AB6 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
@@ -70,7 +86,7 @@
 		025B0783152B1C8700E250BF /* gb.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gb.txt; sourceTree = "<group>"; };
 		025B0787152B1E8600E250BF /* GB_BIG_Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB_BIG_Converter.h; sourceTree = "<group>"; };
 		025B0788152B1E8600E250BF /* GB_BIG_Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GB_BIG_Converter.m; sourceTree = "<group>"; };
-		02710E8A152A839F006D4BFF /* LyricX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LyricX.app; path = DynamicLyrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02710E8A152A839F006D4BFF /* DynamicLyrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicLyrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02710E8E152A839F006D4BFF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		02710E91152A839F006D4BFF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		02710E92152A839F006D4BFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -109,6 +125,8 @@
 		028E17A7153051C6006CE85B /* VerticalButtonWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalButtonWindow.m; sourceTree = "<group>"; };
 		028E17AA15305F02006CE85B /* DouBanAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBanAPI.h; sourceTree = "<group>"; };
 		028E17AB15305F02006CE85B /* DouBanAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanAPI.m; sourceTree = "<group>"; };
+		02912A2315710A0A00843F1A /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub.pem; sourceTree = "<group>"; };
 		02957583152DDFAC0048C210 /* ConstantTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantTable.h; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +138,7 @@
 			files = (
 				02710ED6152AA0FF006D4BFF /* ScriptingBridge.framework in Frameworks */,
 				02710E8F152A839F006D4BFF /* Cocoa.framework in Frameworks */,
+				02912A2415710A0A00843F1A /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +196,7 @@
 		025B0781152B1C7300E250BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */,
 				024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */,
 				02ACCFB21566932D004CC95A /* Donate.png */,
 				02035AA21554367B00AB5AB6 /* StatusIcon.png */,
@@ -203,7 +223,7 @@
 		02710E8B152A839F006D4BFF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02710E8A152A839F006D4BFF /* LyricX.app */,
+				02710E8A152A839F006D4BFF /* DynamicLyrics.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 		02710E8D152A839F006D4BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02912A2315710A0A00843F1A /* Sparkle.framework */,
 				02710ED5152AA0FF006D4BFF /* ScriptingBridge.framework */,
 				02710E8E152A839F006D4BFF /* Cocoa.framework */,
 				02710E90152A839F006D4BFF /* Other Frameworks */,
@@ -311,6 +332,7 @@
 				02710E87152A839F006D4BFF /* Frameworks */,
 				02710E88152A839F006D4BFF /* Resources */,
 				02BFDC3415667BE700336A2A /* ShellScript */,
+				02912A2615710A5600843F1A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -318,7 +340,7 @@
 			);
 			name = DynamicLyrics;
 			productName = LyricX;
-			productReference = 02710E8A152A839F006D4BFF /* LyricX.app */;
+			productReference = 02710E8A152A839F006D4BFF /* DynamicLyrics.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -368,6 +390,7 @@
 				02736EA5155570A600F4EC5C /* icon.icns in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
 				024DE7311567E51100C7B033 /* DynamicLyricsHelper.app in Resources */,
+				02912A291571129A00843F1A /* dynamiclyrics2_dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +517,10 @@
 		02710EA9152A839F006D4BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
@@ -506,6 +533,10 @@
 		02710EAA152A839F006D4BFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
