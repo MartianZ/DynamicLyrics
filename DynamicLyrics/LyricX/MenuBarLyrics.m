@@ -110,6 +110,7 @@
         if (![ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
             [_statusItem setAttributedTitle:nil];
             [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+            
         } 
         return;
     }

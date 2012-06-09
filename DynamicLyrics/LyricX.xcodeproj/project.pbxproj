@@ -127,7 +127,6 @@
 		028E17AB15305F02006CE85B /* DouBanAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanAPI.m; sourceTree = "<group>"; };
 		02912A2315710A0A00843F1A /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub.pem; sourceTree = "<group>"; };
-		02957583152DDFAC0048C210 /* ConstantTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantTable.h; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,7 +251,6 @@
 		02710E94152A839F006D4BFF /* LyricX */ = {
 			isa = PBXGroup;
 			children = (
-				02957583152DDFAC0048C210 /* ConstantTable.h */,
 				02710ED0152A9B8A006D4BFF /* iTunes.h */,
 				02710EC0152A9A53006D4BFF /* Controller */,
 				02710EA0152A839F006D4BFF /* LyricXAppDelegate.h */,

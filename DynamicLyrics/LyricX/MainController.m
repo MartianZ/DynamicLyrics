@@ -75,8 +75,15 @@
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
         return;
     }
-    self.iTunesCurrentTrack = [iTunes currentTrack];
     
+    
+    if ((note != nil) && (![[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Playing"])) {
+        return;
+    }
+    
+    if (self.iTunesCurrentTrack == [iTunes currentTrack]) return;
+    self.iTunesCurrentTrack = [iTunes currentTrack];
+
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[NSString stringWithString:@"iTunesSongChanged"] forKey:@"Type"];
     [self WorkingThread:dict];
@@ -278,7 +285,10 @@
     while (true) {
         currentPlayerPosition += 100;
         usleep(100000); //1000微秒 = 1毫秒
-        
+        if ([iTunes playerState] != iTunesEPlSPlaying) {
+            usleep(100000);
+            continue;
+        }
         PlayerPosition = [iTunes playerPosition];
         if ((currentPlayerPosition / 1000) != PlayerPosition)
             currentPlayerPosition = PlayerPosition * 1000;
