@@ -149,7 +149,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     CGFontRelease(font);
     CGColorSpaceRelease (colorSpace);
     CGColorRelease (cgbackColor);
-    
+    CGColorRelease (cgfontColor);
     [pool release];
 }
 
