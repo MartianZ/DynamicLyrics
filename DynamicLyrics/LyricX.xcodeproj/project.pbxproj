@@ -17,6 +17,8 @@
 		0239025D154F9D2D00869A2D /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02390258154F9C1800869A2D /* DBPrefsWindowController.m */; };
 		0239025F154F9D7A00869A2D /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 0239025E154F9D7A00869A2D /* General.png */; };
 		02390261154F9D8200869A2D /* Advanced.png in Resources */ = {isa = PBXBuildFile; fileRef = 02390260154F9D8200869A2D /* Advanced.png */; };
+		024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDD1584EFB000444B78 /* Quartz.framework */; };
+		024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDE1584EFB000444B78 /* QuartzCore.framework */; };
 		024DE7311567E51100C7B033 /* DynamicLyricsHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */; };
 		0251F443153980A60019F36F /* music-default.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0251F442153980A60019F36F /* music-default.gif */; };
 		025B0777152B14F400E250BF /* MenuBarLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B0776152B14F400E250BF /* MenuBarLyrics.m */; };
@@ -78,6 +80,8 @@
 		0239025E154F9D7A00869A2D /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = General.png; sourceTree = "<group>"; };
 		02390260154F9D8200869A2D /* Advanced.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Advanced.png; sourceTree = "<group>"; };
 		02390275154FA26E00869A2D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		024B8BDD1584EFB000444B78 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		024B8BDE1584EFB000444B78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = DynamicLyricsHelper.app; sourceTree = "<group>"; };
 		0251F442153980A60019F36F /* music-default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "music-default.gif"; sourceTree = "<group>"; };
 		025B0775152B14F400E250BF /* MenuBarLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBarLyrics.h; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */,
+				024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */,
 				02710ED6152AA0FF006D4BFF /* ScriptingBridge.framework in Frameworks */,
 				02710E8F152A839F006D4BFF /* Cocoa.framework in Frameworks */,
 				02912A2415710A0A00843F1A /* Sparkle.framework in Frameworks */,
@@ -230,6 +236,8 @@
 		02710E8D152A839F006D4BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				024B8BDD1584EFB000444B78 /* Quartz.framework */,
+				024B8BDE1584EFB000444B78 /* QuartzCore.framework */,
 				02912A2315710A0A00843F1A /* Sparkle.framework */,
 				02710ED5152AA0FF006D4BFF /* ScriptingBridge.framework */,
 				02710E8E152A839F006D4BFF /* Cocoa.framework */,

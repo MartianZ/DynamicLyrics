@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Quartz/Quartz.h>
 
 @interface PanelView : NSView {
-    @private
     NSMutableString *LyricsLine;
     NSNotificationCenter *nc;
+    CALayer *rootLayer;
+    CATextLayer *textLayer;
+    CAGradientLayer *rectangleLayer;
 }
+
 
 @end

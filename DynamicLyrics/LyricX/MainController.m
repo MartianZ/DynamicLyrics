@@ -45,7 +45,11 @@
         NSRect frame = NSScreen.mainScreen.frame;
         LyricsWindow = [[FloatPanel alloc] initWithContentRect:frame];
         NSView *LView = [[PanelView alloc] initWithFrame:frame];
+        
+        
         LyricsWindow.contentView = LView;
+        
+        
         [LView release];
         [LyricsWindow makeKeyAndOrderFront:nil];
         

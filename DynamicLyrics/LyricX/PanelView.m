@@ -9,7 +9,9 @@
 #import "PanelView.h"
 #import "Constants.h"
 
+
 @implementation PanelView
+
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -18,39 +20,79 @@
         nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(iTunesLyricsChanged:) name:@"LyricsChanged" object:nil];
         LyricsLine = [[NSMutableString alloc] initWithString:@"DynamicLyrics!"];
+
+        rootLayer = [[CALayer layer] retain];
+
+        [rootLayer setNeedsDisplayOnBoundsChange:YES];
+
+        [self setLayer:rootLayer];
+        [self setWantsLayer:YES];
+        
+        textLayer = [[CATextLayer layer] retain];
+        rectangleLayer = [[CAGradientLayer layer] retain];
+        
+        [rootLayer addSublayer:rectangleLayer];
+        [rootLayer addSublayer:textLayer];
+        
+                
     }
     return self;
 }
+
+
+- (CGMutablePathRef)spiralPath:(CGRect)rect
+{
+	CGMutablePathRef path = CGPathCreateMutable();
+	float ox=rect.origin.x+rect.size.width*0.5;
+	float oy=rect.origin.y+rect.size.height*0.6;
+	CGPathMoveToPoint(path, nil, ox, oy);
+	float x=ox,y=oy;
+	float a=2;
+    float t = 0.0;
+	for(int i=0;i<600;i++){
+		t+=0.1;
+        float r=a*t*0.1;
+        x+=r*cos(t);
+        y-=r*sin(t);
+		CGPathAddLineToPoint(path, nil, x, y);
+	}
+	CGPathCloseSubpath(path);
+	return path;
+}
+
+
+static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
+                                            colorSpace, NSColor *color)
+{
+    NSColor *deviceColor = [color colorUsingColorSpaceName:
+                            NSDeviceRGBColorSpace];
+    
+    CGFloat components[4];
+    [deviceColor getRed: &components[0] green: &components[1] blue:
+     &components[2] alpha: &components[3]];
+    return CGColorCreate (colorSpace, components);
+}
+
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSDictionary *d = [note userInfo];
-    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
     if ([[d objectForKey:@"Lyrics"] isEqualToString:@NC_Disabled_MenuBarLyrics]) {
         [pool release]; return;
     }
     
-    if ([[d objectForKey:@"Lyrics"] isEqualToString:@NC_Changed_DesktopLyrics]) {
-        [self setNeedsDisplay:YES];
-        [pool release]; return;
-    }
-   
-    [LyricsLine setString: [d objectForKey:@"Lyrics"]];
-    [self setNeedsDisplay:YES];
-    [pool release];
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     if (![userDefaults boolForKey:@Pref_Enable_Desktop_Lyrics]) {
-         return;
+        rectangleLayer.frame = CGRectMake(0, 0, 0, 0);
+        textLayer.frame=CGRectMake(0, 0, 0, 0);
+        [pool release];  return;
     }
     
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
+    
+    
     //First: 绘制圆角矩形
     CGFloat x = [userDefaults floatForKey:@Pref_Lyrics_X];
     x = x <= 0 ? 150 : x;
@@ -61,57 +103,57 @@
     CGFloat h = [userDefaults floatForKey:@Pref_Lyrics_H];
     h = h <=0 ? 100 : h;
     
-    
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(x, y, w, h) xRadius:15 yRadius:15];
-    
     NSColor *backColor = [NSColor whiteColor];
     NSData *theDataA=[userDefaults dataForKey:@Pref_Desktop_Background_Color];
     if (theDataA != nil) backColor =(NSColor *)[NSUnarchiver unarchiveObjectWithData:theDataA];
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB ();
+    CGColorRef cgbackColor = CGColorCreateFromNSColor (colorSpace, backColor);
+    
+    
+    rectangleLayer.colors = [NSArray arrayWithObjects:(id)cgbackColor,(id)cgbackColor, nil];
+    rectangleLayer.cornerRadius = 15;
+    rectangleLayer.frame=CGRectMake(x, y, w, h);
+    
+    
 
+    //Second：文字
     
-    [backColor set];
-    [path fill];
-    
-    //Second: 设置文字样式
-    NSMutableDictionary *attr=[[NSMutableDictionary alloc] init];
-    
-    
-    NSString *fontName = [userDefaults stringForKey:@Pref_Lyrics_FontName];
-    if (!fontName) {
-        fontName = [NSString stringWithString:@"Helvetica"];
-    }
     float fontSize = [userDefaults floatForKey:@Pref_Lyrics_FontSize];
     if (fontSize <= 0) {
         fontSize = 28;
     }
-    
-    
+    NSString *fontName = [userDefaults stringForKey:@Pref_Lyrics_FontName];
+    if (!fontName) {
+        fontName = [NSString stringWithString:@"Helvetica"];
+    }
     NSColor *textColor = [NSColor whiteColor];
     NSData *theData=[userDefaults dataForKey:@Pref_Desktop_Text_Color];
     if (theData != nil) textColor =(NSColor *)[NSUnarchiver unarchiveObjectWithData:theData];
     
-    [attr setObject:textColor forKey:NSForegroundColorAttributeName];
+    
+    CGFontRef font = CGFontCreateWithFontName((CFStringRef)fontName);
+    
+    CGColorRef cgfontColor = CGColorCreateFromNSColor (colorSpace, textColor);
 
+    if (![[d objectForKey:@"Lyrics"] isEqualToString:@NC_Changed_DesktopLyrics]) {
+        textLayer.string = [d objectForKey:@"Lyrics"];
+
+    }
+    textLayer.fontSize = fontSize;
+    textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2, w, h);
+    textLayer.alignmentMode = kCAAlignmentCenter;
+    textLayer.font = CGFontCreateWithFontName((CFStringRef)fontName);
+    textLayer.foregroundColor = cgfontColor;
     
-    [attr setObject:[NSFont fontWithName:fontName size:fontSize] forKey:NSFontAttributeName];
+    CGFontRelease(font);
+    CGColorSpaceRelease (colorSpace);
+    CGColorRelease (cgbackColor);
     
-    
-    
-    NSMutableParagraphStyle *par=[[NSMutableParagraphStyle alloc] init];
-    [par setAlignment:NSCenterTextAlignment];
-    [par setLineBreakMode:NSLineBreakByClipping];
-    [par setLineHeightMultiple:30];
-    [attr setObject:par forKey:NSParagraphStyleAttributeName];
-    
-    //Third: 绘制文字
-    NSMutableAttributedString *str=[[NSMutableAttributedString alloc] initWithString:LyricsLine attributes:attr];    
-    [str drawInRect:NSMakeRect(x, y -h/2 + fontSize/2, w, h)];
-    [str release];
-    [attr release];
-    [par release];
     [pool release];
-    
 }
+
+
 
 
 @end
