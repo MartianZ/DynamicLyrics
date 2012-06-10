@@ -143,7 +143,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     textLayer.fontSize = fontSize;
     textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2, w, h);
     textLayer.alignmentMode = kCAAlignmentCenter;
-    textLayer.font = CGFontCreateWithFontName((CFStringRef)fontName);
+    textLayer.font = font;
     textLayer.foregroundColor = cgfontColor;
     
     CGFontRelease(font);
