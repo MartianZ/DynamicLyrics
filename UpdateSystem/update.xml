@@ -6,12 +6,12 @@
       <description>DynamicLyrics 更新日志 - 4321.La</description>
       <language>zh-Hans</language>
          <item>
-            <title>Version 2.4</title>
+            <title>Version 2.1 Build 209</title>
 						<sparkle:releaseNotesLink>
-							http://martian.sinaapp.com/software-update/
+							http://martianlaboratory.com/dynamiclyrics/
 						</sparkle:releaseNotesLink>
-            <pubDate>2012 2月28日</pubDate>
-            <enclosure url="http://dl.4321.la/MusicSeekerX.zip" sparkle:version="210" length="1444347" type="application/octet-stream" sparkle:dsaSignature="MCwCFFVIh4ddItR6FwqJPWtRekpBLgqDAhQUX21J0F8uJgT/PYn4l+6XgXRb1w==" />
+            <pubDate>2011-06-11</pubDate>
+            <enclosure url="http://martianlaboratory.com/dynamiclyrics/DynamicLyricsBuild209.zip" sparkle:shortVersionString="2.1" sparkle:version="209" length="1444347" type="application/octet-stream" sparkle:dsaSignature="MEQCIG8nnpp0iBLBKAG7SaPiA4lQn1rj40vpxleoz5KpgBccAiBS9pFgN5z39E6zDgagqqfbEwSxUorWcO+iPTjc2KtKwg==" />
          </item>
    </channel>
 </rss>

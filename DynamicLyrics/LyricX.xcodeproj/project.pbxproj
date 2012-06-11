@@ -47,8 +47,8 @@
 		028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17AB15305F02006CE85B /* DouBanAPI.m */; };
 		02912A2415710A0A00843F1A /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02912A2315710A0A00843F1A /* Sparkle.framework */; };
 		02912A2715710A7200843F1A /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02912A2315710A0A00843F1A /* Sparkle.framework */; };
-		02912A291571129A00843F1A /* dynamiclyrics2_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */; };
 		02ACCFB31566932D004CC95A /* Donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 02ACCFB21566932D004CC95A /* Donate.png */; };
+		02ECC8921585B9D700C915E5 /* dynamiclyrics2_dsa_pub_new.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02ECC8911585B9D700C915E5 /* dynamiclyrics2_dsa_pub_new.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -130,8 +130,8 @@
 		028E17AA15305F02006CE85B /* DouBanAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBanAPI.h; sourceTree = "<group>"; };
 		028E17AB15305F02006CE85B /* DouBanAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanAPI.m; sourceTree = "<group>"; };
 		02912A2315710A0A00843F1A /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub.pem; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
+		02ECC8911585B9D700C915E5 /* dynamiclyrics2_dsa_pub_new.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub_new.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +201,7 @@
 		025B0781152B1C7300E250BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				02912A281571129A00843F1A /* dynamiclyrics2_dsa_pub.pem */,
+				02ECC8911585B9D700C915E5 /* dynamiclyrics2_dsa_pub_new.pem */,
 				024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */,
 				02ACCFB21566932D004CC95A /* Donate.png */,
 				02035AA21554367B00AB5AB6 /* StatusIcon.png */,
@@ -396,7 +396,7 @@
 				02736EA5155570A600F4EC5C /* icon.icns in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
 				024DE7311567E51100C7B033 /* DynamicLyricsHelper.app in Resources */,
-				02912A291571129A00843F1A /* dynamiclyrics2_dsa_pub.pem in Resources */,
+				02ECC8921585B9D700C915E5 /* dynamiclyrics2_dsa_pub_new.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
