@@ -30,5 +30,6 @@
 
 - (IBAction)DisabledMenuBarLyrics:(id)sender;
 - (IBAction)DisabledDesktopLyrics:(id)sender;
+- (IBAction)aboutDynamicLyrics:(id)sender;
 
 @end

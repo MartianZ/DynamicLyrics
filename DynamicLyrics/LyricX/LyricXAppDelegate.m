@@ -145,10 +145,16 @@
     
 }
 
-- (IBAction)DisabledDesktopLyrics:(id)sender;
+- (IBAction)DisabledDesktopLyrics:(id)sender
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:@NC_LyricsChanged object:self userInfo:[NSDictionary dictionaryWithObject:@NC_Changed_DesktopLyrics forKey:@"Lyrics"]];
+}
+
+- (IBAction)aboutDynamicLyrics:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://dynamiclyrics.project.4321.la/"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 

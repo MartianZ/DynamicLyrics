@@ -227,9 +227,27 @@
 						<reference key="NSOnImage" ref="817365088"/>
 						<reference key="NSMixedImage" ref="112771844"/>
 					</object>
+					<object class="NSMenuItem" id="73639004">
+						<reference key="NSMenu" ref="105512611"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="817365088"/>
+						<reference key="NSMixedImage" ref="112771844"/>
+					</object>
+					<object class="NSMenuItem" id="765504819">
+						<reference key="NSMenu" ref="105512611"/>
+						<string key="NSTitle">About DynamicLyrics...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="817365088"/>
+						<reference key="NSMixedImage" ref="112771844"/>
+					</object>
 					<object class="NSMenuItem" id="972610659">
 						<reference key="NSMenu" ref="105512611"/>
-						<string key="NSTitle">Quit LyricX</string>
+						<string key="NSTitle">Quit DynamicLyrics</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">262144</int>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -364,6 +382,14 @@
 					<int key="connectionID">813</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">aboutDynamicLyrics:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="765504819"/>
+					</object>
+					<int key="connectionID">820</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.PrefEnableMenuBarLyrics</string>
 						<reference key="source" ref="505948474"/>
@@ -460,6 +486,8 @@
 							<reference ref="496384238"/>
 							<reference ref="825473663"/>
 							<reference ref="189409604"/>
+							<reference ref="73639004"/>
+							<reference ref="765504819"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -613,6 +641,16 @@
 						<reference key="object" ref="189409604"/>
 						<reference key="parent" ref="105512611"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">818</int>
+						<reference key="object" ref="73639004"/>
+						<reference key="parent" ref="105512611"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">819</int>
+						<reference key="object" ref="765504819"/>
+						<reference key="parent" ref="105512611"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -649,9 +687,13 @@
 					<string>814.IBPluginDependency</string>
 					<string>815.IBPluginDependency</string>
 					<string>816.IBPluginDependency</string>
+					<string>818.IBPluginDependency</string>
+					<string>819.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -696,7 +738,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">817</int>
+			<int key="maxID">820</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -718,9 +760,11 @@
 							<string>OpenLyricsSearchWindow:</string>
 							<string>WriteArtwork:</string>
 							<string>WriteLyricsToiTunes:</string>
+							<string>aboutDynamicLyrics:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -747,6 +791,7 @@
 							<string>OpenLyricsSearchWindow:</string>
 							<string>WriteArtwork:</string>
 							<string>WriteLyricsToiTunes:</string>
+							<string>aboutDynamicLyrics:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -788,6 +833,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">WriteLyricsToiTunes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">aboutDynamicLyrics:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
