@@ -289,7 +289,7 @@
     while (true) {
         currentPlayerPosition += 100;
         usleep(100000); //1000微秒 = 1毫秒
-        if ([iTunes playerState] != iTunesEPlSPlaying) {
+        if (![iTunes isRunning] || [iTunes playerState] != iTunesEPlSPlaying) {
             usleep(100000);
             continue;
         }
