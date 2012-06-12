@@ -16,6 +16,7 @@
 #import "FloatPanel.h"
 #import "PanelView.h"
 #import "Constants.h"
+#import "RequestSender.h"
 
 
 @interface MainController : NSObject {
