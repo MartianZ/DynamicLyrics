@@ -66,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		02035AA21554367B00AB5AB6 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
-		02135B4F1586F981001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
 		02135B521586F99F001480AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LyricsSearchWnd.xib; sourceTree = "<group>"; };
 		02135B541586F9A4001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LyricsSearchWnd.xib"; sourceTree = "<group>"; };
 		02353CCE152BF84700214998 /* Albumfiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Albumfiller.h; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		02A561091586F75E00E37C6C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		02AA97BA1586F7FC004DD939 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
+		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
 		02ECC8911585B9D700C915E5 /* dynamiclyrics2_dsa_pub_new.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub_new.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -369,6 +369,8 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				"zh-Hant",
+				"zh-Hans-CN",
 			);
 			mainGroup = 02710E7F152A839F006D4BFF;
 			productRefGroup = 02710E8B152A839F006D4BFF /* Products */;
@@ -500,7 +502,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				02A561071586F74F00E37C6C /* en */,
-				02135B4F1586F981001480AD /* zh-Hans */,
+				02CEF1BC1586FFF200B800A6 /* zh-Hans */,
 			);
 			name = Albumfiller.xib;
 			sourceTree = "<group>";

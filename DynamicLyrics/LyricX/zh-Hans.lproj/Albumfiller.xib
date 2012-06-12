@@ -78,7 +78,7 @@
 															<string key="NSFrameSize">{635, 164}</string>
 															<reference key="NSSuperview" ref="834873079"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="498624150"/>
+															<reference key="NSNextKeyView" ref="968437614"/>
 															<string key="NSReuseIdentifierKey">_NS:80</string>
 															<string key="NSMinGridSize">{0, 0}</string>
 															<string key="NSMaxGridSize">{0, 0}</string>
@@ -125,7 +125,6 @@
 													<string key="NSFrame">{{0, 149}, {635, 15}}</string>
 													<reference key="NSSuperview" ref="19128980"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:91</string>
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="19128980"/>
@@ -136,7 +135,7 @@
 											<string key="NSFrame">{{8, 7}, {635, 164}}</string>
 											<reference key="NSSuperview" ref="17566541"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="968437614"/>
+											<reference key="NSNextKeyView" ref="834873079"/>
 											<string key="NSReuseIdentifierKey">_NS:76</string>
 											<int key="NSsFlags">203296</int>
 											<reference key="NSVScroller" ref="968437614"/>
@@ -160,8 +159,8 @@
 							<object class="NSTextFieldCell" key="NSTitleCell">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">选择一个新的专辑封面：</string>
-								<object class="NSFont" key="NSSupport" id="220405569">
+								<string key="NSContents">选择新的专辑封面：</string>
+								<object class="NSFont" key="NSSupport" id="231938706">
 									<string key="NSName">STHeitiSC-Light</string>
 									<double key="NSSize">11</double>
 									<int key="NSfFlags">16</int>
@@ -240,7 +239,7 @@
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">0</int>
 								<string key="NSContents">当前专辑封面：</string>
-								<reference key="NSSupport" ref="220405569"/>
+								<reference key="NSSupport" ref="231938706"/>
 								<reference key="NSBackgroundColor" ref="902762807"/>
 								<object class="NSColor" key="NSTextColor">
 									<int key="NSColorSpace">3</int>
@@ -1145,27 +1144,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/Albumfiller.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSCollectionViewItem</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="imageView">NSImageView</string>
-						<string key="textField">NSTextField</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="imageView">
-							<string key="name">imageView</string>
-							<string key="candidateClassName">NSImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="textField">
-							<string key="name">textField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSCollectionViewItem.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
