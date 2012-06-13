@@ -40,26 +40,6 @@
 }
 
 
-- (CGMutablePathRef)spiralPath:(CGRect)rect
-{
-	CGMutablePathRef path = CGPathCreateMutable();
-	float ox=rect.origin.x+rect.size.width*0.5;
-	float oy=rect.origin.y+rect.size.height*0.6;
-	CGPathMoveToPoint(path, nil, ox, oy);
-	float x=ox,y=oy;
-	float a=2;
-    float t = 0.0;
-	for(int i=0;i<600;i++){
-		t+=0.1;
-        float r=a*t*0.1;
-        x+=r*cos(t);
-        y-=r*sin(t);
-		CGPathAddLineToPoint(path, nil, x, y);
-	}
-	CGPathCloseSubpath(path);
-	return path;
-}
-
 
 static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
                                             colorSpace, NSColor *color)

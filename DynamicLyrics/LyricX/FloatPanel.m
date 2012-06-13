@@ -16,7 +16,7 @@
     if (self) {
         //self.backgroundColor = [NSColor colorWithCalibratedWhite:0 alpha:0.3];
         self.backgroundColor = NSColor.clearColor;
-        self.level = NSDockWindowLevel; //CGShieldingWindowLevel();
+        self.level = NSFloatingWindowLevel; //CGShieldingWindowLevel();
         self.opaque = NO;
         self.hasShadow = NO;
         self.hidesOnDeactivate = NO;
