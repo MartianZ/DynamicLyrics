@@ -85,6 +85,7 @@
 - (void) iTunesPlayerInfo:(NSNotification *)note
 {
     @autoreleasepool {
+
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     
     if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
@@ -103,8 +104,8 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[NSString stringWithString:@"iTunesSongChanged"] forKey:@"Type"];
     [self WorkingThread:dict];
-    }
     
+    }
 }
 
 -(void) UserLyricsChanged:(NSNotification *)note
@@ -307,6 +308,7 @@
     unsigned long PlayerPosition = 0;   
     while (true) {
         @autoreleasepool {
+
         currentPlayerPosition += 100;
         usleep(100000); //1000微秒 = 1毫秒
         if (![iTunes isRunning] || [iTunes playerState] != iTunesEPlSPlaying) {
@@ -326,7 +328,7 @@
         [dict setObject:[NSString stringWithString:@"iTunesPosition"] forKey:@"Type"];
         [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
         [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
-         }
+        }
     }
 }
 

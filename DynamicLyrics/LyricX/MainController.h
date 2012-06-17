@@ -35,7 +35,7 @@
 - (void)WorkingThread:(NSMutableDictionary*)tmpDict;
 - (id)initWithMenu:(NSMenu *)AppMenu;
 
-@property(nonatomic, assign) iTunesTrack *iTunesCurrentTrack;
+@property(nonatomic, retain) iTunesTrack *iTunesCurrentTrack;
 @property(nonatomic, assign) NSString *SongLyrics;
 @property(nonatomic, assign) NSString *CurrentSongLyrics;
 @property(nonatomic, assign) NSMutableArray *lyrics;
