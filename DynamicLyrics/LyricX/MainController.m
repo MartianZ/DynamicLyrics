@@ -12,7 +12,6 @@
 
 @synthesize iTunesCurrentTrack;
 @synthesize SongLyrics;
-@synthesize CurrentSongLyrics;
 @synthesize lyrics;
 
 
@@ -23,7 +22,6 @@
         NSLog(@"%@",@"Initialization");
         
         lyrics = [[NSMutableArray alloc] init];
-        self.CurrentSongLyrics = @"DynamicLyrics!";
         nc = [NSNotificationCenter defaultCenter];
         dnc = [NSDistributedNotificationCenter defaultCenter];
         userDefaults = [NSUserDefaults standardUserDefaults];
@@ -54,6 +52,8 @@
         [LView release];
         [LyricsWindow makeKeyAndOrderFront:nil];
         NSLog(@"%@",@Pref_Enable_Desktop_Lyrics);
+        
+        CurrentSongLyrics = [[NSMutableString alloc] initWithString:@"DynamicLyrics!"];
 
     }
     
@@ -68,6 +68,8 @@
     SongLyrics = nil;
     iTunesCurrentTrack = nil;
     CurrentSongLyrics = nil;
+    [CurrentSongLyrics release];
+    [LyricsWindow release];
     [super dealloc];
 }
 
@@ -145,7 +147,7 @@
 - (void) WorkingThread:(NSMutableDictionary*)tmpDict
 {
     @autoreleasepool {
-       
+        
     //this thread should work in main thread
     //iTunesPosition or iTunesSongChanged handler
     if ([[tmpDict objectForKey:@"Type"] isEqualToString:@"iTunesSongChanged"])
@@ -212,9 +214,9 @@
                 
                 NSString* lyric = [[NSString alloc]initWithFormat:@"%@",[NSString stringWithString:[[lyrics objectAtIndex:CurrentLyric] objectForKey:@"Content"]]];
                 
-                if (CurrentSongLyrics || ![CurrentSongLyrics isEqualToString:lyric])
+                if (![CurrentSongLyrics isEqualToString:lyric])
                 {
-                    self.CurrentSongLyrics = lyric;
+                    [CurrentSongLyrics setString:lyric];
                     [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:CurrentSongLyrics forKey:@"Lyrics"]];
                     
                 }

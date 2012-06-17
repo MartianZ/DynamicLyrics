@@ -63,7 +63,7 @@
 -(IBAction)CopyCurrentLyrics:(id)sender
 {
     [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject: NSStringPboardType] owner:nil];
-    [[NSPasteboard generalPasteboard] setString:Controller.CurrentSongLyrics forType: NSStringPboardType];
+    [[NSPasteboard generalPasteboard] setString:Controller->CurrentSongLyrics forType: NSStringPboardType];
 }
 
 

@@ -26,7 +26,8 @@
     NSDistributedNotificationCenter *dnc;
     int CurrentLyric;    
     NSPanel *LyricsWindow;
-    
+    @public
+    NSMutableString *CurrentSongLyrics;
 
 }
 
@@ -37,7 +38,6 @@
 
 @property(nonatomic, retain) iTunesTrack *iTunesCurrentTrack;
 @property(nonatomic, assign) NSString *SongLyrics;
-@property(nonatomic, assign) NSString *CurrentSongLyrics;
 @property(nonatomic, assign) NSMutableArray *lyrics;
 
 
