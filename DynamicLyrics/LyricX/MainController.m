@@ -85,6 +85,8 @@
 
 - (void) iTunesPlayerInfo:(NSNotification *)note
 {
+    @autoreleasepool {
+        
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     
     if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
@@ -103,7 +105,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[NSString stringWithString:@"iTunesSongChanged"] forKey:@"Type"];
     [self WorkingThread:dict];
-    
+    }
 }
 
 -(void) UserLyricsChanged:(NSNotification *)note
@@ -124,6 +126,7 @@
 
 - (void) SearchLyrics:(NSMutableDictionary*)tmpDict
 {
+    @autoreleasepool {
     NSString *SongTitle = [iTunesCurrentTrack name];
     NSString *SongArtist = [iTunesCurrentTrack artist];
     
@@ -137,13 +140,14 @@
 
     
     [_convertManager release];
+    }
 }
 
 - (void) WorkingThread:(NSMutableDictionary*)tmpDict
 {
     //this thread should work in main thread
     //iTunesPosition or iTunesSongChanged handler
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
     if ([[tmpDict objectForKey:@"Type"] isEqualToString:@"iTunesSongChanged"])
     {
         //iTunesSongChanged
@@ -225,11 +229,12 @@
         }
 
     }
-    [pool release];
+    }
 }
 
 -(long) ToTime:(NSString*)s
 {
+    @autoreleasepool {
     NSString *RegEx = [NSString stringWithString:@"^(\\d+):(\\d+)(\\.(\\d+))?$"];
     NSArray *matchArray = nil;
     matchArray = [s arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLCaseless range:NSMakeRange(0UL, [s length]) error:NULL];
@@ -248,12 +253,13 @@
     {
         return 0;
     }
+    }
     
 }
 
 - (void)Anylize
 {
-
+@autoreleasepool {
     NSString *RegEx = [NSString stringWithString:@"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$"]; 
     [lyrics removeAllObjects];
     
@@ -282,12 +288,13 @@
     
     NSSortDescriptor * sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"Time" ascending:YES] autorelease];
     [lyrics sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-        
+}
 }
 
 - (void)iTunesMonitoringThread
 {
     //This thread now will only handle the playing position and will no longer handle either the song name or the lyrics
+    
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
 
     while (![iTunes isRunning])
@@ -299,6 +306,7 @@
     unsigned long currentPlayerPosition = 0;
     unsigned long PlayerPosition = 0;   
     while (true) {
+        @autoreleasepool {
         currentPlayerPosition += 100;
         usleep(100000); //1000微秒 = 1毫秒
         if (![iTunes isRunning] || [iTunes playerState] != iTunesEPlSPlaying) {
@@ -318,6 +326,7 @@
         [dict setObject:[NSString stringWithString:@"iTunesPosition"] forKey:@"Type"];
         [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
         [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
+    }
     }
 }
 
