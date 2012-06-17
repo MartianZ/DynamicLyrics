@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>Martian.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.Martian.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
