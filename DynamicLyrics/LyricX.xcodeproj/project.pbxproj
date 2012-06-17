@@ -68,6 +68,7 @@
 		02035AA21554367B00AB5AB6 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
 		02135B521586F99F001480AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LyricsSearchWnd.xib; sourceTree = "<group>"; };
 		02135B541586F9A4001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LyricsSearchWnd.xib"; sourceTree = "<group>"; };
+		021B9E91158E209900039011 /* DynamicLyrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DynamicLyrics.entitlements; sourceTree = "<group>"; };
 		02353CCE152BF84700214998 /* Albumfiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Albumfiller.h; sourceTree = "<group>"; };
 		02353CCF152BF84700214998 /* Albumfiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Albumfiller.m; sourceTree = "<group>"; };
 		02353CD3152C0B8500214998 /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
@@ -222,6 +223,7 @@
 		02710E7F152A839F006D4BFF = {
 			isa = PBXGroup;
 			children = (
+				021B9E91158E209900039011 /* DynamicLyrics.entitlements */,
 				02736EA4155570A600F4EC5C /* icon.icns */,
 				02710E94152A839F006D4BFF /* LyricX */,
 				02710E8D152A839F006D4BFF /* Frameworks */,
@@ -558,6 +560,8 @@
 		02710EA9152A839F006D4BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DynamicLyrics.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -567,6 +571,7 @@
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -574,6 +579,8 @@
 		02710EAA152A839F006D4BFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DynamicLyrics.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -583,6 +590,7 @@
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
