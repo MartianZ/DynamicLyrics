@@ -87,7 +87,7 @@ FOUNDATION_STATIC_INLINE NSString *ttpCode(NSString *artist, NSString *title, lo
     long intVal6 = intVal5;
     if (intVal6 > 0x80000000) intVal5 = intVal6 - 0x100000000;
     
-	return [[NSString stringWithFormat:@"%d",intVal5] autorelease];  
+	return [NSString stringWithFormat:@"%d",intVal5];  
 }
 
 FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
@@ -159,21 +159,21 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
              很奇怪的BUG，坑爹的苹果库。字符串处理吧……
              */
             NSString *r = [NSString stringWithString:[tempArray objectAtIndex:i]];
-            NSString *lrcID = [r substringFromIndex:[r rangeOfString:@"id=\""].location + 4];
-            lrcID = [lrcID substringToIndex:[lrcID rangeOfString:@"\" arti"].location];
+            NSMutableString *lrcID = [NSMutableString stringWithString:[r substringFromIndex:[r rangeOfString:@"id=\""].location + 4]];
+            [lrcID setString: [lrcID substringToIndex:[lrcID rangeOfString:@"\" arti"].location]];
             
-            NSString *artist = [r substringFromIndex:[r rangeOfString:@"artist=\""].location + 8];
-            artist = [artist substringToIndex:[artist rangeOfString:@"\" title"].location];
+            NSMutableString *artist = [NSMutableString stringWithString:[r substringFromIndex:[r rangeOfString:@"artist=\""].location + 8]];
+            [artist setString: [artist substringToIndex:[artist rangeOfString:@"\" title"].location]];
             
-            NSString *title = [r substringFromIndex:[r rangeOfString:@"title=\""].location + 7];
-            title = [title substringToIndex:[title rangeOfString:@"\"></lrc"].location];
+            NSMutableString *title = [NSMutableString stringWithString:[r substringFromIndex:[r rangeOfString:@"title=\""].location + 7]];
+            [title setString: [title substringToIndex:[title rangeOfString:@"\"></lrc"].location]];
             
-            title = [title stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-            artist = [artist stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-            title = [title stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-            artist = [artist stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-            title = [title stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-            artist = [artist stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+            [title setString:[title stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"]];
+            [artist setString: [artist stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"]];
+            [title setString: [title stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""]];
+            [artist setString: [artist stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""]];
+            [title setString: [title stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+            [artist setString: [artist stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
             KeyValue_SearchLyrics* keyValue_SearchLyrics = [[KeyValue_SearchLyrics alloc] initWithID:lrcID initWithTitle:title initWithArtist:artist];
             
             [array_controller addObject:keyValue_SearchLyrics]; 
@@ -244,22 +244,23 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         
         NSString *r = [NSString stringWithString:[tempArray objectAtIndex:finalTextIndex]];
 
-        NSString *lrcID = [r substringFromIndex:[r rangeOfString:@"id=\""].location + 4];
-        lrcID = [lrcID substringToIndex:[lrcID rangeOfString:@"\" arti"].location];
+        NSMutableString *lrcID = [NSMutableString stringWithString: [r substringFromIndex:[r rangeOfString:@"id=\""].location + 4]];
+        [lrcID setString: [lrcID substringToIndex:[lrcID rangeOfString:@"\" arti"].location]];
         
-        NSString *finalArtist = [r substringFromIndex:[r rangeOfString:@"artist=\""].location + 8];
-        finalArtist = [finalArtist substringToIndex:[finalArtist rangeOfString:@"\" title"].location];
+        NSMutableString *finalArtist = [NSMutableString stringWithString: [r substringFromIndex:[r rangeOfString:@"artist=\""].location + 8]];
+        [finalArtist setString: [finalArtist substringToIndex:[finalArtist rangeOfString:@"\" title"].location]];
         
-        NSString *finalTitle = [r substringFromIndex:[r rangeOfString:@"title=\""].location + 7];
-        finalTitle = [finalTitle substringToIndex:[finalTitle rangeOfString:@"\"></lrc"].location];
+        NSMutableString *finalTitle = [NSMutableString stringWithString: [r substringFromIndex:[r rangeOfString:@"title=\""].location + 7]];
+        [finalTitle setString: [finalTitle substringToIndex:[finalTitle rangeOfString:@"\"></lrc"].location]];
     
         long finalId = [lrcID intValue];
-        finalTitle = [finalTitle stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-        finalArtist = [finalArtist stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-        finalTitle = [finalTitle stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-        finalArtist = [finalArtist stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-        finalTitle = [finalTitle stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-        finalArtist = [finalArtist stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+        
+        [finalTitle setString: [finalTitle stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"]];
+        [finalArtist setString: [finalArtist stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"]];
+        [finalTitle setString: [finalTitle stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""]];
+        [finalArtist setString: [finalArtist stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""]];
+        [finalTitle setString: [finalTitle stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+        [finalArtist setString: [finalArtist stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
         
         
         NSString *finalCode = ttpCode(finalArtist, finalTitle, finalId);
@@ -274,7 +275,7 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         }
         
         NSString *finalResult = [RequestSender sendRequest:finalUrl];
-        return finalResult;
+        return [finalResult autorelease];
     }
     @catch (NSException *exception) {
         return @"NULL";
@@ -301,7 +302,7 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         }
         
         NSString *finalResult = [RequestSender sendRequest:finalUrl];
-        return finalResult;
+        return [finalResult autorelease];
     }
     @catch (NSException *exception) {
         return @"NULL";

@@ -89,11 +89,13 @@
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
+    @autoreleasepool {
+        
+    
     if ([[[note userInfo] objectForKey:@"Lyrics"] isEqualToString:@NC_Changed_DesktopLyrics]) {
         return;
     }
     
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 
     
@@ -124,7 +126,7 @@
     [_queue cancelAllOperations];
     [_queue addOperation:operation];
     [operation release];
-    [pool release];
+    }
 }
 
 

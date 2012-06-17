@@ -23,7 +23,7 @@
         NSLog(@"%@",@"Initialization");
         
         lyrics = [[NSMutableArray alloc] init];
-        
+        self.CurrentSongLyrics = @"DynamicLyrics!";
         nc = [NSNotificationCenter defaultCenter];
         dnc = [NSDistributedNotificationCenter defaultCenter];
         userDefaults = [NSUserDefaults standardUserDefaults];
@@ -41,7 +41,7 @@
         [NSThread detachNewThreadSelector:@selector(iTunesMonitoringThread) toTarget:self withObject:nil];
         [NSThread detachNewThreadSelector:@selector(checkUpdate) toTarget:self withObject:nil];
 
-        MBLyrics = [[MenuBarLyrics alloc] initWithMenu:AppMenu];
+        [[MenuBarLyrics alloc] initWithMenu:AppMenu];
 
         NSRect frame = NSScreen.mainScreen.frame;
         LyricsWindow = [[FloatPanel alloc] initWithContentRect:frame];
@@ -53,7 +53,6 @@
         
         [LView release];
         [LyricsWindow makeKeyAndOrderFront:nil];
-        
         NSLog(@"%@",@Pref_Enable_Desktop_Lyrics);
 
     }
@@ -66,9 +65,9 @@
 {
     [nc removeObserver:self];
     [dnc removeObserver:self];
-    self.SongLyrics = nil;
-    self.iTunesCurrentTrack = nil;
-    self.CurrentSongLyrics = nil;
+    SongLyrics = nil;
+    iTunesCurrentTrack = nil;
+    CurrentSongLyrics = nil;
     [super dealloc];
 }
 
@@ -85,6 +84,7 @@
 
 - (void) iTunesPlayerInfo:(NSNotification *)note
 {
+    @autoreleasepool {
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     
     if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
@@ -103,6 +103,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[NSString stringWithString:@"iTunesSongChanged"] forKey:@"Type"];
     [self WorkingThread:dict];
+    }
     
 }
 
@@ -112,7 +113,7 @@
     NSString *SongArtist = [[note userInfo] objectForKey:@"SongArtist"];
     if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
     {
-        self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+        SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
         if ([[iTunesCurrentTrack name] isEqualToString:SongTitle])
         {
             [self Anylize];  //如果搜索的歌曲是当前正在播放的歌曲，重新加载歌词
@@ -124,6 +125,7 @@
 
 - (void) SearchLyrics:(NSMutableDictionary*)tmpDict
 {
+    
     NSString *SongTitle = [iTunesCurrentTrack name];
     NSString *SongArtist = [iTunesCurrentTrack artist];
     
@@ -131,7 +133,7 @@
     
     self.SongLyrics = [QianQianLyrics getLyricsByTitle:[_convertManager big5ToGb:SongTitle] getLyricsByArtist:[_convertManager big5ToGb:SongArtist]];
     
-    [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
+    [userDefaults setValue:[NSString stringWithString:SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
     
     [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
 
@@ -141,9 +143,10 @@
 
 - (void) WorkingThread:(NSMutableDictionary*)tmpDict
 {
+    @autoreleasepool {
+       
     //this thread should work in main thread
     //iTunesPosition or iTunesSongChanged handler
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     if ([[tmpDict objectForKey:@"Type"] isEqualToString:@"iTunesSongChanged"])
     {
         //iTunesSongChanged
@@ -151,13 +154,13 @@
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
         
-        self.CurrentSongLyrics = [NSString stringWithFormat:@"正在播放：%@ - %@",SongTitle,SongArtist];
-        [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
+        CurrentSongLyrics = [NSString stringWithFormat:@"正在播放：%@ - %@",SongTitle,SongArtist];
+        [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:CurrentSongLyrics forKey:@"Lyrics"]];
         
         
         if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
         {
-            self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+            SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
             CurrentLyric = 0;
             [self Anylize];
         }
@@ -207,10 +210,11 @@
                 }
                 
                 NSString* lyric = [[NSString alloc]initWithFormat:@"%@",[NSString stringWithString:[[lyrics objectAtIndex:CurrentLyric] objectForKey:@"Content"]]];
-                if (![self.CurrentSongLyrics isEqualToString:lyric])
+                
+                if (CurrentSongLyrics || ![CurrentSongLyrics isEqualToString:lyric])
                 {
                     self.CurrentSongLyrics = lyric;
-                    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
+                    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:CurrentSongLyrics forKey:@"Lyrics"]];
                     
                 }
                 [lyric release];
@@ -225,40 +229,43 @@
         }
 
     }
-    [pool release];
+    }
 }
 
 -(long) ToTime:(NSString*)s
 {
-    NSString *RegEx = [NSString stringWithString:@"^(\\d+):(\\d+)(\\.(\\d+))?$"];
-    NSArray *matchArray = nil;
-    matchArray = [s arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLCaseless range:NSMakeRange(0UL, [s length]) error:NULL];
-    if (matchArray)
-    {
-        NSArray *tempArray = [matchArray objectAtIndex:0];
-        NSString *ms = [NSString stringWithString:[tempArray objectAtIndex:4]];
-        if ([ms length] == 1) [ms stringByAppendingString:@"00"];
-        if ([ms length] == 2) [ms stringByAppendingString:@"0"];
-        NSString *_tmp1 = [NSString stringWithString:[tempArray objectAtIndex:1]];
-        NSString *_tmp2 = [NSString stringWithString:[tempArray objectAtIndex:2]];
-        unsigned long ans = ([_tmp1 intValue]) * 60 * 1000 + ([_tmp2 intValue]) * 1000 + [ms intValue];
-        return ans;
+    @autoreleasepool {
+        NSString *RegEx = [NSString stringWithString:@"^(\\d+):(\\d+)(\\.(\\d+))?$"];
+        NSArray *matchArray = nil;
+        matchArray = [s arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLCaseless range:NSMakeRange(0UL, [s length]) error:NULL];
+        if (matchArray)
+        {
+            NSArray *tempArray = [matchArray objectAtIndex:0];
+            NSString *ms = [NSString stringWithString:[tempArray objectAtIndex:4]];
+            if ([ms length] == 1) [ms stringByAppendingString:@"00"];
+            if ([ms length] == 2) [ms stringByAppendingString:@"0"];
+            NSString *_tmp1 = [NSString stringWithString:[tempArray objectAtIndex:1]];
+            NSString *_tmp2 = [NSString stringWithString:[tempArray objectAtIndex:2]];
+            unsigned long ans = ([_tmp1 intValue]) * 60 * 1000 + ([_tmp2 intValue]) * 1000 + [ms intValue];
+            return ans;
+        }
+        else
+        {
+            return 0;
+        }
     }
-    else
-    {
-        return 0;
-    }
+    
     
 }
 
 - (void)Anylize
 {
-
+    @autoreleasepool {
     NSString *RegEx = [NSString stringWithString:@"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$"]; 
     [lyrics removeAllObjects];
     
     NSArray *matchArray = nil;
-    matchArray = [self.SongLyrics arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLMultiline | RKLCaseless range:NSMakeRange(0UL, [self.SongLyrics length]) error:nil];
+    matchArray = [SongLyrics arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLMultiline | RKLCaseless range:NSMakeRange(0UL, [SongLyrics length]) error:nil];
     
     for(int i=0; i<[matchArray count]; i++)
     {
@@ -282,7 +289,7 @@
     
     NSSortDescriptor * sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"Time" ascending:YES] autorelease];
     [lyrics sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-        
+    }
 }
 
 - (void)iTunesMonitoringThread
@@ -299,6 +306,7 @@
     unsigned long currentPlayerPosition = 0;
     unsigned long PlayerPosition = 0;   
     while (true) {
+        @autoreleasepool {
         currentPlayerPosition += 100;
         usleep(100000); //1000微秒 = 1毫秒
         if (![iTunes isRunning] || [iTunes playerState] != iTunesEPlSPlaying) {
@@ -318,6 +326,7 @@
         [dict setObject:[NSString stringWithString:@"iTunesPosition"] forKey:@"Type"];
         [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
         [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
+         }
     }
 }
 
