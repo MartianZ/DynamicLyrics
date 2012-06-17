@@ -47,7 +47,6 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     NSColor *deviceColor = [color colorUsingColorSpaceName:
                             NSDeviceRGBColorSpace];
     
-    
     CGFloat components[4];
     [deviceColor getRed: &components[0] green: &components[1] blue:
      &components[2] alpha: &components[3]];
@@ -57,19 +56,19 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
-    @autoreleasepool {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSDictionary *d = [note userInfo];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     if ([[d objectForKey:@"Lyrics"] isEqualToString:@NC_Disabled_MenuBarLyrics]) {
-        return;
+        [pool release]; return;
     }
     
 
     if (![userDefaults boolForKey:@Pref_Enable_Desktop_Lyrics]) {
         rectangleLayer.frame = CGRectMake(0, 0, 0, 0);
         textLayer.frame=CGRectMake(0, 0, 0, 0);
-        return;
+        [pool release];  return;
     }
     
     
@@ -121,9 +120,8 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
         textLayer.string = [d objectForKey:@"Lyrics"];
 
     }
-
     textLayer.fontSize = fontSize;
-    textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2 , w, h);
+    textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2, w, h);
     textLayer.alignmentMode = kCAAlignmentCenter;
     textLayer.font = font;
     textLayer.foregroundColor = cgfontColor;
@@ -132,7 +130,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     CGColorSpaceRelease (colorSpace);
     CGColorRelease (cgbackColor);
     CGColorRelease (cgfontColor);
-    }
+    [pool release];
 }
 
 

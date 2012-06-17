@@ -24,9 +24,9 @@
     NSUserDefaults *userDefaults;
     NSNotificationCenter *nc;
     NSDistributedNotificationCenter *dnc;
+    MenuBarLyrics* MBLyrics;
     int CurrentLyric;    
     NSPanel *LyricsWindow;
-    
 
 }
 
@@ -35,10 +35,10 @@
 - (void)WorkingThread:(NSMutableDictionary*)tmpDict;
 - (id)initWithMenu:(NSMenu *)AppMenu;
 
-@property(nonatomic, assign) iTunesTrack *iTunesCurrentTrack;
-@property(nonatomic, assign) NSString *SongLyrics;
-@property(nonatomic, assign) NSString *CurrentSongLyrics;
-@property(nonatomic, assign) NSMutableArray *lyrics;
+@property(nonatomic, retain) iTunesTrack *iTunesCurrentTrack;
+@property(nonatomic, retain) NSString *SongLyrics;
+@property(nonatomic, retain) NSString *CurrentSongLyrics;
+@property(nonatomic, retain) NSMutableArray *lyrics;
 
 
 @end

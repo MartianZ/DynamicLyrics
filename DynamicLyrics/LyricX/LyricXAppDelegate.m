@@ -116,7 +116,6 @@
     NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
     imageData = [imageRep representationUsingType:NSJPEGFileType properties:imageProps];
     [imageData writeToFile:path atomically:NO];     
-    [image release];
 }
 
 

@@ -154,7 +154,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02353CC0152BF06A00214998 /* ArtWorkFillerWnd */ = {
+		02353CC0152BF06A00214998 /* Autofiller */ = {
 			isa = PBXGroup;
 			children = (
 				02353CCE152BF84700214998 /* Albumfiller.h */,
@@ -167,10 +167,10 @@
 				028E17AA15305F02006CE85B /* DouBanAPI.h */,
 				028E17AB15305F02006CE85B /* DouBanAPI.m */,
 			);
-			name = ArtWorkFillerWnd;
+			name = Autofiller;
 			sourceTree = "<group>";
 		};
-		02390241154F8BD100869A2D /* PrefsWnd */ = {
+		02390241154F8BD100869A2D /* PrefsWindow */ = {
 			isa = PBXGroup;
 			children = (
 				02390257154F9C1800869A2D /* DBPrefsWindowController.h */,
@@ -179,7 +179,7 @@
 				0239024A154F8EE200869A2D /* AppPrefsWindowController.h */,
 				0239024B154F8EE200869A2D /* AppPrefsWindowController.m */,
 			);
-			name = PrefsWnd;
+			name = PrefsWindow;
 			sourceTree = "<group>";
 		};
 		025B0779152B1AFF00E250BF /* MenuBarLyrics */ = {
@@ -312,23 +312,23 @@
 		02710EE6152AB543006D4BFF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				02390241154F8BD100869A2D /* PrefsWnd */,
-				02353CC0152BF06A00214998 /* ArtWorkFillerWnd */,
-				0288618C152BCBF500DA6B91 /* LyricsSearchWnd */,
+				02390241154F8BD100869A2D /* PrefsWindow */,
+				02353CC0152BF06A00214998 /* Autofiller */,
+				0288618C152BCBF500DA6B91 /* UI */,
 				025B077A152B1B0800E250BF /* DesktopLyrics */,
 				025B0779152B1AFF00E250BF /* MenuBarLyrics */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		0288618C152BCBF500DA6B91 /* LyricsSearchWnd */ = {
+		0288618C152BCBF500DA6B91 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				028861AD152BD60D00DA6B91 /* LyricsSearchWnd.h */,
 				028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */,
 				02135B531586F99F001480AD /* LyricsSearchWnd.xib */,
 			);
-			name = LyricsSearchWnd;
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,7 +515,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -533,7 +532,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -543,7 +541,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -554,7 +551,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -562,7 +558,6 @@
 		02710EA9152A839F006D4BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -570,12 +565,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
-				INSTALL_OWNER = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -583,7 +574,6 @@
 		02710EAA152A839F006D4BFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -591,12 +581,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
-				INSTALL_OWNER = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
