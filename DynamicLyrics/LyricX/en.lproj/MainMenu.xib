@@ -227,14 +227,6 @@
 						<reference key="NSOnImage" ref="817365088"/>
 						<reference key="NSMixedImage" ref="112771844"/>
 					</object>
-					<object class="NSMenuItem" id="825473663">
-						<reference key="NSMenu" ref="105512611"/>
-						<string key="NSTitle">Check for Updates</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="817365088"/>
-						<reference key="NSMixedImage" ref="112771844"/>
-					</object>
 					<object class="NSMenuItem" id="73639004">
 						<reference key="NSMenu" ref="105512611"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -266,9 +258,6 @@
 			</object>
 			<object class="NSCustomObject" id="57075725">
 				<string key="NSClassName">AppDelegate</string>
-			</object>
-			<object class="NSCustomObject" id="628004996">
-				<string key="NSClassName">SUUpdater</string>
 			</object>
 			<object class="NSUserDefaultsController" id="668106822">
 				<bool key="NSSharedInstance">YES</bool>
@@ -437,14 +426,6 @@
 					</object>
 					<int key="connectionID">810</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">checkForUpdates:</string>
-						<reference key="source" ref="628004996"/>
-						<reference key="destination" ref="825473663"/>
-					</object>
-					<int key="connectionID">817</int>
-				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -492,7 +473,6 @@
 							<reference ref="505948474"/>
 							<reference ref="566438284"/>
 							<reference ref="496384238"/>
-							<reference ref="825473663"/>
 							<reference ref="189409604"/>
 							<reference ref="73639004"/>
 							<reference ref="765504819"/>
@@ -636,16 +616,6 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">814</int>
-						<reference key="object" ref="628004996"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">815</int>
-						<reference key="object" ref="825473663"/>
-						<reference key="parent" ref="105512611"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">816</int>
 						<reference key="object" ref="189409604"/>
 						<reference key="parent" ref="105512611"/>
@@ -698,8 +668,6 @@
 					<string>796.IBPluginDependency</string>
 					<string>797.IBPluginDependency</string>
 					<string>798.IBPluginDependency</string>
-					<string>814.IBPluginDependency</string>
-					<string>815.IBPluginDependency</string>
 					<string>816.IBPluginDependency</string>
 					<string>818.IBPluginDependency</string>
 					<string>819.IBPluginDependency</string>
@@ -707,8 +675,6 @@
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -756,7 +722,125 @@
 			<nil key="sourceID"/>
 			<int key="maxID">821</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">AppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>CopyCurrentLyrics:</string>
+							<string>CopyTotalLRC:</string>
+							<string>CopyTotalTextLyrics:</string>
+							<string>DisabledDesktopLyrics:</string>
+							<string>DisabledMenuBarLyrics:</string>
+							<string>ExportLRC:</string>
+							<string>OpenAlbumfillerWindow:</string>
+							<string>OpenLyricsSearchWindow:</string>
+							<string>WriteArtwork:</string>
+							<string>WriteLyricsToiTunes:</string>
+							<string>aboutDynamicLyrics:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>CopyCurrentLyrics:</string>
+							<string>CopyTotalLRC:</string>
+							<string>CopyTotalTextLyrics:</string>
+							<string>DisabledDesktopLyrics:</string>
+							<string>DisabledMenuBarLyrics:</string>
+							<string>ExportLRC:</string>
+							<string>OpenAlbumfillerWindow:</string>
+							<string>OpenLyricsSearchWindow:</string>
+							<string>WriteArtwork:</string>
+							<string>WriteLyricsToiTunes:</string>
+							<string>aboutDynamicLyrics:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">CopyCurrentLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">CopyTotalLRC:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">CopyTotalTextLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">DisabledDesktopLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">DisabledMenuBarLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">ExportLRC:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">OpenAlbumfillerWindow:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">OpenLyricsSearchWindow:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">WriteArtwork:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">WriteLyricsToiTunes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">aboutDynamicLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">AppMenu</string>
+						<string key="NS.object.0">NSMenu</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">AppMenu</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">AppMenu</string>
+							<string key="candidateClassName">NSMenu</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AppDelegate.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
