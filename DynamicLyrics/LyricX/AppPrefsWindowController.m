@@ -86,6 +86,8 @@
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
+/*
+ 需要更换一种能够SandBox的优雅方式……
 - (LSSharedFileListRef)loginItemsFileListRef {
     LSSharedFileListRef loginItemsRef =
     LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
@@ -141,31 +143,48 @@
         }
     }
 }
-
+*/
 - (IBAction)LaunchAndQuitWithiTunes:(id)sender
 {
-    
-    NSTask *task = [[NSTask alloc] init];
+    /*NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
     [task setArguments:[NSArray arrayWithObjects:@"-c", @"killall DynamicLyricsHelper", nil]];
     [task launch];
     [task waitUntilExit];
-    [task release];
+    [task release];*/
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if ([userDefaults boolForKey:@Pref_Launch_Quit_With_iTunes]) {
         [userDefaults setObject:[NSString stringWithString:[[NSBundle mainBundle] bundlePath]] forKey:@"AppLocation"];        
 
-        NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath],@"DynamicLyricsHelper.app"];
+        //NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath],@"DynamicLyricsHelper.app"];
 
-        [[NSWorkspace sharedWorkspace] launchApplication:path];
+        //[[NSWorkspace sharedWorkspace] launchApplication:path];
         
         //添加开机启动
-        [self addPathToLoginItems:path hide:0];
+        //[self addPathToLoginItems:path hide:0];
+        
+        /* 
+         
+         按照苹果蹩脚的文档，下面的代码确实可以在沙盒中运行。不过出来的Helper甚至无法kill掉进程（kill掉立刻被系统重新运行了，囧），而且在系统设置中的Login Items也不再显示。代码是比我之前的代码简洁了好几倍（报一个警告是怎么回事？！），但是对于用户来说体验差了好多，只能再通过DnamicLyrics来关闭Helper。
+         估计是苹果的工程师傲娇偷懒这么设定的。嗯，一定是这样！
+         
+         无聊的Apple弄沙盒……
+         
+         */
+        
+        NSString *ref = @"la.4321.DynamicLyricsHelper";
+        if (!SMLoginItemSetEnabled((CFStringRef)ref, YES)) {
+            NSLog(@"SMLoginItemSetEnabled failed.");
+        }
         
     } else {
         
-        [self removeItemWithNameFromLoginItems:@"DynamicLyricsHelper"];
+        //[self removeItemWithNameFromLoginItems:@"DynamicLyricsHelper"];
+        NSString *ref = @"la.4321.DynamicLyricsHelper";
+        if (!SMLoginItemSetEnabled((CFStringRef)ref, false)) {
+            NSLog(@"SMLoginItemSetEnabled failed.");
+        }
     }
 }
 

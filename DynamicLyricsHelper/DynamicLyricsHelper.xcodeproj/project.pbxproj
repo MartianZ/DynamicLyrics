@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020038E4158F886300F478DE /* DynamicLyricsHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DynamicLyricsHelper.entitlements; sourceTree = "<group>"; };
 		02947A311567622400DA746B /* DynamicLyricsHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicLyricsHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02947A351567622400DA746B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		02947A381567622400DA746B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -83,6 +84,7 @@
 		02947A3B1567622400DA746B /* DynamicLyricsHelper */ = {
 			isa = PBXGroup;
 			children = (
+				020038E4158F886300F478DE /* DynamicLyricsHelper.entitlements */,
 				02947A7515676CDA00DA746B /* iTunes.h */,
 				02947A471567622400DA746B /* AppDelegate.h */,
 				02947A481567622400DA746B /* AppDelegate.m */,
@@ -231,11 +233,14 @@
 		02947A501567622400DA746B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DynamicLyricsHelper/DynamicLyricsHelper.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicLyricsHelper/DynamicLyricsHelper-Prefix.pch";
 				INFOPLIST_FILE = "DynamicLyricsHelper/DynamicLyricsHelper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -243,11 +248,14 @@
 		02947A511567622400DA746B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DynamicLyricsHelper/DynamicLyricsHelper.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicLyricsHelper/DynamicLyricsHelper-Prefix.pch";
 				INFOPLIST_FILE = "DynamicLyricsHelper/DynamicLyricsHelper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

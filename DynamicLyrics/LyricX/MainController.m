@@ -75,7 +75,7 @@
 
 -(void)checkUpdate
 {
-    NSString* result = [RequestSender sendRequest:@"http://api.4321.la/analytics-maclyrics.php?ver=20120612"];
+    NSString* result = [RequestSender sendRequest:@"http://api.4321.la/analytics-maclyrics.php?ver=20120618"];
     
     if ([result isEqualToString:@"Update"])
     {
@@ -125,22 +125,27 @@
     }
 }
 
-- (void) SearchLyrics:(NSMutableDictionary*)tmpDict
+- (void) SearchBestLyrics:(NSMutableDictionary*)tmpDict
 {
     @autoreleasepool {
-    NSString *SongTitle = [iTunesCurrentTrack name];
-    NSString *SongArtist = [iTunesCurrentTrack artist];
+        NSString *SongTitle = [iTunesCurrentTrack name];
+        NSString *SongArtist = [iTunesCurrentTrack artist];
     
-    GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+        GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
     
-    self.SongLyrics = [QianQianLyrics getLyricsByTitle:[_convertManager big5ToGb:SongTitle] getLyricsByArtist:[_convertManager big5ToGb:SongArtist]];
+        self.SongLyrics = [QianQianLyrics getLyricsByTitle:[_convertManager big5ToGb:SongTitle] getLyricsByArtist:[_convertManager big5ToGb:SongArtist]];
     
-    [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
+        
+        if (!self.SongLyrics) {
+            return;
+        }
+        
+        [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
     
-    [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
 
     
-    [_convertManager release];
+        [_convertManager release];
     }
 }
 
@@ -153,11 +158,11 @@
     {
         //iTunesSongChanged
         NSLog(@"%@",[iTunesCurrentTrack name]);
-        LyricsDelay = 0; 
+        LyricsDelay = 0; [lyrics removeAllObjects];
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
         
-        self.CurrentSongLyrics = [NSString stringWithFormat:@"正在播放：%@ - %@",SongTitle,SongArtist];
+        self.CurrentSongLyrics = [NSString stringWithFormat:@"%@ - %@",SongTitle,SongArtist];
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
         
         
@@ -172,7 +177,7 @@
         {
             //搜索歌词
             CurrentLyric = 0;
-            [NSThread detachNewThreadSelector:@selector(SearchLyrics:) toTarget:self withObject:tmpDict];
+            [NSThread detachNewThreadSelector:@selector(SearchBestLyrics:) toTarget:self withObject:tmpDict];
             
             
         }
@@ -313,24 +318,27 @@
         @autoreleasepool {
         currentPlayerPosition += 100;
         usleep(100000); //1000微秒 = 1毫秒
-        if (![iTunes isRunning] || [iTunes playerState] != iTunesEPlSPlaying) {
-            usleep(100000);
-            continue;
-        }
-        PlayerPosition = [iTunes playerPosition];
-        if ((currentPlayerPosition / 1000) != PlayerPosition)
-            currentPlayerPosition = PlayerPosition * 1000;
-        
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        while (![iTunes isRunning] || ![[iTunes currentTrack] name])
+        if (![iTunes isRunning] && [[NSUserDefaults standardUserDefaults] boolForKey:@Pref_Launch_Quit_With_iTunes])
         {
+            exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
+        }
+        if ([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) {
+            PlayerPosition = [iTunes playerPosition];
+            if ((currentPlayerPosition / 1000) != PlayerPosition)
+                currentPlayerPosition = PlayerPosition * 1000;
+            
+            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+            
+            
+            [dict setObject:[NSString stringWithString:@"iTunesPosition"] forKey:@"Type"];
+            [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
+            [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
+
+        }
+        else {
             sleep(1);
         }
-        
-        [dict setObject:[NSString stringWithString:@"iTunesPosition"] forKey:@"Type"];
-        [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
-        [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
-    }
+        }
     }
 }
 

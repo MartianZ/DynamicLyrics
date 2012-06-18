@@ -239,7 +239,7 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         }
         if (finalTextIndex == -1)
         {
-            return @"NULL";
+            return nil;
         }
         
         NSString *r = [NSString stringWithString:[tempArray objectAtIndex:finalTextIndex]];
@@ -277,7 +277,7 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         return finalResult;
     }
     @catch (NSException *exception) {
-        return @"NULL";
+        return nil;
     }
     
 }
@@ -304,7 +304,7 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         return finalResult;
     }
     @catch (NSException *exception) {
-        return @"NULL";
+        return nil;
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020038E7158F89C700F478DE /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020038E6158F89C700F478DE /* ServiceManagement.framework */; };
 		02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02035AA21554367B00AB5AB6 /* StatusIcon.png */; };
 		02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02135B531586F99F001480AD /* LyricsSearchWnd.xib */; };
 		02353CD1152BF84700214998 /* Albumfiller.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CCF152BF84700214998 /* Albumfiller.m */; };
@@ -18,7 +19,6 @@
 		02390261154F9D8200869A2D /* Advanced.png in Resources */ = {isa = PBXBuildFile; fileRef = 02390260154F9D8200869A2D /* Advanced.png */; };
 		024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDD1584EFB000444B78 /* Quartz.framework */; };
 		024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDE1584EFB000444B78 /* QuartzCore.framework */; };
-		024DE7311567E51100C7B033 /* DynamicLyricsHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */; };
 		0251F443153980A60019F36F /* music-default.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0251F442153980A60019F36F /* music-default.gif */; };
 		025B0777152B14F400E250BF /* MenuBarLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B0776152B14F400E250BF /* MenuBarLyrics.m */; };
 		025B0784152B1C8700E250BF /* big5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 025B0782152B1C8700E250BF /* big5.txt */; };
@@ -51,8 +51,8 @@
 		02912A2615710A5600843F1A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		020038E6158F89C700F478DE /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		02035AA21554367B00AB5AB6 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
 		02135B521586F99F001480AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LyricsSearchWnd.xib; sourceTree = "<group>"; };
 		02135B541586F9A4001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LyricsSearchWnd.xib"; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		023C2DAF158EE8A500C9BEAB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		024B8BDD1584EFB000444B78 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		024B8BDE1584EFB000444B78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = DynamicLyricsHelper.app; sourceTree = "<group>"; };
 		0251F442153980A60019F36F /* music-default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "music-default.gif"; sourceTree = "<group>"; };
 		025B0775152B14F400E250BF /* MenuBarLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBarLyrics.h; sourceTree = "<group>"; };
 		025B0776152B14F400E250BF /* MenuBarLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBarLyrics.m; sourceTree = "<group>"; };
@@ -136,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020038E7158F89C700F478DE /* ServiceManagement.framework in Frameworks */,
 				024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */,
 				024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */,
 				02710ED6152AA0FF006D4BFF /* ScriptingBridge.framework in Frameworks */,
@@ -197,7 +198,6 @@
 		025B0781152B1C7300E250BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				024DE7301567E51100C7B033 /* DynamicLyricsHelper.app */,
 				02ACCFB21566932D004CC95A /* Donate.png */,
 				02035AA21554367B00AB5AB6 /* StatusIcon.png */,
 				02390260154F9D8200869A2D /* Advanced.png */,
@@ -232,6 +232,7 @@
 		02710E8D152A839F006D4BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				020038E6158F89C700F478DE /* ServiceManagement.framework */,
 				024B8BDD1584EFB000444B78 /* Quartz.framework */,
 				024B8BDE1584EFB000444B78 /* QuartzCore.framework */,
 				02710ED5152AA0FF006D4BFF /* ScriptingBridge.framework */,
@@ -391,7 +392,6 @@
 				02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */,
 				02736EA5155570A600F4EC5C /* icon.icns in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
-				024DE7311567E51100C7B033 /* DynamicLyricsHelper.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

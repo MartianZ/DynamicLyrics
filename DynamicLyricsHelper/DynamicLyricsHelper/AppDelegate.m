@@ -29,43 +29,28 @@
         while ([iTunes isRunning]) {
             a = true;
             sleep(1);
-            
         }
         if (a) {
             //ITUNES EXIT
-            NSLog(@"%@",@"ITUNES EXIT");
+            /*NSLog(@"%@",@"ITUNES EXIT");
             
             NSTask *task = [[NSTask alloc] init];
             [task setLaunchPath:@"/bin/sh"];
             [task setArguments:[NSArray arrayWithObjects:@"-c", @"killall DynamicLyrics", nil]];
             [task launch];
             [task waitUntilExit];
-            [task release];
+            [task release];*/ //I HATE SANDBOX
         }
         while (![iTunes isRunning]) {
             sleep(1);
         }
         //ITUNES START
         NSLog(@"%@",@"ITUNES START");
-        bool b = false;
-        ProcessSerialNumber psn = { kNoProcess, kNoProcess };
-        while (GetNextProcess(&psn) == noErr) {
-            CFDictionaryRef cfDict = ProcessInformationCopyDictionary(&psn,  kProcessDictionaryIncludeAllInformationMask);
-            if (cfDict) {
-                NSDictionary *dict = (NSDictionary *)cfDict;
-                if ([[dict objectForKey:(id)kCFBundleNameKey] isEqualToString:@"DynamicLyrics"]) {
-                    b = true;
-                }
-                CFRelease(cfDict);          
-            }
-        }
-        
-        if (!b) {
-            NSUserDefaults* prefs = [ NSUserDefaults standardUserDefaults ];
-            NSDictionary* iAppsPrefs = [ prefs persistentDomainForName: @"Martian.DynamicLyrics" ];
-            [[NSWorkspace sharedWorkspace] launchApplication:[iAppsPrefs objectForKey:@"AppLocation"]];
 
-        }
+        NSString *path = [[NSString alloc] initWithString:[[NSBundle mainBundle] bundlePath]];
+        [[NSWorkspace sharedWorkspace] launchApplication:[path stringByReplacingOccurrencesOfString:@"/Contents/Library/LoginItems/DynamicLyricsHelper.app" withString:@""]];
+
+        // /Users/Martian/Desktop/DynamicLyrics.app/Contents/Library/LoginItems/DynamicLyricsHelper.app
                
     }
 
