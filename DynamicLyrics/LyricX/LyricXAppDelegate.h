@@ -27,6 +27,9 @@
 -(IBAction)CopyTotalTextLyrics:(id)sender;
 -(IBAction)WriteLyricsToiTunes:(id)sender;
 -(IBAction)WriteArtwork:(id)sender;
+- (IBAction)adjustLyricsDelay:(id)sender;
+- (IBAction)resetLyricsDelay:(id)sender;
+
 
 - (IBAction)DisabledMenuBarLyrics:(id)sender;
 - (IBAction)DisabledDesktopLyrics:(id)sender;

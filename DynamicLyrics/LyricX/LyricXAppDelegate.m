@@ -76,6 +76,7 @@
 
 -(IBAction)CopyTotalTextLyrics:(id)sender
 {
+    
     NSMutableString *s = [[NSMutableString alloc] init];
     [s setString:@""];
     for (int i = 0; i < [Controller.lyrics count]; i++) {
@@ -102,9 +103,21 @@
 
 -(IBAction)WriteArtwork:(id)sender
 {
+    NSSavePanel *saveDlg = [[NSSavePanel savePanel] autorelease];
+    
+    [saveDlg setTitle:@"Save Artwork"];
+    
+    
+     
     NSString* documentsFolder = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
     NSString* fileName = [NSString stringWithFormat:@"%@ - %@.tiff",Controller.iTunesCurrentTrack.name,Controller.iTunesCurrentTrack.artist];
-    NSString* path = [documentsFolder stringByAppendingPathComponent:fileName];
+    
+    [saveDlg setNameFieldStringValue:fileName];
+
+    [saveDlg setDirectoryURL:[NSURL URLWithString:documentsFolder]];
+    [saveDlg runModal];
+
+
 
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
 
@@ -115,20 +128,26 @@
     NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
     NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
     imageData = [imageRep representationUsingType:NSJPEGFileType properties:imageProps];
-    [imageData writeToFile:path atomically:NO];     
+    [imageData writeToFile:[[saveDlg URL] path] atomically:NO];     
     [image release];
 }
 
 
 -(IBAction)ExportLRC:(id)sender
 {
+    NSSavePanel *saveDlg = [[NSSavePanel savePanel] autorelease];
+    [saveDlg setTitle:@"Save Lyrics"];
+
     
     NSString* documentsFolder = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
     NSString* fileName = [NSString stringWithFormat:@"%@ - %@.lrc",Controller.iTunesCurrentTrack.name,Controller.iTunesCurrentTrack.artist];
     
-    NSString* path = [documentsFolder stringByAppendingPathComponent:fileName];
+    [saveDlg setNameFieldStringValue:fileName];
+    [saveDlg setDirectoryURL:[NSURL URLWithString:documentsFolder]];
+    [saveDlg runModal];
+        
     
-    [[NSFileManager defaultManager] createFileAtPath:path contents:[Controller.SongLyrics dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    [[NSFileManager defaultManager] createFileAtPath:[[saveDlg URL] path] contents:[Controller.SongLyrics dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
 }
 
 -(IBAction)showPrefsWindow:(id)sender
@@ -158,5 +177,25 @@
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
+- (IBAction)adjustLyricsDelay:(id)sender
+{
+    NSString *str = [[(NSMenuItem *)sender title] stringByReplacingOccurrencesOfString:@"s" withString:@""];
+    
+    float i = 0 - [str floatValue]; //我发现我第一次脑残了，把延迟给弄成提前了……于是为了省事直接加个 0- 吧……
+    if (Controller && Controller.iTunesCurrentTrack.name) {
+        Controller->LyricsDelay += i;
+        
+        [[NSUserDefaults standardUserDefaults] setFloat:Controller->LyricsDelay forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]]; 
+            }
+}
+- (IBAction)resetLyricsDelay:(id)sender
+{
+    if (Controller && Controller.iTunesCurrentTrack.name) {
+        Controller->LyricsDelay = 0 ;
+        
+        [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]]; 
+        
+    }
+}
 
 @end

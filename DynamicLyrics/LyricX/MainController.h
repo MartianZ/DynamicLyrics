@@ -27,6 +27,8 @@
     MenuBarLyrics* MBLyrics;
     int CurrentLyric;    
     NSPanel *LyricsWindow;
+    @public
+    float LyricsDelay;
 
 }
 
@@ -39,6 +41,5 @@
 @property(nonatomic, retain) NSString *SongLyrics;
 @property(nonatomic, retain) NSString *CurrentSongLyrics;
 @property(nonatomic, retain) NSMutableArray *lyrics;
-
 
 @end

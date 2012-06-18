@@ -56,6 +56,7 @@
         
         NSLog(@"%@",@Pref_Enable_Desktop_Lyrics);
 
+        LyricsDelay = 0;
     }
     
     return self;
@@ -152,6 +153,7 @@
     {
         //iTunesSongChanged
         NSLog(@"%@",[iTunesCurrentTrack name]);
+        LyricsDelay = 0; 
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
         
@@ -163,6 +165,7 @@
         {
             self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
             CurrentLyric = 0;
+            LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
             [self Anylize];
         }
         else
@@ -181,6 +184,7 @@
         //iTunesPosition
         NSString *_currentPlayerPosition = [NSString stringWithString:[tmpDict objectForKey:@"currentPlayerPosition"]];
         unsigned long currentPlayerPosition = (long)[_currentPlayerPosition longLongValue];
+        currentPlayerPosition += LyricsDelay * 1000;
         long Total = [lyrics count];
         
         if (Total > 0)

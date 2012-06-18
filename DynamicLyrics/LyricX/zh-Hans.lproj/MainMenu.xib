@@ -105,6 +105,123 @@
 									<reference key="NSOnImage" ref="817365088"/>
 									<reference key="NSMixedImage" ref="112771844"/>
 								</object>
+								<object class="NSMenuItem" id="535427723">
+									<reference key="NSMenu" ref="500224075"/>
+									<string key="NSTitle">调整歌词延迟</string>
+									<string type="base64-UTF8" key="NSKeyEquiv">Gw</string>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="817365088"/>
+									<reference key="NSMixedImage" ref="112771844"/>
+									<string key="NSAction">submenuAction:</string>
+									<object class="NSMenu" key="NSSubmenu" id="670221032">
+										<string key="NSTitle">调整歌词延迟</string>
+										<object class="NSMutableArray" key="NSMenuItems">
+											<bool key="EncodedWithXMLCoder">YES</bool>
+											<object class="NSMenuItem" id="715615429">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">-0.5s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="363609333">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">-0.2s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="446335466">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">-0.1s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="106723182">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">-0.05s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="732826476">
+												<reference key="NSMenu" ref="670221032"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<bool key="NSIsSeparator">YES</bool>
+												<string key="NSTitle"/>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="235946563">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">+0.05s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="431925598">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">+0.1s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="683728238">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">+0.2s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="423517251">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">+0.5s</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="651690693">
+												<reference key="NSMenu" ref="670221032"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<bool key="NSIsSeparator">YES</bool>
+												<string key="NSTitle"/>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+											<object class="NSMenuItem" id="520687214">
+												<reference key="NSMenu" ref="670221032"/>
+												<string key="NSTitle">重置延迟</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="817365088"/>
+												<reference key="NSMixedImage" ref="112771844"/>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="NSMenuItem" id="955631974">
+									<reference key="NSMenu" ref="500224075"/>
+									<bool key="NSIsDisabled">YES</bool>
+									<bool key="NSIsSeparator">YES</bool>
+									<string key="NSTitle"/>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="817365088"/>
+									<reference key="NSMixedImage" ref="112771844"/>
+								</object>
 								<object class="NSMenuItem" id="436036635">
 									<reference key="NSMenu" ref="500224075"/>
 									<string key="NSTitle">复制当前歌词</string>
@@ -116,7 +233,7 @@
 								</object>
 								<object class="NSMenuItem" id="776385152">
 									<reference key="NSMenu" ref="500224075"/>
-									<string key="NSTitle">复制全部歌词 (LRC)</string>
+									<string key="NSTitle">复制全部歌词（LRC）</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="817365088"/>
@@ -124,7 +241,7 @@
 								</object>
 								<object class="NSMenuItem" id="369322809">
 									<reference key="NSMenu" ref="500224075"/>
-									<string key="NSTitle">复制全部歌词 (TEXT)</string>
+									<string key="NSTitle">复制全部歌词（TEXT）</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="817365088"/>
@@ -150,7 +267,7 @@
 								</object>
 								<object class="NSMenuItem" id="796675328">
 									<reference key="NSMenu" ref="500224075"/>
-									<string key="NSTitle">在桌面上输出LRC歌词</string>
+									<string key="NSTitle">导出歌词...</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="817365088"/>
@@ -191,7 +308,7 @@
 								</object>
 								<object class="NSMenuItem" id="493816064">
 									<reference key="NSMenu" ref="656067400"/>
-									<string key="NSTitle">导出专辑封面到桌面</string>
+									<string key="NSTitle">导出专辑封面...</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="817365088"/>
@@ -213,15 +330,6 @@
 					<object class="NSMenuItem" id="189444286">
 						<reference key="NSMenu" ref="105512611"/>
 						<string key="NSTitle">偏好设置…</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSKeyEquivModMask">262144</int>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="817365088"/>
-						<reference key="NSMixedImage" ref="112771844"/>
-					</object>
-					<object class="NSMenuItem" id="825473663">
-						<reference key="NSMenu" ref="105512611"/>
-						<string key="NSTitle">检查更新</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="817365088"/>
@@ -249,7 +357,6 @@
 						<reference key="NSMenu" ref="105512611"/>
 						<string key="NSTitle">退出 DynamicLyrics</string>
 						<string key="NSKeyEquiv"/>
-						<int key="NSKeyEquivModMask">262144</int>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="817365088"/>
 						<reference key="NSMixedImage" ref="112771844"/>
@@ -258,9 +365,6 @@
 			</object>
 			<object class="NSCustomObject" id="57075725">
 				<string key="NSClassName">AppDelegate</string>
-			</object>
-			<object class="NSCustomObject" id="628004996">
-				<string key="NSClassName">SUUpdater</string>
 			</object>
 			<object class="NSUserDefaultsController" id="668106822">
 				<bool key="NSSharedInstance">YES</bool>
@@ -390,6 +494,78 @@
 					<int key="connectionID">820</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="715615429"/>
+					</object>
+					<int key="connectionID">853</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="363609333"/>
+					</object>
+					<int key="connectionID">854</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="446335466"/>
+					</object>
+					<int key="connectionID">855</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="106723182"/>
+					</object>
+					<int key="connectionID">856</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="235946563"/>
+					</object>
+					<int key="connectionID">857</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="431925598"/>
+					</object>
+					<int key="connectionID">858</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="683728238"/>
+					</object>
+					<int key="connectionID">859</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">adjustLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="423517251"/>
+					</object>
+					<int key="connectionID">860</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">resetLyricsDelay:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="520687214"/>
+					</object>
+					<int key="connectionID">864</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.PrefEnableMenuBarLyrics</string>
 						<reference key="source" ref="505948474"/>
@@ -428,14 +604,6 @@
 						</object>
 					</object>
 					<int key="connectionID">810</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">checkForUpdates:</string>
-						<reference key="source" ref="628004996"/>
-						<reference key="destination" ref="825473663"/>
-					</object>
-					<int key="connectionID">817</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -484,7 +652,6 @@
 							<reference ref="505948474"/>
 							<reference ref="566438284"/>
 							<reference ref="496384238"/>
-							<reference ref="825473663"/>
 							<reference ref="189409604"/>
 							<reference ref="73639004"/>
 							<reference ref="765504819"/>
@@ -513,6 +680,8 @@
 							<reference ref="369322809"/>
 							<reference ref="740930105"/>
 							<reference ref="927862449"/>
+							<reference ref="535427723"/>
+							<reference ref="955631974"/>
 						</object>
 						<reference key="parent" ref="245212594"/>
 					</object>
@@ -627,16 +796,6 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">814</int>
-						<reference key="object" ref="628004996"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">815</int>
-						<reference key="object" ref="825473663"/>
-						<reference key="parent" ref="105512611"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">816</int>
 						<reference key="object" ref="189409604"/>
 						<reference key="parent" ref="105512611"/>
@@ -650,6 +809,94 @@
 						<int key="objectID">819</int>
 						<reference key="object" ref="765504819"/>
 						<reference key="parent" ref="105512611"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">822</int>
+						<reference key="object" ref="535427723"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="670221032"/>
+						</object>
+						<reference key="parent" ref="500224075"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">823</int>
+						<reference key="object" ref="670221032"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="715615429"/>
+							<reference ref="363609333"/>
+							<reference ref="446335466"/>
+							<reference ref="106723182"/>
+							<reference ref="732826476"/>
+							<reference ref="235946563"/>
+							<reference ref="431925598"/>
+							<reference ref="683728238"/>
+							<reference ref="423517251"/>
+							<reference ref="520687214"/>
+							<reference ref="651690693"/>
+						</object>
+						<reference key="parent" ref="535427723"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">825</int>
+						<reference key="object" ref="955631974"/>
+						<reference key="parent" ref="500224075"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">844</int>
+						<reference key="object" ref="715615429"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">845</int>
+						<reference key="object" ref="363609333"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">846</int>
+						<reference key="object" ref="446335466"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">847</int>
+						<reference key="object" ref="106723182"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">848</int>
+						<reference key="object" ref="732826476"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">849</int>
+						<reference key="object" ref="235946563"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">850</int>
+						<reference key="object" ref="431925598"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">851</int>
+						<reference key="object" ref="683728238"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">852</int>
+						<reference key="object" ref="423517251"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">861</int>
+						<reference key="object" ref="520687214"/>
+						<reference key="parent" ref="670221032"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">862</int>
+						<reference key="object" ref="651690693"/>
+						<reference key="parent" ref="670221032"/>
 					</object>
 				</object>
 			</object>
@@ -684,14 +931,38 @@
 					<string>796.IBPluginDependency</string>
 					<string>797.IBPluginDependency</string>
 					<string>798.IBPluginDependency</string>
-					<string>814.IBPluginDependency</string>
-					<string>815.IBPluginDependency</string>
 					<string>816.IBPluginDependency</string>
 					<string>818.IBPluginDependency</string>
 					<string>819.IBPluginDependency</string>
+					<string>822.IBPluginDependency</string>
+					<string>823.IBPluginDependency</string>
+					<string>825.IBPluginDependency</string>
+					<string>844.IBPluginDependency</string>
+					<string>845.IBPluginDependency</string>
+					<string>846.IBPluginDependency</string>
+					<string>847.IBPluginDependency</string>
+					<string>848.IBPluginDependency</string>
+					<string>849.IBPluginDependency</string>
+					<string>850.IBPluginDependency</string>
+					<string>851.IBPluginDependency</string>
+					<string>852.IBPluginDependency</string>
+					<string>861.IBPluginDependency</string>
+					<string>862.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -738,9 +1009,141 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">820</int>
+			<int key="maxID">864</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">AppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>CopyCurrentLyrics:</string>
+							<string>CopyTotalLRC:</string>
+							<string>CopyTotalTextLyrics:</string>
+							<string>DisabledDesktopLyrics:</string>
+							<string>DisabledMenuBarLyrics:</string>
+							<string>ExportLRC:</string>
+							<string>OpenAlbumfillerWindow:</string>
+							<string>OpenLyricsSearchWindow:</string>
+							<string>WriteArtwork:</string>
+							<string>WriteLyricsToiTunes:</string>
+							<string>aboutDynamicLyrics:</string>
+							<string>adjustLyricsDelay:</string>
+							<string>resetLyricsDelay:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>CopyCurrentLyrics:</string>
+							<string>CopyTotalLRC:</string>
+							<string>CopyTotalTextLyrics:</string>
+							<string>DisabledDesktopLyrics:</string>
+							<string>DisabledMenuBarLyrics:</string>
+							<string>ExportLRC:</string>
+							<string>OpenAlbumfillerWindow:</string>
+							<string>OpenLyricsSearchWindow:</string>
+							<string>WriteArtwork:</string>
+							<string>WriteLyricsToiTunes:</string>
+							<string>aboutDynamicLyrics:</string>
+							<string>adjustLyricsDelay:</string>
+							<string>resetLyricsDelay:</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">CopyCurrentLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">CopyTotalLRC:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">CopyTotalTextLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">DisabledDesktopLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">DisabledMenuBarLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">ExportLRC:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">OpenAlbumfillerWindow:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">OpenLyricsSearchWindow:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">WriteArtwork:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">WriteLyricsToiTunes:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">aboutDynamicLyrics:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">adjustLyricsDelay:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">resetLyricsDelay:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">AppMenu</string>
+						<string key="NS.object.0">NSMenu</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">AppMenu</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">AppMenu</string>
+							<string key="candidateClassName">NSMenu</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AppDelegate.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
