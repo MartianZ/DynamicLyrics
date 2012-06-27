@@ -20,7 +20,7 @@
     
     //设置默认配置
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
+    NSLog(@"%@",[userDefaults objectForKey:@Pref_Desktop_Text_Color]);
     if ([userDefaults objectForKey:@Pref_Desktop_Text_Color] == nil) {
         NSData *theData=[NSArchiver archivedDataWithRootObject:[NSColor whiteColor]];
         [userDefaults setObject:theData forKey:@Pref_Desktop_Text_Color];

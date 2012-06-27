@@ -12,7 +12,6 @@
 		02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02135B531586F99F001480AD /* LyricsSearchWnd.xib */; };
 		02353CD1152BF84700214998 /* Albumfiller.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CCF152BF84700214998 /* Albumfiller.m */; };
 		02353CD5152C0B8600214998 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CD4152C0B8500214998 /* AlbumModel.m */; };
-		02353CD7152C0F4E00214998 /* a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02353CD6152C0F4E00214998 /* a.jpg */; };
 		0239024C154F8EE200869A2D /* AppPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0239024B154F8EE200869A2D /* AppPrefsWindowController.m */; };
 		0239025D154F9D2D00869A2D /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02390258154F9C1800869A2D /* DBPrefsWindowController.m */; };
 		0239025F154F9D7A00869A2D /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 0239025E154F9D7A00869A2D /* General.png */; };
@@ -36,26 +35,28 @@
 		02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EDE152AA8B7006D4BFF /* KeyValue_SearchLyrics.m */; };
 		02710EE2152AA9DE006D4BFF /* BingTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EE1152AA9DE006D4BFF /* BingTranslator.m */; };
 		02710EE5152AAB7F006D4BFF /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EE4152AAB7E006D4BFF /* RegexKitLite.m */; };
-		02736EA5155570A600F4EC5C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02736EA4155570A600F4EC5C /* icon.icns */; };
 		027C9E88152B23DA00A75EB2 /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C9E87152B23DA00A75EB2 /* PanelView.m */; };
 		027C9E8F152B243D00A75EB2 /* FloatPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C9E8E152B243D00A75EB2 /* FloatPanel.m */; };
 		028861B0152BD60D00DA6B91 /* LyricsSearchWnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */; };
 		028E17A8153051C6006CE85B /* VerticalButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17A7153051C6006CE85B /* VerticalButtonWindow.m */; };
 		028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17AB15305F02006CE85B /* DouBanAPI.m */; };
+		029DB3971591AA8A000598E1 /* DynamicLyricsHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */; };
 		02A561021586F74200E37C6C /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A561041586F74200E37C6C /* Preferences.xib */; };
 		02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A561081586F74F00E37C6C /* Albumfiller.xib */; };
 		02ACCFB31566932D004CC95A /* Donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 02ACCFB21566932D004CC95A /* Donate.png */; };
+		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		02912A2615710A5600843F1A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
+				029DB3971591AA8A000598E1 /* DynamicLyricsHelper.app in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -69,7 +70,6 @@
 		02353CCF152BF84700214998 /* Albumfiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Albumfiller.m; sourceTree = "<group>"; };
 		02353CD3152C0B8500214998 /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
 		02353CD4152C0B8500214998 /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
-		02353CD6152C0F4E00214998 /* a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a.jpg; sourceTree = "<group>"; };
 		0239024A154F8EE200869A2D /* AppPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPrefsWindowController.h; sourceTree = "<group>"; };
 		0239024B154F8EE200869A2D /* AppPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPrefsWindowController.m; sourceTree = "<group>"; };
 		02390257154F9C1800869A2D /* DBPrefsWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
@@ -113,7 +113,6 @@
 		02710EE1152AA9DE006D4BFF /* BingTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BingTranslator.m; sourceTree = "<group>"; };
 		02710EE3152AAB7E006D4BFF /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		02710EE4152AAB7E006D4BFF /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		02736EA4155570A600F4EC5C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		027C9E86152B23DA00A75EB2 /* PanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelView.h; sourceTree = "<group>"; };
 		027C9E87152B23DA00A75EB2 /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
 		027C9E8D152B243D00A75EB2 /* FloatPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatPanel.h; sourceTree = "<group>"; };
@@ -124,10 +123,12 @@
 		028E17A7153051C6006CE85B /* VerticalButtonWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalButtonWindow.m; sourceTree = "<group>"; };
 		028E17AA15305F02006CE85B /* DouBanAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBanAPI.h; sourceTree = "<group>"; };
 		028E17AB15305F02006CE85B /* DouBanAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanAPI.m; sourceTree = "<group>"; };
+		029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = DynamicLyricsHelper.app; sourceTree = "<group>"; };
 		02A561031586F74200E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
 		02A561071586F74F00E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Albumfiller.xib; sourceTree = "<group>"; };
 		02AA97BA1586F7FC004DD939 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
+		02BA4D8E1591A93400BB03CD /* ico512.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ico512.icns; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,7 +204,6 @@
 				02390260154F9D8200869A2D /* Advanced.png */,
 				0239025E154F9D7A00869A2D /* General.png */,
 				0251F442153980A60019F36F /* music-default.gif */,
-				02353CD6152C0F4E00214998 /* a.jpg */,
 				025B0782152B1C8700E250BF /* big5.txt */,
 				025B0783152B1C8700E250BF /* gb.txt */,
 			);
@@ -213,8 +213,9 @@
 		02710E7F152A839F006D4BFF = {
 			isa = PBXGroup;
 			children = (
+				029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */,
 				021B9E91158E209900039011 /* DynamicLyrics.entitlements */,
-				02736EA4155570A600F4EC5C /* icon.icns */,
+				02BA4D8E1591A93400BB03CD /* ico512.icns */,
 				02710E94152A839F006D4BFF /* LyricX */,
 				02710E8D152A839F006D4BFF /* Frameworks */,
 				02710E8B152A839F006D4BFF /* Products */,
@@ -384,14 +385,13 @@
 				025B0785152B1C8700E250BF /* gb.txt in Resources */,
 				02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */,
 				02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */,
-				02353CD7152C0F4E00214998 /* a.jpg in Resources */,
 				0251F443153980A60019F36F /* music-default.gif in Resources */,
 				02A561021586F74200E37C6C /* Preferences.xib in Resources */,
 				0239025F154F9D7A00869A2D /* General.png in Resources */,
 				02390261154F9D8200869A2D /* Advanced.png in Resources */,
 				02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */,
-				02736EA5155570A600F4EC5C /* icon.icns in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
+				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +514,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -535,7 +535,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
@@ -543,7 +543,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyrics.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -554,7 +553,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -563,7 +561,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyrics.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -574,7 +571,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

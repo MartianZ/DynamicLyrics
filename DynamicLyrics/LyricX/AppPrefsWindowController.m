@@ -14,7 +14,7 @@
 {
 	//[self addView:generalPreferenceView label:@"General"];
 	[self addView:advancedPreferenceView label:@"Advanced"];
-	[self addView:donatePreferenceView label:@"Donate"];
+	//[self addView:donatePreferenceView label:@"Donate"];
 	[self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];
 	[self setShiftSlowsAnimation:[[NSUserDefaults standardUserDefaults] boolForKey:@"shiftSlowsAnimation"]];
     
@@ -155,7 +155,6 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if ([userDefaults boolForKey:@Pref_Launch_Quit_With_iTunes]) {
-        [userDefaults setObject:[NSString stringWithString:[[NSBundle mainBundle] bundlePath]] forKey:@"AppLocation"];        
 
         //NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath],@"DynamicLyricsHelper.app"];
 

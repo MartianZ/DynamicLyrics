@@ -74,7 +74,7 @@
     [DouBan SearchArtwork:[[iTunes currentTrack] album]];
     
     SBElementArray* theArtworks = [[iTunes currentTrack] artworks];
-    int totalArtworkCount = [theArtworks count];
+    unsigned long totalArtworkCount = [theArtworks count];
     if (totalArtworkCount > 0) {
         iTunesArtwork *thisArtwork = [theArtworks objectAtIndex:0];
         

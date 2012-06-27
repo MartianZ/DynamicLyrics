@@ -87,7 +87,7 @@ FOUNDATION_STATIC_INLINE NSString *ttpCode(NSString *artist, NSString *title, lo
     long intVal6 = intVal5;
     if (intVal6 > 0x80000000) intVal5 = intVal6 - 0x100000000;
     
-	return [[NSString stringWithFormat:@"%d",intVal5] autorelease];  
+	return [[NSString stringWithFormat:@"%ld",intVal5] autorelease];  
 }
 
 FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)

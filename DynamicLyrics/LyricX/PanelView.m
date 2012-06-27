@@ -105,7 +105,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     }
     NSString *fontName = [userDefaults stringForKey:@Pref_Lyrics_FontName];
     if (!fontName) {
-        fontName = [NSString stringWithString:@"Helvetica"];
+        fontName = @"Helvetica";
     }
     NSColor *textColor = [NSColor whiteColor];
     NSData *theData=[userDefaults dataForKey:@Pref_Desktop_Text_Color];

@@ -10,8 +10,7 @@
 #import "Constants.h"
 @implementation MenuBarLyrics
 
-@synthesize CurrentSongLyrics;
-
+@synthesize  CurrentSongLyrics;
 -(id) initWithMenu:(NSMenu *)AppMenu;
 {
     self = [super init];

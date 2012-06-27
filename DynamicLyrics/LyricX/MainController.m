@@ -57,6 +57,8 @@
         NSLog(@"%@",@Pref_Enable_Desktop_Lyrics);
 
         LyricsDelay = 0;
+        
+        [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
     }
     
     return self;
@@ -104,7 +106,7 @@
     self.iTunesCurrentTrack = [iTunes currentTrack];
 
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:[NSString stringWithString:@"iTunesSongChanged"] forKey:@"Type"];
+    [dict setObject:@"iTunesSongChanged" forKey:@"Type"];
     [self WorkingThread:dict];
     }
 }
@@ -244,7 +246,7 @@
 -(long) ToTime:(NSString*)s
 {
     @autoreleasepool {
-    NSString *RegEx = [NSString stringWithString:@"^(\\d+):(\\d+)(\\.(\\d+))?$"];
+    NSString *RegEx = @"^(\\d+):(\\d+)(\\.(\\d+))?$";
     NSArray *matchArray = nil;
     matchArray = [s arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLCaseless range:NSMakeRange(0UL, [s length]) error:NULL];
     if (matchArray)
@@ -269,7 +271,7 @@
 - (void)Anylize
 {
 @autoreleasepool {
-    NSString *RegEx = [NSString stringWithString:@"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$"]; 
+    NSString *RegEx = @"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$";
     [lyrics removeAllObjects];
     
     NSArray *matchArray = nil;
@@ -320,7 +322,8 @@
         usleep(100000); //1000微秒 = 1毫秒
         if (![iTunes isRunning] && [[NSUserDefaults standardUserDefaults] boolForKey:@Pref_Launch_Quit_With_iTunes])
         {
-            exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
+            [[NSApplication sharedApplication] terminate:self];
+            //exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
         }
         if ([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) {
             PlayerPosition = [iTunes playerPosition];
@@ -330,7 +333,7 @@
             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
             
             
-            [dict setObject:[NSString stringWithString:@"iTunesPosition"] forKey:@"Type"];
+            [dict setObject:@"iTunesPosition" forKey:@"Type"];
             [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
             [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
 
