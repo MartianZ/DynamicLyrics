@@ -48,8 +48,9 @@
         NSLog(@"%@",@"ITUNES START");
 
         NSString *path = [[NSString alloc] initWithString:[[NSBundle mainBundle] bundlePath]];
-        [[NSWorkspace sharedWorkspace] launchApplication:[path stringByReplacingOccurrencesOfString:@"/Contents/Library/LoginItems/DynamicLyricsHelper.app" withString:@""]];
-
+        
+        [[NSWorkspace sharedWorkspace] launchApplication:[path stringByReplacingOccurrencesOfString:@"/Contents/Library/LoginItems/DynamicLyricsHelper.app" withString:@"/Contents/MacOS/DynamicLyrics"]];
+        //
         // /Users/Martian/Desktop/DynamicLyrics.app/Contents/Library/LoginItems/DynamicLyricsHelper.app
                
     }
