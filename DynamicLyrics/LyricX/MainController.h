@@ -13,11 +13,9 @@
 #import "RegexKitLite.h"
 #import "MenuBarLyrics.h"
 #import "GB_BIG_Converter.h"
-#import "FloatPanel.h"
-#import "PanelView.h"
+#import "LyricsFloatWindow.h"
 #import "Constants.h"
 #import "RequestSender.h"
-
 
 @interface MainController : NSObject {
     
@@ -26,7 +24,7 @@
     NSDistributedNotificationCenter *dnc;
     MenuBarLyrics* MBLyrics;
     int CurrentLyric;    
-    NSPanel *LyricsWindow;
+    LyricsFloatWindow *LyricsWindow;
     @public
     float LyricsDelay;
 

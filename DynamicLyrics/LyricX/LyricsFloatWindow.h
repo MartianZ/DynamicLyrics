@@ -7,8 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
+#import "LyricsView.h"
+#import "CGSPrivate.h"
 
-@interface FloatPanel : NSPanel
+
+@interface LyricsFloatWindow : NSPanel {
+    LyricsView *lyricsView;
+
+}
 
 -(id)initWithContentRect:(NSRect)contentRect;
 

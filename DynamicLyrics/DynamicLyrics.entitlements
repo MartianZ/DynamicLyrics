@@ -9,6 +9,10 @@
 	<key>com.apple.security.network.client</key>
 	<true/>
 	<key>com.apple.security.temporary-exception.apple-events</key>
-	<string>com.apple.itunes</string>
+	<array>
+		<string>com.apple.itunes</string>
+		<string>com.Growl.GrowlHelperApp</string>
+	</array>
+
 </dict>
 </plist>

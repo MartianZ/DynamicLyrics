@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 Martian. All rights reserved.
 //
 
-#import "FloatPanel.h"
+#import "LyricsFloatWindow.h"
 
-@implementation FloatPanel
+@implementation LyricsFloatWindow
 
 - (id)initWithContentRect:(NSRect)contentRect
 {
@@ -21,10 +21,16 @@
         self.hasShadow = NO;
         self.hidesOnDeactivate = NO;
         self.IgnoresMouseEvents = YES;
-        //[self center];
         
+        lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
+        [self.contentView addSubview:lyricsView];
+        //[self center];
+                 
     }
     return self;
 }
+
+
+
 
 @end

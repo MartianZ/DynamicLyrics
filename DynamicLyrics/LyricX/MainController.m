@@ -41,23 +41,17 @@
         [NSThread detachNewThreadSelector:@selector(iTunesMonitoringThread) toTarget:self withObject:nil];
         [NSThread detachNewThreadSelector:@selector(checkUpdate) toTarget:self withObject:nil];
 
+        //开启标题栏歌词
         MBLyrics = [[MenuBarLyrics alloc] initWithMenu:AppMenu];
 
         NSRect frame = NSScreen.mainScreen.frame;
-        LyricsWindow = [[FloatPanel alloc] initWithContentRect:frame];
-        NSView *LView = [[PanelView alloc] initWithFrame:frame];
         
-        
-        LyricsWindow.contentView = LView;
-        
-        
-        [LView release];
+        //开启桌面歌词
+        LyricsWindow = [[LyricsFloatWindow alloc] initWithContentRect:frame];
         [LyricsWindow makeKeyAndOrderFront:nil];
         
-        NSLog(@"%@",@Pref_Enable_Desktop_Lyrics);
-
-        LyricsDelay = 0;
         
+        LyricsDelay = 0;
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
     }
     

@@ -15,7 +15,7 @@
 		0239024C154F8EE200869A2D /* AppPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0239024B154F8EE200869A2D /* AppPrefsWindowController.m */; };
 		0239025D154F9D2D00869A2D /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02390258154F9C1800869A2D /* DBPrefsWindowController.m */; };
 		0239025F154F9D7A00869A2D /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 0239025E154F9D7A00869A2D /* General.png */; };
-		02390261154F9D8200869A2D /* Advanced.png in Resources */ = {isa = PBXBuildFile; fileRef = 02390260154F9D8200869A2D /* Advanced.png */; };
+		02491CA6159DB2E800A6A2A9 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02491CA5159DB2E800A6A2A9 /* Growl.framework */; };
 		024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDD1584EFB000444B78 /* Quartz.framework */; };
 		024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDE1584EFB000444B78 /* QuartzCore.framework */; };
 		0251F443153980A60019F36F /* music-default.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0251F442153980A60019F36F /* music-default.gif */; };
@@ -35,8 +35,8 @@
 		02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EDE152AA8B7006D4BFF /* KeyValue_SearchLyrics.m */; };
 		02710EE2152AA9DE006D4BFF /* BingTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EE1152AA9DE006D4BFF /* BingTranslator.m */; };
 		02710EE5152AAB7F006D4BFF /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EE4152AAB7E006D4BFF /* RegexKitLite.m */; };
-		027C9E88152B23DA00A75EB2 /* PanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C9E87152B23DA00A75EB2 /* PanelView.m */; };
-		027C9E8F152B243D00A75EB2 /* FloatPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C9E8E152B243D00A75EB2 /* FloatPanel.m */; };
+		027C9E88152B23DA00A75EB2 /* LyricsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C9E87152B23DA00A75EB2 /* LyricsView.m */; };
+		027C9E8F152B243D00A75EB2 /* LyricsFloatWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C9E8E152B243D00A75EB2 /* LyricsFloatWindow.m */; };
 		028861B0152BD60D00DA6B91 /* LyricsSearchWnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */; };
 		028E17A8153051C6006CE85B /* VerticalButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17A7153051C6006CE85B /* VerticalButtonWindow.m */; };
 		028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17AB15305F02006CE85B /* DouBanAPI.m */; };
@@ -45,6 +45,8 @@
 		02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A561081586F74F00E37C6C /* Albumfiller.xib */; };
 		02ACCFB31566932D004CC95A /* Donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 02ACCFB21566932D004CC95A /* Donate.png */; };
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
+		02BB8A38159CA9E8001334D7 /* Desktop Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Desktop Lyrics.png */; };
+		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,9 +77,9 @@
 		02390257154F9C1800869A2D /* DBPrefsWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
 		02390258154F9C1800869A2D /* DBPrefsWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
 		0239025E154F9D7A00869A2D /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = General.png; sourceTree = "<group>"; };
-		02390260154F9D8200869A2D /* Advanced.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Advanced.png; sourceTree = "<group>"; };
 		02390275154FA26E00869A2D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		023C2DAF158EE8A500C9BEAB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		02491CA5159DB2E800A6A2A9 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		024B8BDD1584EFB000444B78 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		024B8BDE1584EFB000444B78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0251F442153980A60019F36F /* music-default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "music-default.gif"; sourceTree = "<group>"; };
@@ -113,10 +115,10 @@
 		02710EE1152AA9DE006D4BFF /* BingTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BingTranslator.m; sourceTree = "<group>"; };
 		02710EE3152AAB7E006D4BFF /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		02710EE4152AAB7E006D4BFF /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		027C9E86152B23DA00A75EB2 /* PanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelView.h; sourceTree = "<group>"; };
-		027C9E87152B23DA00A75EB2 /* PanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelView.m; sourceTree = "<group>"; };
-		027C9E8D152B243D00A75EB2 /* FloatPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatPanel.h; sourceTree = "<group>"; };
-		027C9E8E152B243D00A75EB2 /* FloatPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatPanel.m; sourceTree = "<group>"; };
+		027C9E86152B23DA00A75EB2 /* LyricsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricsView.h; sourceTree = "<group>"; };
+		027C9E87152B23DA00A75EB2 /* LyricsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricsView.m; sourceTree = "<group>"; };
+		027C9E8D152B243D00A75EB2 /* LyricsFloatWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricsFloatWindow.h; sourceTree = "<group>"; };
+		027C9E8E152B243D00A75EB2 /* LyricsFloatWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricsFloatWindow.m; sourceTree = "<group>"; };
 		028861AD152BD60D00DA6B91 /* LyricsSearchWnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricsSearchWnd.h; sourceTree = "<group>"; };
 		028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricsSearchWnd.m; sourceTree = "<group>"; };
 		028E17A6153051C6006CE85B /* VerticalButtonWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalButtonWindow.h; sourceTree = "<group>"; };
@@ -128,7 +130,10 @@
 		02A561071586F74F00E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Albumfiller.xib; sourceTree = "<group>"; };
 		02AA97BA1586F7FC004DD939 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
+		02B9438C159B6E3E006E434E /* CGSPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; };
 		02BA4D8E1591A93400BB03CD /* ico512.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ico512.icns; sourceTree = "<group>"; };
+		02BB8A37159CA9E8001334D7 /* Desktop Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desktop Lyrics.png"; sourceTree = "<group>"; };
+		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +147,7 @@
 				024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */,
 				02710ED6152AA0FF006D4BFF /* ScriptingBridge.framework in Frameworks */,
 				02710E8F152A839F006D4BFF /* Cocoa.framework in Frameworks */,
+				02491CA6159DB2E800A6A2A9 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +194,11 @@
 		025B077A152B1B0800E250BF /* DesktopLyrics */ = {
 			isa = PBXGroup;
 			children = (
-				027C9E86152B23DA00A75EB2 /* PanelView.h */,
-				027C9E87152B23DA00A75EB2 /* PanelView.m */,
-				027C9E8D152B243D00A75EB2 /* FloatPanel.h */,
-				027C9E8E152B243D00A75EB2 /* FloatPanel.m */,
+				02B9438C159B6E3E006E434E /* CGSPrivate.h */,
+				027C9E86152B23DA00A75EB2 /* LyricsView.h */,
+				027C9E87152B23DA00A75EB2 /* LyricsView.m */,
+				027C9E8D152B243D00A75EB2 /* LyricsFloatWindow.h */,
+				027C9E8E152B243D00A75EB2 /* LyricsFloatWindow.m */,
 			);
 			name = DesktopLyrics;
 			sourceTree = "<group>";
@@ -200,8 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				02ACCFB21566932D004CC95A /* Donate.png */,
+				02BB8A37159CA9E8001334D7 /* Desktop Lyrics.png */,
+				02BB8A3A159CAA9B001334D7 /* Notification.png */,
 				02035AA21554367B00AB5AB6 /* StatusIcon.png */,
-				02390260154F9D8200869A2D /* Advanced.png */,
 				0239025E154F9D7A00869A2D /* General.png */,
 				0251F442153980A60019F36F /* music-default.gif */,
 				025B0782152B1C8700E250BF /* big5.txt */,
@@ -233,6 +241,7 @@
 		02710E8D152A839F006D4BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02491CA5159DB2E800A6A2A9 /* Growl.framework */,
 				020038E6158F89C700F478DE /* ServiceManagement.framework */,
 				024B8BDD1584EFB000444B78 /* Quartz.framework */,
 				024B8BDE1584EFB000444B78 /* QuartzCore.framework */,
@@ -388,10 +397,11 @@
 				0251F443153980A60019F36F /* music-default.gif in Resources */,
 				02A561021586F74200E37C6C /* Preferences.xib in Resources */,
 				0239025F154F9D7A00869A2D /* General.png in Resources */,
-				02390261154F9D8200869A2D /* Advanced.png in Resources */,
 				02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
 				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
+				02BB8A38159CA9E8001334D7 /* Desktop Lyrics.png in Resources */,
+				02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +439,8 @@
 				02710EE5152AAB7F006D4BFF /* RegexKitLite.m in Sources */,
 				025B0777152B14F400E250BF /* MenuBarLyrics.m in Sources */,
 				025B0789152B1E8600E250BF /* GB_BIG_Converter.m in Sources */,
-				027C9E88152B23DA00A75EB2 /* PanelView.m in Sources */,
-				027C9E8F152B243D00A75EB2 /* FloatPanel.m in Sources */,
+				027C9E88152B23DA00A75EB2 /* LyricsView.m in Sources */,
+				027C9E8F152B243D00A75EB2 /* LyricsFloatWindow.m in Sources */,
 				028861B0152BD60D00DA6B91 /* LyricsSearchWnd.m in Sources */,
 				02353CD1152BF84700214998 /* Albumfiller.m in Sources */,
 				02353CD5152C0B8600214998 /* AlbumModel.m in Sources */,
@@ -501,20 +511,21 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -528,14 +539,15 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -546,6 +558,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"/Volumes/MacBook Pro HDD/Downloads/Growl-1.3.1-SDK/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
@@ -564,6 +577,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"/Volumes/MacBook Pro HDD/Downloads/Growl-1.3.1-SDK/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";

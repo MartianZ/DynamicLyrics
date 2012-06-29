@@ -13,8 +13,10 @@
 - (void)setupToolbar
 {
 	//[self addView:generalPreferenceView label:@"General"];
-	[self addView:advancedPreferenceView label:@"Advanced"];
+	[self addView:advancedPreferenceView label:@"Desktop Lyrics"];
 	//[self addView:donatePreferenceView label:@"Donate"];
+    [self addView:notificationPreferenceView label:@"Notification"];
+    
 	[self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];
 	[self setShiftSlowsAnimation:[[NSUserDefaults standardUserDefaults] boolForKey:@"shiftSlowsAnimation"]];
     
@@ -55,7 +57,7 @@
 
 - (NSUInteger)validModesForFontPanel:(NSFontPanel *)fontPanel 
 {
-    return  NSFontPanelSizeModeMask | NSFontPanelCollectionModeMask;
+    return  NSFontPanelSizeModeMask | NSFontPanelCollectionModeMask | NSFontPanelShadowEffectModeMask;
 }
 
 -(IBAction)openFontPanel:(id)sender

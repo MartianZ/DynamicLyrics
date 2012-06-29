@@ -44,6 +44,7 @@
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     for (float alpha = 0.3; alpha < 1.01; alpha+=0.02)
     {
+        
         NSColor *color = [NSColor colorWithCalibratedWhite:0 alpha:alpha];
         
         NSMutableDictionary *d = [NSMutableDictionary dictionary];

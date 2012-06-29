@@ -32,4 +32,7 @@
 
 #define Pref_Launch_Quit_With_iTunes "PrefLaunchQuitWithiTunes"
 
+//NOTIFICATION
+#define Pref_Enable_Notification "PrefEnableNotification"
+#define Pref_Notification_Mode "PrefNotificationMode"
 #endif

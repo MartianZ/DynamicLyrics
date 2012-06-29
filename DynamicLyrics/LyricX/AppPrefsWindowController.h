@@ -10,7 +10,7 @@
 #import "DBPrefsWindowController.h"
 #import "Constants.h"
 @interface AppPrefsWindowController : DBPrefsWindowController <NSWindowDelegate> {
-    //IBOutlet NSView *generalPreferenceView;
+    IBOutlet NSView *notificationPreferenceView;
     IBOutlet NSView *advancedPreferenceView;
     IBOutlet NSView *donatePreferenceView;
     

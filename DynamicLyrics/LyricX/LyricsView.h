@@ -8,13 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
+#import "Growl/Growl.h"
 
-@interface PanelView : NSView {
+@interface LyricsView : NSView <GrowlApplicationBridgeDelegate> {
     NSMutableString *LyricsLine;
     NSNotificationCenter *nc;
+    NSDistributedNotificationCenter *dnc;
     CALayer *rootLayer;
     CATextLayer *textLayer;
     CAGradientLayer *rectangleLayer;
+    CAGradientLayer *messageRectangleLayer;
+    CATextLayer *messageTextLayer;
+    CALayer *messageAlbumLayer;
 }
 
 
