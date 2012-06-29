@@ -45,7 +45,7 @@
 		02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A561081586F74F00E37C6C /* Albumfiller.xib */; };
 		02ACCFB31566932D004CC95A /* Donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 02ACCFB21566932D004CC95A /* Donate.png */; };
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
-		02BB8A38159CA9E8001334D7 /* Desktop Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Desktop Lyrics.png */; };
+		02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Lyrics.png */; };
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +80,7 @@
 		02390275154FA26E00869A2D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		023C2DAF158EE8A500C9BEAB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		02491CA5159DB2E800A6A2A9 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		02491CB3159DC0B700A6A2A9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		024B8BDD1584EFB000444B78 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		024B8BDE1584EFB000444B78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0251F442153980A60019F36F /* music-default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "music-default.gif"; sourceTree = "<group>"; };
@@ -128,11 +129,10 @@
 		029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = DynamicLyricsHelper.app; sourceTree = "<group>"; };
 		02A561031586F74200E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
 		02A561071586F74F00E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Albumfiller.xib; sourceTree = "<group>"; };
-		02AA97BA1586F7FC004DD939 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
 		02B9438C159B6E3E006E434E /* CGSPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; };
 		02BA4D8E1591A93400BB03CD /* ico512.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ico512.icns; sourceTree = "<group>"; };
-		02BB8A37159CA9E8001334D7 /* Desktop Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desktop Lyrics.png"; sourceTree = "<group>"; };
+		02BB8A37159CA9E8001334D7 /* Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyrics.png; sourceTree = "<group>"; };
 		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				02ACCFB21566932D004CC95A /* Donate.png */,
-				02BB8A37159CA9E8001334D7 /* Desktop Lyrics.png */,
+				02BB8A37159CA9E8001334D7 /* Lyrics.png */,
 				02BB8A3A159CAA9B001334D7 /* Notification.png */,
 				02035AA21554367B00AB5AB6 /* StatusIcon.png */,
 				0239025E154F9D7A00869A2D /* General.png */,
@@ -400,7 +400,7 @@
 				02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
 				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
-				02BB8A38159CA9E8001334D7 /* Desktop Lyrics.png in Resources */,
+				02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */,
 				02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,7 +483,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				02A561031586F74200E37C6C /* en */,
-				02AA97BA1586F7FC004DD939 /* zh-Hans */,
+				02491CB3159DC0B700A6A2A9 /* zh-Hans */,
 			);
 			name = Preferences.xib;
 			sourceTree = "<group>";

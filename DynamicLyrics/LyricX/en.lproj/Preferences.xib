@@ -52,7 +52,6 @@
 						<string key="NSFrame">{{75, 13}, {226, 58}}</string>
 						<reference key="NSSuperview" ref="220524593"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -703,7 +702,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 										<string key="NSFrame">{{16, 12}, {201, 28}}</string>
 										<reference key="NSSuperview" ref="1055279510"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="75917518">
@@ -773,7 +771,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<string key="NSFrame">{{17, 6}, {304, 19}}</string>
 						<reference key="NSSuperview" ref="838850584"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -1398,7 +1395,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 								<float key="scoringTypeFloat">24</float>
 								<int key="contentType">2</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="555549428">
+							<object class="IBNSLayoutConstraint" id="884544225">
 								<reference key="firstItem" ref="532736290"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
@@ -3340,7 +3337,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2824</int>
-						<reference key="object" ref="555549428"/>
+						<reference key="object" ref="884544225"/>
 						<reference key="parent" ref="220524593"/>
 					</object>
 				</array>
@@ -3600,7 +3597,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<array class="NSMutableArray" key="823.IBNSViewMetadataConstraints">
 					<reference ref="678623189"/>
 					<reference ref="541010319"/>
-					<reference ref="555549428"/>
+					<reference ref="884544225"/>
 					<reference ref="857931591"/>
 					<reference ref="628453462"/>
 					<reference ref="532214479"/>

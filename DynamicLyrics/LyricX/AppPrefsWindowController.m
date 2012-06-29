@@ -13,7 +13,7 @@
 - (void)setupToolbar
 {
 	//[self addView:generalPreferenceView label:@"General"];
-	[self addView:advancedPreferenceView label:@"Desktop Lyrics"];
+	[self addView:advancedPreferenceView label:@"Lyrics"];
 	//[self addView:donatePreferenceView label:@"Donate"];
     [self addView:notificationPreferenceView label:@"Notification"];
     
