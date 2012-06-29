@@ -27,12 +27,15 @@
 ## TODO
 
 1. [DONE] ~~Add CheckUpdate system~~
-2. [NEW] Maybe a better icon?
-3. [NEW] Automatical translator
+2. [DONE] ~~Maybe a better icon?~~
+3. [ABANDON] ~~Automatical translator~~
 4. [DONE] ~~Export album artwork to desktop~~
 5. [ABANDON] ~~Automatically write lyrics to iTunes(this may cost a lot of time before playing)~~
 6. [DONE] ~~Move some settings to menu, delete them from pref window.~~
+7. [DONE] ~~Sandbox App~~
+8. [NEW] 更多的语言支持
 
-## License
+#
+# License
 
 Code in the DynamicLyrics project is licensed under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html).
