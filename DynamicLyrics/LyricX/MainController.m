@@ -16,7 +16,7 @@
 @synthesize lyrics;
 
 
-- (id)initWithMenu:(NSMenu *)AppMenu
+- (id)initWithMenu:(NSMenu *)AppMenu initWithDelayItem:(NSMenuItem *)delayMenuItem
 {
     self = [super init];
     if (self) {
@@ -30,6 +30,11 @@
         
         [dnc addObserver:self selector:@selector(iTunesPlayerInfo:) name:@"com.apple.iTunes.playerInfo" object:nil];
         [nc addObserver:self selector:@selector(UserLyricsChanged:) name:@"UserLyricsChanged" object:nil];
+        
+        currentDelayMenuItem = delayMenuItem;
+        LyricsDelay = 0;
+        [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
+
         
         //if iTunes is running when the application launched
         iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
@@ -51,8 +56,10 @@
         [LyricsWindow makeKeyAndOrderFront:nil];
         
         
-        LyricsDelay = 0;
+
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
+        
+        
     }
     
     return self;
@@ -155,6 +162,8 @@
         //iTunesSongChanged
         NSLog(@"%@",[iTunesCurrentTrack name]);
         LyricsDelay = 0; [lyrics removeAllObjects];
+        [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
+
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
         
@@ -167,6 +176,8 @@
             self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
             CurrentLyric = 0;
             LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
+            [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
+
             [self Anylize];
         }
         else

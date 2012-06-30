@@ -10,12 +10,15 @@
 		020038E7158F89C700F478DE /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020038E6158F89C700F478DE /* ServiceManagement.framework */; };
 		02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02035AA21554367B00AB5AB6 /* StatusIcon.png */; };
 		02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02135B531586F99F001480AD /* LyricsSearchWnd.xib */; };
+		02147716159EC55800B92431 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; };
+		02147718159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */; };
+		0214771B159EC65900B92431 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; };
+		02147734159F547100B92431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02147732159F547100B92431 /* Localizable.strings */; };
 		02353CD1152BF84700214998 /* Albumfiller.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CCF152BF84700214998 /* Albumfiller.m */; };
 		02353CD5152C0B8600214998 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CD4152C0B8500214998 /* AlbumModel.m */; };
 		0239024C154F8EE200869A2D /* AppPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0239024B154F8EE200869A2D /* AppPrefsWindowController.m */; };
 		0239025D154F9D2D00869A2D /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02390258154F9C1800869A2D /* DBPrefsWindowController.m */; };
 		0239025F154F9D7A00869A2D /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 0239025E154F9D7A00869A2D /* General.png */; };
-		02491CA6159DB2E800A6A2A9 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02491CA5159DB2E800A6A2A9 /* Growl.framework */; };
 		024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDD1584EFB000444B78 /* Quartz.framework */; };
 		024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024B8BDE1584EFB000444B78 /* QuartzCore.framework */; };
 		0251F443153980A60019F36F /* music-default.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0251F442153980A60019F36F /* music-default.gif */; };
@@ -24,7 +27,6 @@
 		025B0785152B1C8700E250BF /* gb.txt in Resources */ = {isa = PBXBuildFile; fileRef = 025B0783152B1C8700E250BF /* gb.txt */; };
 		025B0789152B1E8600E250BF /* GB_BIG_Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B0788152B1E8600E250BF /* GB_BIG_Converter.m */; };
 		02710E8F152A839F006D4BFF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02710E8E152A839F006D4BFF /* Cocoa.framework */; };
-		02710E99152A839F006D4BFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02710E97152A839F006D4BFF /* InfoPlist.strings */; };
 		02710E9B152A839F006D4BFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710E9A152A839F006D4BFF /* main.m */; };
 		02710EA2152A839F006D4BFF /* LyricXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EA1152A839F006D4BFF /* LyricXAppDelegate.m */; };
 		02710EA5152A839F006D4BFF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02710EA3152A839F006D4BFF /* MainMenu.xib */; };
@@ -50,6 +52,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		02147719159EC64400B92431 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0214771B159EC65900B92431 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02912A2615710A5600843F1A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 8;
@@ -67,6 +79,9 @@
 		02035AA21554367B00AB5AB6 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
 		02135B521586F99F001480AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LyricsSearchWnd.xib; sourceTree = "<group>"; };
 		02135B541586F9A4001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LyricsSearchWnd.xib"; sourceTree = "<group>"; };
+		02147715159EC55800B92431 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub_new.pem; sourceTree = "<group>"; };
+		02147735159F564500B92431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		021B9E91158E209900039011 /* DynamicLyrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DynamicLyrics.entitlements; sourceTree = "<group>"; };
 		02353CCE152BF84700214998 /* Albumfiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Albumfiller.h; sourceTree = "<group>"; };
 		02353CCF152BF84700214998 /* Albumfiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Albumfiller.m; sourceTree = "<group>"; };
@@ -78,9 +93,6 @@
 		02390258154F9C1800869A2D /* DBPrefsWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
 		0239025E154F9D7A00869A2D /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = General.png; sourceTree = "<group>"; };
 		02390275154FA26E00869A2D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		023C2DAF158EE8A500C9BEAB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
-		02491CA5159DB2E800A6A2A9 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
-		02491CB3159DC0B700A6A2A9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		024B8BDD1584EFB000444B78 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		024B8BDE1584EFB000444B78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0251F442153980A60019F36F /* music-default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "music-default.gif"; sourceTree = "<group>"; };
@@ -96,7 +108,6 @@
 		02710E92152A839F006D4BFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		02710E93152A839F006D4BFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		02710E96152A839F006D4BFF /* LyricX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LyricX-Info.plist"; sourceTree = "<group>"; };
-		02710E98152A839F006D4BFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02710E9A152A839F006D4BFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02710E9C152A839F006D4BFF /* LyricX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricX-Prefix.pch"; sourceTree = "<group>"; };
 		02710EA0152A839F006D4BFF /* LyricXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricXAppDelegate.h; sourceTree = "<group>"; };
@@ -147,7 +158,7 @@
 				024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */,
 				02710ED6152AA0FF006D4BFF /* ScriptingBridge.framework in Frameworks */,
 				02710E8F152A839F006D4BFF /* Cocoa.framework in Frameworks */,
-				02491CA6159DB2E800A6A2A9 /* Growl.framework in Frameworks */,
+				02147716159EC55800B92431 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +217,7 @@
 		025B0781152B1C7300E250BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */,
 				02ACCFB21566932D004CC95A /* Donate.png */,
 				02BB8A37159CA9E8001334D7 /* Lyrics.png */,
 				02BB8A3A159CAA9B001334D7 /* Notification.png */,
@@ -241,7 +253,7 @@
 		02710E8D152A839F006D4BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02491CA5159DB2E800A6A2A9 /* Growl.framework */,
+				02147715159EC55800B92431 /* Sparkle.framework */,
 				020038E6158F89C700F478DE /* ServiceManagement.framework */,
 				024B8BDD1584EFB000444B78 /* Quartz.framework */,
 				024B8BDE1584EFB000444B78 /* QuartzCore.framework */,
@@ -281,8 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				02390275154FA26E00869A2D /* Constants.h */,
+				02147732159F547100B92431 /* Localizable.strings */,
 				02710E96152A839F006D4BFF /* LyricX-Info.plist */,
-				02710E97152A839F006D4BFF /* InfoPlist.strings */,
 				02710E9A152A839F006D4BFF /* main.m */,
 				02710E9C152A839F006D4BFF /* LyricX-Prefix.pch */,
 			);
@@ -344,6 +356,7 @@
 				02710E88152A839F006D4BFF /* Resources */,
 				02BFDC3415667BE700336A2A /* ShellScript */,
 				02912A2615710A5600843F1A /* CopyFiles */,
+				02147719159EC64400B92431 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -388,7 +401,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02710E99152A839F006D4BFF /* InfoPlist.strings in Resources */,
 				02710EA5152A839F006D4BFF /* MainMenu.xib in Resources */,
 				025B0784152B1C8700E250BF /* big5.txt in Resources */,
 				025B0785152B1C8700E250BF /* gb.txt in Resources */,
@@ -402,6 +414,8 @@
 				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
 				02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */,
 				02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */,
+				02147718159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem in Resources */,
+				02147734159F547100B92431 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,19 +476,18 @@
 			name = LyricsSearchWnd.xib;
 			sourceTree = "<group>";
 		};
-		02710E97152A839F006D4BFF /* InfoPlist.strings */ = {
+		02147732159F547100B92431 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				02710E98152A839F006D4BFF /* en */,
+				02147735159F564500B92431 /* en */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		02710EA3152A839F006D4BFF /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				02710EA4152A839F006D4BFF /* en */,
-				023C2DAF158EE8A500C9BEAB /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -483,7 +496,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				02A561031586F74200E37C6C /* en */,
-				02491CB3159DC0B700A6A2A9 /* zh-Hans */,
 			);
 			name = Preferences.xib;
 			sourceTree = "<group>";

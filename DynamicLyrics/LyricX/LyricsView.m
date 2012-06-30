@@ -80,6 +80,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
     }
     
     
+    rootLayer.opacity = 1;
     
     //First: 绘制圆角矩形
     CGFloat x = [userDefaults floatForKey:@Pref_Lyrics_X];
@@ -142,19 +143,15 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 }
 
 
-- (NSDictionary *) registrationDictionaryForGrowl {
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"TicketVersion",[NSArray arrayWithObject:@"DynamicLyrics"],@"AllNotifications", nil];
-    return dic;
-}
 - (void) iTunesPlayerInfo:(NSNotification *)note
 {
     @autoreleasepool {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        if (![userDefaults boolForKey:@Pref_Enable_Notification]) {
-            return;
-        }
-        
-        if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
+        if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"] || [[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Paused"]) {
+            
+            if (![userDefaults boolForKey:@Pref_Lyrcis_Show_When_Paused]) {
+                rootLayer.opacity = 0;
+            }
             return;
         }
         
@@ -163,39 +160,14 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
             return;
         }
         
+        
+        if (![userDefaults boolForKey:@Pref_Enable_Notification]) {
+            return;
+        }
+        
         iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
 
-        
-        if ([userDefaults integerForKey:@Pref_Notification_Mode] == 2)
-        {
-            NSUserNotificationCenter *unc = [NSUserNotificationCenter defaultUserNotificationCenter];
-            NSUserNotification * un = [[NSUserNotification alloc] init];
-            [un setTitle:[[note userInfo] objectForKey:@"Name"]];
-            [un setSubtitle:[NSString stringWithFormat:@"%@ | %@",[[note userInfo] objectForKey:@"Artist"],[[note userInfo] objectForKey:@"Album"]]];
-            [unc deliverNotification:un];
-            [un release];
-            [unc removeAllDeliveredNotifications];
-            
-            return;
-        }
-        
-
-        if ([userDefaults integerForKey:@Pref_Notification_Mode] == 1) {
-            [GrowlApplicationBridge setGrowlDelegate:self];
-            SBElementArray* theArtworks = [[iTunes currentTrack] artworks];
-            if ([theArtworks count] > 0) {
-                iTunesArtwork *thisArtwork = [theArtworks objectAtIndex:0];
-                [GrowlApplicationBridge notifyWithTitle:[[note userInfo] objectForKey:@"Name"] description:[NSString stringWithFormat:@"%@\n%@",[[note userInfo] objectForKey:@"Artist"],[[note userInfo] objectForKey:@"Album"]] notificationName:@"DynamicLyrics" iconData:[thisArtwork rawData] priority:0 isSticky:NO clickContext:nil];
-            } else{
-                NSImage *image = [NSImage imageNamed:@"music-default.gif"];
-                [GrowlApplicationBridge notifyWithTitle:[[note userInfo] objectForKey:@"Name"] description:[NSString stringWithFormat:@"%@\n%@",[[note userInfo] objectForKey:@"Artist"],[[note userInfo] objectForKey:@"Album"]] notificationName:@"DynamicLyrics" iconData:[image TIFFRepresentation] priority:0 isSticky:NO clickContext:nil];
-            }
-            
-            return;
-        }
-
-   
-        
+           
         //绘制圆角矩形
         messageRectangleLayer.opacity = 1;
         
@@ -239,7 +211,13 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 }
 
 - (void) hideMessageThread {
-    sleep(2);
+    
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    long i = [userDefaults integerForKey:@Pref_Notification_Time];
+    if (i<=0) i = 3;
+    sleep((int)i);
+    
     [self performSelectorOnMainThread:@selector(hideMessage) withObject:nil waitUntilDone:NO];
 
 }

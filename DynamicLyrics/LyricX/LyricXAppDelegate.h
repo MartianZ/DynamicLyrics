@@ -16,6 +16,7 @@
     LyricsSearchWnd *SearchWindow;
     Albumfiller *AlbumfillerWindow;
     IBOutlet NSMenu *AppMenu;
+    IBOutlet NSMenuItem *currentDelay;
 
 }
 

@@ -13,7 +13,7 @@
 #define Pref_Enable_Desktop_Lyrics "PrefEnableDesktopLyrics"
 #define Pref_Enable_Auto_Save_Lyrics "PrefEnableAutoSaveLyrics"
 #define Pref_Enable_Translator "PrefEnableTranslator"
-
+#define Pref_Lyrcis_Show_When_Paused "PrefLyricsShowWhenPaused"
 
 #define Pref_Lyrics_FontName "PrefLyricsFontName"
 #define Pref_Lyrics_FontSize "PrefLyricsFontSize"
@@ -34,5 +34,8 @@
 
 //NOTIFICATION
 #define Pref_Enable_Notification "PrefEnableNotification"
-#define Pref_Notification_Mode "PrefNotificationMode"
+#define Pref_Notification_Mode "PrefNotificationMode" //ABANDON
+#define Pref_Notification_Time "PrefNotificationTime"
+
+
 #endif

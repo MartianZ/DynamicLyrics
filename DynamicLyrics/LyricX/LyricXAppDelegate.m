@@ -16,7 +16,7 @@
     //Initialize application
     //Start coding at 2012-04-03 10:51 =。=
     //By Martian
-    Controller = [[MainController alloc] initWithMenu:AppMenu];
+    Controller = [[MainController alloc] initWithMenu:AppMenu initWithDelayItem:currentDelay];
     
     //设置默认配置
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -185,7 +185,9 @@
     if (Controller && Controller.iTunesCurrentTrack.name) {
         Controller->LyricsDelay += i;
         
-        [[NSUserDefaults standardUserDefaults] setFloat:Controller->LyricsDelay forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]]; 
+        [currentDelay setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - Controller->LyricsDelay]];
+
+        [[NSUserDefaults standardUserDefaults] setFloat:Controller->LyricsDelay forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]];
             }
 }
 - (IBAction)resetLyricsDelay:(id)sender
@@ -193,7 +195,8 @@
     if (Controller && Controller.iTunesCurrentTrack.name) {
         Controller->LyricsDelay = 0 ;
         
-        [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]]; 
+        [currentDelay setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - Controller->LyricsDelay]];
+        [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]];
         
     }
 }

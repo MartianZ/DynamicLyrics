@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
-#import "Growl/Growl.h"
 
-@interface LyricsView : NSView <GrowlApplicationBridgeDelegate> {
+@interface LyricsView : NSView  {
     NSMutableString *LyricsLine;
     NSNotificationCenter *nc;
     NSDistributedNotificationCenter *dnc;

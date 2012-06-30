@@ -25,6 +25,7 @@
     MenuBarLyrics* MBLyrics;
     int CurrentLyric;    
     LyricsFloatWindow *LyricsWindow;
+    NSMenuItem *currentDelayMenuItem;
     @public
     float LyricsDelay;
 
@@ -33,7 +34,7 @@
 - (void)Anylize;
 - (void)iTunesPlayerInfo:(NSNotification *)note;
 - (void)WorkingThread:(NSMutableDictionary*)tmpDict;
-- (id)initWithMenu:(NSMenu *)AppMenu;
+- (id)initWithMenu:(NSMenu *)AppMenu initWithDelayItem:(NSMenuItem *)delayMenuItem;
 
 @property(nonatomic, retain) iTunesTrack *iTunesCurrentTrack;
 @property(nonatomic, retain) NSString *SongLyrics;
