@@ -83,6 +83,8 @@
 		02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub_new.pem; sourceTree = "<group>"; };
 		02147735159F564500B92431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02147745159FF2AA00B92431 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		02147749159FF44800B92431 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		0214774C159FF4F500B92431 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.xib"; sourceTree = "<group>"; };
 		021B9E91158E209900039011 /* DynamicLyrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DynamicLyrics.entitlements; sourceTree = "<group>"; };
 		02353CCE152BF84700214998 /* Albumfiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Albumfiller.h; sourceTree = "<group>"; };
 		02353CCF152BF84700214998 /* Albumfiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Albumfiller.m; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				02710EA4152A839F006D4BFF /* en */,
+				02147749159FF44800B92431 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				02A561031586F74200E37C6C /* en */,
+				0214774C159FF4F500B92431 /* zh-Hans */,
 			);
 			name = Preferences.xib;
 			sourceTree = "<group>";

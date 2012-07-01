@@ -1,0 +1,90 @@
+
+/* Class = "NSMenuItem"; title = "Lyrics"; ObjectID = "592"; */
+"592.title" = "Lyrics";
+
+/* Class = "NSMenu"; title = "Lyrics"; ObjectID = "593"; */
+"593.title" = "Lyrics";
+
+/* Class = "NSMenuItem"; title = "Search Lyrics..."; ObjectID = "594"; */
+"594.title" = "Search Lyrics...";
+
+/* Class = "NSMenuItem"; title = "Copy Current Lyrics"; ObjectID = "619"; */
+"619.title" = "Copy Current Lyrics";
+
+/* Class = "NSMenuItem"; title = "Copy Lyrics (LRC)"; ObjectID = "620"; */
+"620.title" = "Copy Lyrics (LRC)";
+
+/* Class = "NSMenuItem"; title = "Export LRC..."; ObjectID = "625"; */
+"625.title" = "Export LRC...";
+
+/* Class = "NSMenuItem"; title = "Artwork"; ObjectID = "684"; */
+"684.title" = "Artwork";
+
+/* Class = "NSMenu"; title = "Artwork"; ObjectID = "685"; */
+"685.title" = "Artwork";
+
+/* Class = "NSMenuItem"; title = "Search Artwork..."; ObjectID = "686"; */
+"686.title" = "Search Artwork...";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "759"; */
+"759.title" = "Preferences…";
+
+/* Class = "NSMenuItem"; title = "Quit DynamicLyrics"; ObjectID = "761"; */
+"761.title" = "Quit DynamicLyrics";
+
+/* Class = "NSMenuItem"; title = "Copy Lyrics (TEXT)"; ObjectID = "777"; */
+"777.title" = "Copy Lyrics (TEXT)";
+
+/* Class = "NSMenuItem"; title = "Save Lyrics to iTunes"; ObjectID = "778"; */
+"778.title" = "Save Lyrics to iTunes";
+
+/* Class = "NSMenuItem"; title = "Export Artwork..."; ObjectID = "779"; */
+"779.title" = "Export Artwork...";
+
+/* Class = "NSMenuItem"; title = "Enable Menu Bar Lyrics"; ObjectID = "795"; */
+"795.title" = "Enable Menu Bar Lyrics";
+
+/* Class = "NSMenuItem"; title = "Enable Desktop Lyrics"; ObjectID = "796"; */
+"796.title" = "Enable Desktop Lyrics";
+
+/* Class = "NSMenuItem"; title = "About DynamicLyrics..."; ObjectID = "819"; */
+"819.title" = "About DynamicLyrics...";
+
+/* Class = "NSMenuItem"; title = "Adjust Lyrics Delay by"; ObjectID = "822"; */
+"822.title" = "Adjust Lyrics Delay by";
+
+/* Class = "NSMenu"; title = "Adjust Lyrics Delay by"; ObjectID = "823"; */
+"823.title" = "Adjust Lyrics Delay by";
+
+/* Class = "NSMenuItem"; title = "-0.1s"; ObjectID = "824"; */
+"824.title" = "-0.1s";
+
+/* Class = "NSMenuItem"; title = "-0.5s"; ObjectID = "827"; */
+"827.title" = "-0.5s";
+
+/* Class = "NSMenuItem"; title = "+0.1s"; ObjectID = "829"; */
+"829.title" = "+0.1s";
+
+/* Class = "NSMenuItem"; title = "+0.5s"; ObjectID = "830"; */
+"830.title" = "+0.5s";
+
+/* Class = "NSMenuItem"; title = "-0.2s"; ObjectID = "836"; */
+"836.title" = "-0.2s";
+
+/* Class = "NSMenuItem"; title = "-0.05s"; ObjectID = "837"; */
+"837.title" = "-0.05s";
+
+/* Class = "NSMenuItem"; title = "+0.05s"; ObjectID = "838"; */
+"838.title" = "+0.05s";
+
+/* Class = "NSMenuItem"; title = "+0.2s"; ObjectID = "839"; */
+"839.title" = "+0.2s";
+
+/* Class = "NSMenuItem"; title = "Reset Delay"; ObjectID = "845"; */
+"845.title" = "Reset Delay";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "848"; */
+"848.title" = "Check for Updates...";
+
+/* Class = "NSMenuItem"; title = "Current Delay: 0.00s"; ObjectID = "850"; */
+"850.title" = "Current Delay: 0.00s";

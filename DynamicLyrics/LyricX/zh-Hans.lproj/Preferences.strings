@@ -1,0 +1,72 @@
+
+/* Class = "NSBox"; title = "Behavioral Settings:"; ObjectID = "1865"; */
+"1865.title" = "Behavioral Settings:";
+
+/* Class = "NSBox"; title = "Desktop Lyrics Settings:"; ObjectID = "1887"; */
+"1887.title" = "Desktop Lyrics Settings:";
+
+/* Class = "NSTextFieldCell"; title = "Window Position:(Left,Bottom,Height,Width)"; ObjectID = "1953"; */
+"1953.title" = "Window Position:(Left,Bottom,Height,Width)";
+
+/* Class = "NSButtonCell"; title = "Select"; ObjectID = "1954"; */
+"1954.title" = "Select";
+
+/* Class = "NSTextFieldCell"; title = "Font:"; ObjectID = "1955"; */
+"1955.title" = "Font:";
+
+/* Class = "NSTextFieldCell"; title = "Text Color:"; ObjectID = "1956"; */
+"1956.title" = "Text Color:";
+
+/* Class = "NSTextFieldCell"; title = "Background Color:"; ObjectID = "1961"; */
+"1961.title" = "Background Color:";
+
+/* Class = "IBBindingConnection"; ibShadowedIsNilPlaceholder = "150"; ObjectID = "2238"; */
+"2238.ibShadowedIsNilPlaceholder" = "150";
+
+/* Class = "IBBindingConnection"; ibShadowedIsNilPlaceholder = "100"; ObjectID = "2239"; */
+"2239.ibShadowedIsNilPlaceholder" = "100";
+
+/* Class = "IBBindingConnection"; ibShadowedIsNilPlaceholder = "1000"; ObjectID = "2249"; */
+"2249.ibShadowedIsNilPlaceholder" = "1000";
+
+/* Class = "NSTextFieldCell"; title = "We are very pleased to see that our software can help you. If you like this App, consider donating to keep development going!"; ObjectID = "2313"; */
+"2313.title" = "We are very pleased to see that our software can help you. If you like this App, consider donating to keep development going!";
+
+/* Class = "NSButtonCell"; title = "Donate via PayPal"; ObjectID = "2364"; */
+"2364.title" = "Donate via PayPal";
+
+/* Class = "NSButtonCell"; title = "Donate via 支付宝"; ObjectID = "2391"; */
+"2391.title" = "Donate via 支付宝";
+
+/* Class = "NSButtonCell"; title = "Donate via 亚马逊中国"; ObjectID = "2399"; */
+"2399.title" = "Donate via 亚马逊中国";
+
+/* Class = "NSTextFieldCell"; title = "Thank you for being awesome!"; ObjectID = "2614"; */
+"2614.title" = "Thank you for being awesome!";
+
+/* Class = "IBBindingConnection"; ibShadowedIsNilPlaceholder = "100"; ObjectID = "2658"; */
+"2658.ibShadowedIsNilPlaceholder" = "100";
+
+/* Class = "IBBindingConnection"; ibShadowedIsNilPlaceholder = "Helvetica, 28.0"; ObjectID = "2659"; */
+"2659.ibShadowedIsNilPlaceholder" = "Helvetica, 28.0";
+
+/* Class = "NSButtonCell"; title = "Launch and quit with iTunes"; ObjectID = "2673"; */
+"2673.title" = "Launch and quit with iTunes";
+
+/* Class = "NSButtonCell"; title = "Show track info when the playing song changes"; ObjectID = "2762"; */
+"2762.title" = "Show track info when the playing song changes";
+
+/* Class = "NSTextFieldCell"; title = "Displayed time:"; ObjectID = "2893"; */
+"2893.title" = "Displayed time:";
+
+/* Class = "NSTextFieldCell"; title = "1"; ObjectID = "2927"; */
+"2927.title" = "1";
+
+/* Class = "NSTextFieldCell"; title = "seconds"; ObjectID = "2931"; */
+"2931.title" = "seconds";
+
+/* Class = "NSTextFieldCell"; title = "5"; ObjectID = "2938"; */
+"2938.title" = "5";
+
+/* Class = "NSButtonCell"; title = "Show desktop lyrics when iTunes is paused"; ObjectID = "3038"; */
+"3038.title" = "Show desktop lyrics when iTunes is paused";
