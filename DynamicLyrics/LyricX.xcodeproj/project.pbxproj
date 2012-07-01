@@ -82,6 +82,7 @@
 		02147715159EC55800B92431 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dynamiclyrics2_dsa_pub_new.pem; sourceTree = "<group>"; };
 		02147735159F564500B92431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02147745159FF2AA00B92431 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		021B9E91158E209900039011 /* DynamicLyrics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DynamicLyrics.entitlements; sourceTree = "<group>"; };
 		02353CCE152BF84700214998 /* Albumfiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Albumfiller.h; sourceTree = "<group>"; };
 		02353CCF152BF84700214998 /* Albumfiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Albumfiller.m; sourceTree = "<group>"; };
@@ -480,6 +481,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				02147735159F564500B92431 /* en */,
+				02147745159FF2AA00B92431 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

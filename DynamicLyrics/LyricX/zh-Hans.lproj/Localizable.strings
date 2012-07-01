@@ -1,0 +1,5 @@
+/* Localized versions of Info.plist keys */
+
+"CurrentDelay" = "当前延迟：";
+"SoftwareUpdateTitle" = "软件更新提示";
+"SoftwareUpdate" = "软件检测到已经您当前的版本已经过期，新版本已经发布，请在软件中运行“检查更新”下载新版本！";

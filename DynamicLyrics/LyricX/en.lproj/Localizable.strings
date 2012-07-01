@@ -1,3 +1,5 @@
 /* Localized versions of Info.plist keys */
 
 "CurrentDelay" = "Current Delay:";
+"SoftwareUpdateTitle" = "Software Update";
+"SoftwareUpdate" = "A new version of DynamicLyrics is available! Please click \"Check for Updates\" menu to update your software automatically.";
