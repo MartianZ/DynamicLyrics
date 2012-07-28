@@ -21,7 +21,7 @@
         self.hasShadow = NO;
         self.hidesOnDeactivate = NO;
         self.IgnoresMouseEvents = YES;
-        
+        [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
         lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
         [self.contentView addSubview:lyricsView];
         //[self center];

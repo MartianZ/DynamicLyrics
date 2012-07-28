@@ -6,12 +6,12 @@
       <description>DynamicLyrics 更新日志 - 4321.La</description>
       <language>zh-Hans</language>
          <item>
-            <title>Version 2.1 Build 226</title>
+            <title>Version 2.1 Build 762</title>
 						<sparkle:releaseNotesLink>
 							http://martianlaboratory.com/dynamiclyrics/
 						</sparkle:releaseNotesLink>
-            <pubDate>2011-06-11</pubDate>
-            <enclosure url="http://martianlaboratory.com/dynamiclyrics/DynamicLyricsBuild226.zip" sparkle:shortVersionString="2.1" sparkle:version="226" length="759163" type="application/octet-stream" sparkle:dsaSignature="MCwCFF8nej1Fz2zHW71WVv3VZtz0LpRFAhRoIgz6f9cKhgH8aFiHmwqA/uL+kA==" />
+            <pubDate>2011-07-01</pubDate>
+            <enclosure url="http://martianlaboratory.com/dynamiclyrics/DynamicLyricsBuild762.zip" sparkle:shortVersionString="2.1" sparkle:version="762" length="1228652" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCVePpWy5rBHlQnNLK+pgBLYfQtxwIUauO5wsPD5zIjmJmgIqZ+kPuRlkQ=" />
          </item>
    </channel>
 </rss>
