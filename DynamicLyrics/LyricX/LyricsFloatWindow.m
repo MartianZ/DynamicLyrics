@@ -7,7 +7,7 @@
 //
 
 #import "LyricsFloatWindow.h"
-
+#import "Constants.h"
 @implementation LyricsFloatWindow
 
 - (id)initWithContentRect:(NSRect)contentRect
@@ -21,7 +21,9 @@
         self.hasShadow = NO;
         self.hidesOnDeactivate = NO;
         self.IgnoresMouseEvents = YES;
-        [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@Pref_Attach_LyricsWindow_To_All_Spaces]) {
+            [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
+        }
         lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
         [self.contentView addSubview:lyricsView];
         //[self center];

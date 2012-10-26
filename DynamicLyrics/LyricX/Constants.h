@@ -15,6 +15,8 @@
 #define Pref_Enable_Translator "PrefEnableTranslator"
 #define Pref_Lyrcis_Show_When_Paused "PrefLyricsShowWhenPaused"
 
+#define Pref_Attach_LyricsWindow_To_All_Spaces "PrefAttachLyricsWindowToAllSpace"
+
 #define Pref_Lyrics_FontName "PrefLyricsFontName"
 #define Pref_Lyrics_FontSize "PrefLyricsFontSize"
 #define Pref_Lyrics_DisplayFont "PrefLyricsDisplayFont"

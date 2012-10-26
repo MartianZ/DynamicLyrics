@@ -16,6 +16,8 @@
 	[self addView:advancedPreferenceView label:@"Lyrics"];
 	//[self addView:donatePreferenceView label:@"Donate"];
     [self addView:notificationPreferenceView label:@"Notification"];
+    [self addView:donatePreferenceView label:@"Donate"];
+
     
 	[self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];
 	[self setShiftSlowsAnimation:[[NSUserDefaults standardUserDefaults] boolForKey:@"shiftSlowsAnimation"]];
