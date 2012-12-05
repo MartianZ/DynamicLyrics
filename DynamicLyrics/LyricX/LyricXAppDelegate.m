@@ -57,7 +57,7 @@
         AlbumfillerWindow = [[Albumfiller alloc] init];
     else {
         [AlbumfillerWindow.window makeKeyAndOrderFront:self];
-        
+        [AlbumfillerWindow SearchArtwork];
     }
     
 }
