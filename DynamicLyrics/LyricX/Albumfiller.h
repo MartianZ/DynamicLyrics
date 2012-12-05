@@ -20,6 +20,7 @@
     IBOutlet NSCollectionView *collectionView;
 }
 
+-(void)SearchArtwork;
 
 -(IBAction)ChangeAlbum:(id)sender;
  

@@ -10,6 +10,7 @@
 
 @interface Albumfiller ()
 
+@property (strong, nonatomic) NSString *searchedAlbum;
 @end
 
 @implementation Albumfiller
@@ -19,7 +20,6 @@
 {
     self = [super initWithWindowNibName:@"Albumfiller"];
     if (self) {    
-        
         
         
         DouBan = [[DouBanAPI alloc]init];
@@ -32,8 +32,9 @@
         [dnc addObserver:self selector:@selector(iTunesPlayerInfo) name:@"com.apple.iTunes.playerInfo" object:nil];
         
         
-        operationQueue = [[NSOperationQueue alloc] init]; 
+        operationQueue = [[NSOperationQueue alloc] init];
         [operationQueue setMaxConcurrentOperationCount:5];
+        self.searchedAlbum = nil;
         [self SearchArtwork];
         
         
@@ -71,6 +72,12 @@
     {
         return;
     }
+	NSString *searchAlbum = [NSString stringWithFormat:@"%@ %@", [[iTunes currentTrack] albumArtist],[[iTunes currentTrack] album]];
+	if ([searchAlbum isEqualToString:self.searchedAlbum]) {
+		NSLog(@"Same album. Ignore action.");
+		return;
+	}
+	NSLog(@"Search album: %@", self.searchedAlbum);
     [DouBan SearchArtwork:[[iTunes currentTrack] album]];
     
     SBElementArray* theArtworks = [[iTunes currentTrack] artworks];
@@ -107,6 +114,7 @@
 
         
     }
+	self.searchedAlbum = searchAlbum;
 }
 
 - (void) iTunesPlayerInfo
