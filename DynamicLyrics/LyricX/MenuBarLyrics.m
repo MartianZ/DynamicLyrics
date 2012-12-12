@@ -8,6 +8,7 @@
 
 #import "MenuBarLyrics.h"
 #import "Constants.h"
+
 @implementation MenuBarLyrics
 
 @synthesize  CurrentSongLyrics;
@@ -89,12 +90,13 @@
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
-	// Change desktop lyrics status. Ignore action
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString *lyric = [[note userInfo] objectForKey:@"Lyrics"];
+	// Change desktop lyrics status. Ignore action
 	if ([lyric isEqualToString:@NC_Changed_DesktopLyrics]) {
+		[pool release];
 		return;
     }
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 	BOOL forceUpdate = NO;
 	if ([lyric isEqualToString:@NC_Disabled_MenuBarLyrics]) {
@@ -107,15 +109,14 @@
 			return;
 			
 		}else{
-			lyric = self.CurrentSongLyrics;
 			forceUpdate = YES;
 		}
-	}
-	
-
-    if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
-		[_queue cancelAllOperations];
+	}else{
 		self.CurrentSongLyrics = lyric;
+	}
+
+	[_queue cancelAllOperations];
+    if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
 		if ([self.CurrentSongLyrics isEqualToString:@""]) {
 			[_statusItem setAttributedTitle:nil];
 			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];

@@ -9,7 +9,6 @@
 #import "LyricsView.h"
 #import "Constants.h"
 #import "iTunes.h"
-#import "NSString+LyricsCleaner.h"
 
 @interface LyricsView ()
 
