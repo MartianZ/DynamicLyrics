@@ -89,41 +89,47 @@
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
-    if ([[[note userInfo] objectForKey:@"Lyrics"] isEqualToString:@NC_Changed_DesktopLyrics]) {
-        return;
+	// Change desktop lyrics status. Ignore action
+	NSString *lyric = [[note userInfo] objectForKey:@"Lyrics"];
+	if ([lyric isEqualToString:@NC_Changed_DesktopLyrics]) {
+		return;
     }
-    
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+	BOOL forceUpdate = NO;
+	if ([lyric isEqualToString:@NC_Disabled_MenuBarLyrics]) {
+		if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
+			[_queue cancelAllOperations];
+			[_statusItem setAttributedTitle:nil];
+			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+			
+			[pool release];
+			return;
+			
+		}else{
+			lyric = self.CurrentSongLyrics;
+			forceUpdate = YES;
+		}
+	}
+	
 
-    
-    if (![ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
-        [_statusItem setAttributedTitle:nil];
-        [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
-        return;
+    if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
+		[_queue cancelAllOperations];
+		self.CurrentSongLyrics = lyric;
+		if ([self.CurrentSongLyrics isEqualToString:@""]) {
+			[_statusItem setAttributedTitle:nil];
+			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+		}else{
+			[_statusItem setImage:nil];
+			NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(showSmoothTitle:) object:self.CurrentSongLyrics];
+			[_queue addOperation:operation];
+			[operation release];
+		}
     } else {
-        [_statusItem setImage:nil];
+		[_statusItem setAttributedTitle:nil];
+		[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
     }
     
-
-    if ([[[note userInfo] objectForKey:@"Lyrics"] isEqualToString:@NC_Disabled_MenuBarLyrics]) {
-        if (![ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
-            [_statusItem setAttributedTitle:nil];
-            [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
-            
-        } 
-        return;
-    }
-    
-    
-    
-    self.CurrentSongLyrics = [[note userInfo] objectForKey:@"Lyrics"];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(showSmoothTitle:) object:self.CurrentSongLyrics];
-    
-    
-    [_queue cancelAllOperations];
-    [_queue addOperation:operation];
-    [operation release];
     [pool release];
 }
 
