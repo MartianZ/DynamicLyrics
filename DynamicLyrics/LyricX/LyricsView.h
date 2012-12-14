@@ -10,7 +10,6 @@
 #import <Quartz/Quartz.h>
 
 @interface LyricsView : NSView  {
-    NSMutableString *LyricsLine;
     NSNotificationCenter *nc;
     NSDistributedNotificationCenter *dnc;
     CALayer *rootLayer;
