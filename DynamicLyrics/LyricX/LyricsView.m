@@ -142,7 +142,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 		textLayer.string = self.currentLyrics;
 		textLayer.fontSize = fontSize;
 		textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2, w, h);
-		textLayer.alignmentMode = kCAAlignmentCenter;
+		textLayer.alignmentMode = kCAAlignmentJustified;
 		textLayer.font = font;
 		textLayer.foregroundColor = cgfontColor;
 		
