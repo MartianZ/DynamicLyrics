@@ -99,14 +99,14 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 		rootLayer.opacity = 1;
 		
 		//First: 绘制圆角矩形
-		CGFloat x = [userDefaults floatForKey:@Pref_Lyrics_X];
-		x = x <= 0 ? 150 : x;
-		CGFloat y = [userDefaults floatForKey:@Pref_Lyrics_Y];
-		y = y <=0 ? 100 : y;
-		CGFloat w = [userDefaults floatForKey:@Pref_Lyrics_W];
-		w = w <=0 ? self.bounds.size.width - (x*2) : w;
-		CGFloat h = [userDefaults floatForKey:@Pref_Lyrics_H];
-		h = h <=0 ? 100 : h;
+		CGFloat left = [userDefaults floatForKey:@Pref_Lyrics_X];
+		left = left <= 0 ? 150 : left;
+		CGFloat bottom = [userDefaults floatForKey:@Pref_Lyrics_Y];
+		bottom = bottom <= 0 ? 100 : bottom;
+		CGFloat width = [userDefaults floatForKey:@Pref_Lyrics_W];
+		width = width <= 0 ? self.bounds.size.width - (left*2) : width;
+		CGFloat height = [userDefaults floatForKey:@Pref_Lyrics_H];
+		height = height <= 0 ? 100 : height;
 		
 		NSColor *backColor = [NSColor whiteColor];
 		NSData *theDataA=[userDefaults dataForKey:@Pref_Desktop_Background_Color];
@@ -116,9 +116,9 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 		CGColorRef cgbackColor = CGColorCreateFromNSColor (colorSpace, backColor);
 		
 		
-		rectangleLayer.colors = [NSArray arrayWithObjects:(id)cgbackColor,(id)cgbackColor, nil];
+		rectangleLayer.colors = [NSArray arrayWithObjects:(id)cgbackColor, (id)cgbackColor, nil];
 		rectangleLayer.cornerRadius = 15;
-		rectangleLayer.frame=CGRectMake(x, y, w, h);
+		rectangleLayer.frame = CGRectMake(left, bottom, width, height);
 		
 		//Second：文字
 		
@@ -141,12 +141,12 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 		
 		textLayer.string = self.currentLyrics;
 		textLayer.fontSize = fontSize;
-		textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2, w, h);
+		textLayer.frame = CGRectMake(left, bottom - fontSize/2, width, height);
 		textLayer.alignmentMode = kCAAlignmentCenter;
 		textLayer.font = font;
 		textLayer.foregroundColor = cgfontColor;
 		
-		CGFontRelease(font);
+		CGFontRelease (font);
 		CGColorSpaceRelease (colorSpace);
 		CGColorRelease (cgbackColor);
 		CGColorRelease (cgfontColor);

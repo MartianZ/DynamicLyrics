@@ -376,7 +376,7 @@
 		02710E81152A839F006D4BFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Martian;
 			};
 			buildConfigurationList = 02710E84152A839F006D4BFF /* Build configuration list for PBXProject "LyricX" */;
@@ -574,6 +574,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyrics.entitlements;
 				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -594,6 +595,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyrics.entitlements;
 				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
