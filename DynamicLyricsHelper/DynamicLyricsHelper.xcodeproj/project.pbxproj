@@ -234,14 +234,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyricsHelper/DynamicLyricsHelper.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicLyricsHelper/DynamicLyricsHelper-Prefix.pch";
 				INFOPLIST_FILE = "DynamicLyricsHelper/DynamicLyricsHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -251,14 +250,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyricsHelper/DynamicLyricsHelper.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Zhu Zheng";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicLyricsHelper/DynamicLyricsHelper-Prefix.pch";
 				INFOPLIST_FILE = "DynamicLyricsHelper/DynamicLyricsHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
