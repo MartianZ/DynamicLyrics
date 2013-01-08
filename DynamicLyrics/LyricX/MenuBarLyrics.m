@@ -9,6 +9,11 @@
 #import "MenuBarLyrics.h"
 #import "Constants.h"
 
+@interface NSStatusBar (NSStatusBar_Private)
+- (id)_statusItemWithLength:(float)l withPriority:(int)p;
+- (id)_insertStatusItem:(NSStatusItem *)i withPriority:(int)p;
+@end
+
 @implementation MenuBarLyrics
 
 @synthesize  CurrentSongLyrics;
@@ -18,8 +23,12 @@
     if (self) {
         _queue = [[NSOperationQueue alloc] init]; 
         [_queue setMaxConcurrentOperationCount:1];
-        _statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+        NSStatusBar *bar = [NSStatusBar systemStatusBar];
+        _statusItem = [[bar _statusItemWithLength:0 withPriority:INT_MIN] retain];
         //[_statusItem setTitle:@"LyricsX!"];
+        [bar removeStatusItem:_statusItem];
+        [bar _insertStatusItem:_statusItem withPriority:INT_MIN];
+        [_statusItem setLength:NSVariableStatusItemLength];
         [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
         [_statusItem setHighlightMode:YES];
         [_statusItem setMenu:AppMenu];
