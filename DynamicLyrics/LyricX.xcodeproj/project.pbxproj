@@ -51,6 +51,16 @@
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EF68C6D6169BF788006B9128 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02947A311567622400DA746B;
+			remoteInfo = DynamicLyricsHelper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		02147719159EC64400B92431 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -149,6 +159,7 @@
 		02BB8A37159CA9E8001334D7 /* Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyrics.png; sourceTree = "<group>"; };
 		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
+		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +253,7 @@
 				02710E94152A839F006D4BFF /* LyricX */,
 				02710E8D152A839F006D4BFF /* Frameworks */,
 				02710E8B152A839F006D4BFF /* Products */,
+				EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -347,6 +359,14 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		EF68C6CF169BF788006B9128 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF68C6D7169BF788006B9128 /* DynamicLyricsHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -392,12 +412,28 @@
 			mainGroup = 02710E7F152A839F006D4BFF;
 			productRefGroup = 02710E8B152A839F006D4BFF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EF68C6CF169BF788006B9128 /* Products */;
+					ProjectRef = EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				02710E89152A839F006D4BFF /* DynamicLyrics */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EF68C6D7169BF788006B9128 /* DynamicLyricsHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DynamicLyricsHelper.app;
+			remoteRef = EF68C6D6169BF788006B9128 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		02710E88152A839F006D4BFF /* Resources */ = {
