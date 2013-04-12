@@ -164,6 +164,11 @@
 	(void)sender;
 }
 
+- (IBAction)hideLyric:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:[NSString stringWithFormat:@"%@%@", Controller.iTunesCurrentTrack.name, Controller.iTunesCurrentTrack.artist]];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:Controller.iTunesCurrentTrack.name, @"SongTitle", Controller.iTunesCurrentTrack.artist, @"SongArtist", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@NC_LyricsChanged object:self userInfo:dict];
+}
 
 - (IBAction)DisabledMenuBarLyrics:(id)sender
 {
