@@ -59,7 +59,7 @@
         
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
-        [d setObject:[NSFont fontWithName: @"Helvetica" size: 15] forKey:NSFontAttributeName];
+        [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
         
         NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
         
