@@ -445,14 +445,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">ExportLRC:</string>
-						<reference key="source" ref="57075725"/>
-						<reference key="destination" ref="796675328"/>
-					</object>
-					<int key="connectionID">772</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">OpenLyricsSearchWindow:</string>
 						<reference key="source" ref="57075725"/>
 						<reference key="destination" ref="406312067"/>
@@ -618,6 +610,14 @@
 						<reference key="destination" ref="900024044"/>
 					</object>
 					<int key="connectionID">854</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">ExportLRC:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="796675328"/>
+					</object>
+					<int key="connectionID">855</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1110,7 +1110,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">854</int>
+			<int key="maxID">855</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
