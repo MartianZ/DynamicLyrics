@@ -143,19 +143,17 @@
 
 -(IBAction)ExportLRC:(id)sender
 {
-    NSSavePanel *saveDlg = [[NSSavePanel savePanel] autorelease];
+    NSSavePanel *saveDlg = [NSSavePanel savePanel];
     [saveDlg setTitle:@"Save Lyrics"];
 
     
-    NSString* documentsFolder = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
+    NSString* documentsFolder =  [NSString stringWithFormat:@"file://localhost%@",  [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"]];
     NSString* fileName = [NSString stringWithFormat:@"%@ - %@.lrc",Controller.iTunesCurrentTrack.name,Controller.iTunesCurrentTrack.artist];
-    
     [saveDlg setNameFieldStringValue:fileName];
     [saveDlg setDirectoryURL:[NSURL URLWithString:documentsFolder]];
     [saveDlg runModal];
-        
-    
     [[NSFileManager defaultManager] createFileAtPath:[[saveDlg URL] path] contents:[Controller.SongLyrics dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+
 }
 
 -(IBAction)showPrefsWindow:(id)sender
