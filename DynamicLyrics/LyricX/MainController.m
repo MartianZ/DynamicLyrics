@@ -331,6 +331,8 @@
             [[NSApplication sharedApplication] terminate:self];
             //exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
         }
+            NSLog(@"%f",(double)[iTunes playerPosition]);
+            NSLog(@"%d",(NSInteger)[iTunes playerPosition]);
         if ([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) {
             PlayerPosition = [iTunes playerPosition];
             if ((currentPlayerPosition / 1000) != PlayerPosition)
