@@ -318,7 +318,7 @@
     //Dirty code QAQ
 
     NSDictionary *iTunesVersionDictionary = [NSDictionary dictionaryWithContentsOfFile:@"/Applications/iTunes.app/Contents/version.plist"];
-    
+    long long iTunesVersion = [[iTunesVersionDictionary objectForKey:@"SourceVersion"] longLongValue];
     
     while (![iTunes isRunning])
     {
@@ -338,7 +338,7 @@
             //exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
         }
         if ([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) {
-            if ([[iTunesVersionDictionary objectForKey:@"SourceVersion"] longLongValue] >= 1103042001000000)
+            if (iTunesVersion >= 1103042001000000)
             {
                 PlayerPosition = [iTunesNEW playerPosition];
                 
