@@ -6,12 +6,12 @@
       <description>DynamicLyrics 更新日志 - 4321.La</description>
       <language>zh-Hans</language>
          <item>
-            <title>Version 2.1 Build 831</title>
+            <title>Version 2.1 Build 899</title>
 						<sparkle:releaseNotesLink>
 							http://martianlaboratory.com/dynamiclyrics/
 						</sparkle:releaseNotesLink>
-            <pubDate>2013-04-13</pubDate>
-            <enclosure url="http://martianlaboratory.com/dynamiclyrics/DynamicLyricsBuild831.zip" sparkle:shortVersionString="2.1" sparkle:version="831" length="1215484" type="application/octet-stream" sparkle:dsaSignature="MCwCFGnBFM2DkKBXCcDOfonMntZ+mxEUAhRPzUPbX9EACjJBjO3mOpMu5a+MUg==" />
+            <pubDate>2013-05-17</pubDate>
+            <enclosure url="http://martianlaboratory.com/dynamiclyrics/DynamicLyricsBuild899.zip" sparkle:shortVersionString="2.1" sparkle:version="899" length="1214662" type="application/octet-stream" sparkle:dsaSignature="MCwCFF9uf1XQr5lPUNCccbebpPckEaQ4AhQlbWu8Uz6GuOXWADdEhk8NkxBbDg==" />
          </item>
    </channel>
 </rss>

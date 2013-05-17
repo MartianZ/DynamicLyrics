@@ -169,7 +169,7 @@ typedef enum iTunesEAPD iTunesEAPD;
 @property BOOL fullScreen;  // are visuals displayed using the entire screen?
 @property (copy, readonly) NSString *name;  // the name of the application
 @property BOOL mute;  // has the sound output been muted?
-@property double playerPosition;  // the player’s position within the currently playing track in seconds
+//@property double playerPosition;  // the player’s position within the currently playing track in seconds
 @property (readonly) iTunesEPlS playerState;  // is iTunes stopped, paused, or playing?
 @property (copy, readonly) SBObject *selection;  // the selection visible to the user
 @property NSInteger soundVolume;  // the sound output volume (0 = minimum, 100 = maximum)
@@ -200,6 +200,15 @@ typedef enum iTunesEAPD iTunesEAPD;
 - (void) openLocation:(NSString *)x;  // Opens a Music Store or audio stream URL
 
 @end
+
+@interface OldiTunesApplication : iTunesApplication
+@property NSInteger playerPosition;
+@end
+
+@interface NewiTunesApplication : iTunesApplication
+@property double playerPosition;
+@end
+
 
 // an item
 @interface iTunesItem : SBObject
