@@ -186,7 +186,7 @@
 
 - (IBAction)aboutDynamicLyrics:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://dynamiclyrics.project.4321.la/"];
+    NSURL *url = [NSURL URLWithString:@"http://martianz.cn/dynamiclyrics/"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
