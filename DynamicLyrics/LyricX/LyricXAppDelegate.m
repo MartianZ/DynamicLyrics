@@ -141,7 +141,7 @@
 }
 
 
--(IBAction)ExportLRC:(id)sender
+-(IBAction)exportLRC:(id)sender
 {
     NSSavePanel *saveDlg = [NSSavePanel savePanel];
     [saveDlg setTitle:@"Save Lyrics"];
@@ -168,6 +168,31 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@NC_LyricsChanged object:self userInfo:dict];
     Controller.SongLyrics = @"";
     [Controller Anylize];
+}
+
+-(IBAction)importLyric:(id)sender
+{
+    NSOpenPanel *oPanel = [NSOpenPanel openPanel];
+    [oPanel setCanChooseDirectories:NO];
+	[oPanel setCanChooseFiles:YES];
+	[oPanel setDirectoryURL:[NSURL URLWithString:[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"]]];
+    [oPanel setAllowedFileTypes:[NSArray arrayWithObject:@"lrc"]];
+
+    if ([oPanel runModal] == NSOKButton) {
+        
+        
+        NSString *contents = [NSString stringWithContentsOfFile:[[[oPanel URLs] objectAtIndex:0] path] encoding:NSUTF8StringEncoding error:nil];
+                
+        [[NSUserDefaults standardUserDefaults] setValue:contents forKey:[NSString stringWithFormat:@"%@%@", Controller.iTunesCurrentTrack.artist, Controller.iTunesCurrentTrack.name]];
+        
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:Controller.iTunesCurrentTrack.name, @"SongTitle", Controller.iTunesCurrentTrack.artist, @"SongArtist", nil];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@NC_LyricsChanged object:self userInfo:dict];
+        Controller.SongLyrics = contents;
+        [Controller Anylize];
+    }
+    
+
 }
 
 - (IBAction)DisabledMenuBarLyrics:(id)sender

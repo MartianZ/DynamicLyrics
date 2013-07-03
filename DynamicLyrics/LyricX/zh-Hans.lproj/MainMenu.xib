@@ -273,6 +273,14 @@
 									<reference key="NSOnImage" ref="817365088"/>
 									<reference key="NSMixedImage" ref="112771844"/>
 								</object>
+								<object class="NSMenuItem" id="324411803">
+									<reference key="NSMenu" ref="500224075"/>
+									<string key="NSTitle">导入LRC歌词...</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="817365088"/>
+									<reference key="NSMixedImage" ref="112771844"/>
+								</object>
 								<object class="NSMenuItem" id="796675328">
 									<reference key="NSMenu" ref="500224075"/>
 									<string key="NSTitle">导出LRC歌词...</string>
@@ -613,11 +621,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">ExportLRC:</string>
+						<string key="label">exportLRC:</string>
 						<reference key="source" ref="57075725"/>
 						<reference key="destination" ref="796675328"/>
 					</object>
-					<int key="connectionID">855</int>
+					<int key="connectionID">856</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">importLyric:</string>
+						<reference key="source" ref="57075725"/>
+						<reference key="destination" ref="324411803"/>
+					</object>
+					<int key="connectionID">858</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -747,6 +763,7 @@
 							<reference ref="718917190"/>
 							<reference ref="816981477"/>
 							<reference ref="900024044"/>
+							<reference ref="324411803"/>
 						</object>
 						<reference key="parent" ref="245212594"/>
 					</object>
@@ -989,6 +1006,11 @@
 						<reference key="object" ref="900024044"/>
 						<reference key="parent" ref="500224075"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">857</int>
+						<reference key="object" ref="324411803"/>
+						<reference key="parent" ref="500224075"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1044,9 +1066,11 @@
 					<string>850.IBPluginDependency</string>
 					<string>852.IBPluginDependency</string>
 					<string>853.IBPluginDependency</string>
+					<string>857.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1110,7 +1134,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">855</int>
+			<int key="maxID">858</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
