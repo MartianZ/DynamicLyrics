@@ -79,15 +79,15 @@ FOUNDATION_STATIC_INLINE NSString *ttpCode(NSString *artist, NSString *title, lo
 		intVal1 = (intVal1 + intVal4) & 0x00000000FFFFFFFF;  
 		uBound += 1;  
 	}  
-	long intVal5 = Conv(intVal2 ^ intVal3);  
+	long intVal5 = Conv(intVal2 ^ intVal3);
 	intVal5 = Conv(intVal5 + (intVal1 | lrcId));  
 	intVal5 = Conv(intVal5 * (intVal1 | intVal3));  
-	intVal5 = Conv(intVal5 * (intVal2 ^ lrcId)); 
+	intVal5 = Conv(intVal5 * (intVal2 ^ lrcId));
     
     long intVal6 = intVal5;
     if (intVal6 > 0x80000000) intVal5 = intVal6 - 0x100000000;
     
-	return [[NSString stringWithFormat:@"%ld",intVal5] autorelease];  
+	return [[[NSString stringWithFormat:@"%ld",intVal5] retain] autorelease];
 }
 
 FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
