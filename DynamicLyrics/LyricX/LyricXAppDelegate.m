@@ -111,7 +111,7 @@
 
 -(IBAction)WriteArtwork:(id)sender
 {
-    NSSavePanel *saveDlg = [[NSSavePanel savePanel] autorelease];
+    NSSavePanel *saveDlg = [[NSSavePanel savePanel] retain];
     
     [saveDlg setTitle:@"Save Artwork"];
     
@@ -136,7 +136,8 @@
     NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
     NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
     imageData = [imageRep representationUsingType:NSJPEGFileType properties:imageProps];
-    [imageData writeToFile:[[saveDlg URL] path] atomically:NO];     
+    [imageData writeToFile:[[saveDlg URL] path] atomically:NO];
+    [saveDlg release];
     [image release];
 }
 
