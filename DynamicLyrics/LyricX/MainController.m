@@ -141,6 +141,8 @@
     
         
         if (!self.SongLyrics) {
+            [_convertManager release];
+            
             return;
         }
         
