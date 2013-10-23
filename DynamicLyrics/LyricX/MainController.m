@@ -78,7 +78,7 @@
 
 -(void)checkUpdate
 {
-    NSString* result = [RequestSender sendRequest:@"http://martianlaboratory.com/analytics/dynamiclyrics/20130703"];
+    NSString* result = [RequestSender sendRequest:@"http://martianlaboratory.com/analytics/dynamiclyrics/20131023"];
     
     if ([result isEqualToString:@"Update"])
     {
