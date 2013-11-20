@@ -55,7 +55,10 @@
     return self;
 }
 
+- (void) viewDidChangeBackingProperties {
+    self.layer.contentsScale = [[self window] backingScaleFactor];
 
+}
 
 static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor *color)
 {
