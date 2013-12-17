@@ -18,6 +18,7 @@
     CAGradientLayer *messageRectangleLayer;
     CATextLayer *messageTextLayer;
     CALayer *messageAlbumLayer;
+    NSTimer *hideTimer;
 }
 
 

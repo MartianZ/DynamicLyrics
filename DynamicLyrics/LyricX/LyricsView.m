@@ -50,7 +50,7 @@
         dnc = [NSDistributedNotificationCenter defaultCenter];
         [dnc addObserver:self selector:@selector(iTunesPlayerInfo:) name:@"com.apple.iTunes.playerInfo" object:nil];
 
-                
+        hideTimer = NULL;
     }
     return self;
 }
@@ -231,25 +231,32 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
         }
         
         //隐藏
-        [NSThread detachNewThreadSelector:@selector(hideMessageThread) toTarget:self withObject:nil];
+        [self hideMessageThread];
+//        [NSThread detachNewThreadSelector:@selector(hideMessageThread) toTarget:self withObject:nil];
  
     }
 }
 
-- (void) hideMessage {
+- (void) hideMessage:(NSTimer *)timer {
     messageRectangleLayer.opacity = 0;
+    hideTimer = NULL;
 }
 
 - (void) hideMessageThread {
     
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    long i = [userDefaults integerForKey:@Pref_Notification_Time];
-    if (i<=0) i = 3;
-    sleep((int)i);
+    long time = [userDefaults integerForKey:@Pref_Notification_Time];
+    if (time <= 0)
+        time = 3;
     
-    [self performSelectorOnMainThread:@selector(hideMessage) withObject:nil waitUntilDone:NO];
-
+    if (hideTimer != NULL)
+        [hideTimer invalidate];
+    
+    hideTimer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)time
+                                                 target:self
+                                               selector:@selector(hideMessage:)
+                                               userInfo:NULL
+                                                repeats:FALSE];
 }
 
 @end
