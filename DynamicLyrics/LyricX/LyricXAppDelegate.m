@@ -240,4 +240,24 @@
     }
 }
 
+- (IBAction)doubanFM:(id)sender
+{
+    iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+
+    [iTunes openLocation:@"http://mr3.douban.com/201312182134/51000c72924abb7f020d96411c49a4c4/view/song/small/p552455.mp3"];
+    
+    [iTunes.currentTrack setName:@"测试"];
+    [iTunes.currentTrack setComposer:@"DoubanFM"];
+    
+    NSArray *songArray = (NSArray *)[iTunes.currentPlaylist searchFor:@"DoubanFM" only:iTunesESrAAll];
+    iTunesTrack *tTrack = [songArray objectAtIndex:0];
+
+    
+    NSLog(@"Find: %@", tTrack.name);
+    
+    sleep(3);
+    [iTunes.currentTrack delete];
+    
+}
+
 @end
