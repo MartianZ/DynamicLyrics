@@ -11,10 +11,14 @@
 #import "LyricsSearchWnd.h"
 #import "Albumfiller.h"
 #import "AppPrefsWindowController.h"
+#import "DoubanController.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     MainController *Controller;
     LyricsSearchWnd *SearchWindow;
     Albumfiller *AlbumfillerWindow;
+    DoubanController *DoubanFMController;
+    
     IBOutlet NSMenu *AppMenu;
     IBOutlet NSMenuItem *currentDelay;
 

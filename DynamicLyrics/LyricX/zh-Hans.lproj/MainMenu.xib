@@ -184,16 +184,125 @@
                     </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="816"/>
+                <menuItem title="豆瓣FM" id="hyK-KA-xsa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="豆瓣FM" id="8WI-vD-7Lk">
+                        <items>
+                            <menuItem title="登录" id="xQF-Bu-eTe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="doubanFMSignInOrSignOut:" target="768" id="twC-M6-Z7z"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="ara-7O-rf0"/>
+                            <menuItem title="播放" id="lbc-vL-YDV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="下一首" id="eez-LC-Y22">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="正在播放" id="fuy-QY-cue">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="正在播放">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="10" headIndent="10"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="回レ! 雪月花" id="M4d-pt-UlC">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="回レ! 雪月花">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="15" headIndent="15"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="歌組雪月花" id="9OR-bZ-ufw">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="歌組雪月花">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="15" headIndent="15"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="wBX-uA-LEI"/>
+                            <menuItem title="私人兆赫" id="bbU-W7-7cr">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="红心兆赫" id="lCc-RD-c4Z">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="公共兆赫" id="aU7-GC-bTy">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="公共兆赫" id="Got-SV-y9R">
+                                    <items>
+                                        <menuItem title="Item" id="h6c-mL-7HE">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="品牌兆赫" id="ATB-c0-mFx">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="品牌兆赫" id="HH0-jg-muQ">
+                                    <items>
+                                        <menuItem title="Item" id="Ge1-Fp-sG4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="热门兆赫" id="hok-qO-MXH">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="热门兆赫" id="R8f-Tb-NSp">
+                                    <items>
+                                        <menuItem title="Item" id="slA-aB-A9u">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="上升最快" id="dYm-1C-Ule">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="上升最快" id="CG8-s6-v2n">
+                                    <items>
+                                        <menuItem title="Item" id="Vgp-C7-egM">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="全部兆赫" id="yNK-KX-Mky">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="全部兆赫" id="Xfr-ZV-4b2">
+                                    <items>
+                                        <menuItem title="Item" id="Tb4-69-yoF">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="QQ0-mO-MuB"/>
+                            <menuItem title="删除iTunes缓存" id="TsQ-Hb-dOI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="tEz-07-4PJ"/>
                 <menuItem title="偏好设置..." id="759">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="showPrefsWindow:" target="768" id="774"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="豆瓣FM测试用" id="hyK-KA-xsa">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="doubanFM:" target="768" id="Afm-Of-6or"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="818"/>

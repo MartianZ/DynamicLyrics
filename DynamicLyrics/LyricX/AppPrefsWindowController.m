@@ -17,6 +17,7 @@
 	//[self addView:donatePreferenceView label:@"Donate"];
     [self addView:notificationPreferenceView label:@"Notification"];
     [self addView:donatePreferenceView label:@"Donate"];
+    [self addView:doubanPreferenceView label:@"DoubanFM"];
 
     
 	[self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];

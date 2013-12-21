@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="advancedPreferenceView" destination="824" id="864"/>
                 <outlet property="donatePreferenceView" destination="2310" id="2311"/>
+                <outlet property="doubanPreferenceView" destination="yim-U5-aw2" id="Bzz-IY-gj0"/>
                 <outlet property="notificationPreferenceView" destination="823" id="2767"/>
             </connections>
         </customObject>
@@ -142,11 +143,11 @@
                                     <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3117">
                                         <dictionary key="options">
                                             <bool key="NSValidatesImmediately" value="YES"/>
-                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <integer key="NSNotApplicablePlaceholder" value="0"/>
                                             <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                            <integer key="NSNullPlaceholder" value="0"/>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -440,5 +441,20 @@
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="2099"/>
+        <customView identifier="DouBan" id="yim-U5-aw2" userLabel="Notification">
+            <rect key="frame" x="0.0" y="0.0" width="418" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" id="IRm-bC-L3y">
+                    <rect key="frame" x="166" y="75" width="87" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="豆瓣" id="z6G-f9-tKr">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
     </objects>
 </document>

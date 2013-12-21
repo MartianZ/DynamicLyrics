@@ -49,6 +49,7 @@
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
 		02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Lyrics.png */; };
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
+		CACCE47D1865A58A00FB9EA1 /* DoubanController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACCE47C1865A58A00FB9EA1 /* DoubanController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,8 @@
 		02BB8A37159CA9E8001334D7 /* Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyrics.png; sourceTree = "<group>"; };
 		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
+		CACCE47B1865A58A00FB9EA1 /* DoubanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanController.h; sourceTree = "<group>"; };
+		CACCE47C1865A58A00FB9EA1 /* DoubanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubanController.m; sourceTree = "<group>"; };
 		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -319,6 +322,7 @@
 		02710EC0152A9A53006D4BFF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CACCE47F1865A59100FB9EA1 /* Douban */,
 				025B0787152B1E8600E250BF /* GB_BIG_Converter.h */,
 				025B0788152B1E8600E250BF /* GB_BIG_Converter.m */,
 				02710EE3152AAB7E006D4BFF /* RegexKitLite.h */,
@@ -357,6 +361,15 @@
 				02135B531586F99F001480AD /* LyricsSearchWnd.xib */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		CACCE47F1865A59100FB9EA1 /* Douban */ = {
+			isa = PBXGroup;
+			children = (
+				CACCE47B1865A58A00FB9EA1 /* DoubanController.h */,
+				CACCE47C1865A58A00FB9EA1 /* DoubanController.m */,
+			);
+			name = Douban;
 			sourceTree = "<group>";
 		};
 		EF68C6CF169BF788006B9128 /* Products */ = {
@@ -483,6 +496,7 @@
 			files = (
 				0239025D154F9D2D00869A2D /* DBPrefsWindowController.m in Sources */,
 				02710E9B152A839F006D4BFF /* main.m in Sources */,
+				CACCE47D1865A58A00FB9EA1 /* DoubanController.m in Sources */,
 				02710EA2152A839F006D4BFF /* LyricXAppDelegate.m in Sources */,
 				02710EC7152A9B28006D4BFF /* MainController.m in Sources */,
 				02710ED9152AA87F006D4BFF /* QianQianLyrics.m in Sources */,

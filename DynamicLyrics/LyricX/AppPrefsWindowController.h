@@ -13,7 +13,8 @@
     IBOutlet NSView *notificationPreferenceView;
     IBOutlet NSView *advancedPreferenceView;
     IBOutlet NSView *donatePreferenceView;
-    
+    IBOutlet NSView *doubanPreferenceView;
+
 }
 
 - (IBAction)openFontPanel:(id)sender;

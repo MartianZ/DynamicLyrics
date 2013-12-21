@@ -17,6 +17,8 @@
     //Start coding at 2012-04-03 10:51 =。=
     //By Martian
     Controller = [[MainController alloc] initWithMenu:AppMenu initWithDelayItem:currentDelay];
+    DoubanFMController = [[DoubanController alloc] init];
+    
     
     //设置默认配置
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -238,6 +240,25 @@
         [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:[NSString stringWithFormat:@"Delay%@%@",Controller.iTunesCurrentTrack.artist,Controller.iTunesCurrentTrack.name]];
         
     }
+}
+
+#pragma mark -
+#pragma mark DoubanFM Methods
+
+
+- (IBAction)doubanFMSignInOrSignOut:(id)sender
+{
+    [[AppPrefsWindowController sharedPrefsWindowController] showWindow:nil];
+    [[AppPrefsWindowController sharedPrefsWindowController] displayViewForIdentifier:@"Donate" animate:NO];
+
+    [[[[AppPrefsWindowController sharedPrefsWindowController] window] toolbar] setSelectedItemIdentifier:@"Donate"];
+
+    
+    /*
+     NSString *firstIdentifier = [toolbarIdentifiers objectAtIndex:0];
+     [[[self window] toolbar] setSelectedItemIdentifier:firstIdentifier];
+     [self displayViewForIdentifier:firstIdentifier animate:NO];
+     */
 }
 
 - (IBAction)doubanFM:(id)sender
