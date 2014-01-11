@@ -125,7 +125,9 @@
             [self Anylize];  //如果搜索的歌曲是当前正在播放的歌曲，重新加载歌词
             CurrentLyric = 0;
         }
-        
+        NSLog(@"%@", [[note userInfo] objectForKey:@"ServerSongArtist"]);
+        [self performSelectorOnMainThread:@selector(postingThread:) withObject:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", [[note userInfo] objectForKey:@"ServerSongTitle"], @"ServerSongTitle", [[note userInfo] objectForKey:@"ServerSongArtist"], @"ServerSongArtist", nil] waitUntilDone:NO];
+
     }
 }
 
@@ -150,18 +152,21 @@
     
         [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
         
-        [self postingThread:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", nil]];
+        [self postingThread:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", @"", @"ServerSongArtist", @"", @"ServerSongTitle", nil]];
     
         [_convertManager release];
     }
 }
 
-- (void) postingThread:(NSDictionary*)tmpDict //post the lyrics to server in order to analize a better lyrics solution in future
+- (void) postingThread:(NSDictionary*)tmpDict //post the lyrics to server in order to analyze a better lyrics solution in future
 {
-    
+    NSLog(@"%@", [tmpDict objectForKey:@"ServerSongTitle"]);
     NSString *post = nil;
     NSLog(@"%@", [tmpDict objectForKey:@"title"]);
-    post = [[NSString alloc] initWithFormat:@"title=%@&artist=%@&content=%@", [tmpDict objectForKey:@"title"], [tmpDict objectForKey:@"artist"], [tmpDict objectForKey:@"lyrics"]];
+    
+    
+    
+    post = [[NSString alloc] initWithFormat:@"title=%@&artist=%@&content=%@&servertitle=%@&serverartist=%@", [tmpDict objectForKey:@"title"], [tmpDict objectForKey:@"artist"], [tmpDict objectForKey:@"lyrics"], [tmpDict objectForKey:@"ServerSongTitle"], [tmpDict objectForKey:@"ServerSongArtist"]];
     
     NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     
@@ -171,7 +176,7 @@
     NSString *urlString = @"http://martianlaboratory.com/lrc/";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-    [request setTimeoutInterval:2];
+    [request setTimeoutInterval:5];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
     
