@@ -149,10 +149,45 @@
         [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
     
         [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
-
+        
+        [self postingThread:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", nil]];
     
         [_convertManager release];
     }
+}
+
+- (void) postingThread:(NSDictionary*)tmpDict //post the lyrics to server in order to analize a better lyrics solution in future
+{
+    
+    NSString *post = nil;
+    NSLog(@"%@", [tmpDict objectForKey:@"title"]);
+    post = [[NSString alloc] initWithFormat:@"title=%@&artist=%@&content=%@", [tmpDict objectForKey:@"title"], [tmpDict objectForKey:@"artist"], [tmpDict objectForKey:@"lyrics"]];
+    
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%lu", [postData length]];
+
+    
+    NSString *urlString = @"http://martianlaboratory.com/lrc/";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    [request setTimeoutInterval:2];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+
+    [request setHTTPBody:postData];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:NULL];
+    NSString *result = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease];
+
+    [request release];
+    NSLog(@"%@", result);
+    
+
 }
 
 - (void) WorkingThread:(NSMutableDictionary*)tmpDict
