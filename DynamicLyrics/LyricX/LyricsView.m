@@ -49,6 +49,8 @@
         
         dnc = [NSDistributedNotificationCenter defaultCenter];
         [dnc addObserver:self selector:@selector(iTunesPlayerInfo:) name:@"com.apple.iTunes.playerInfo" object:nil];
+        
+        textLayer.contentsScale = [[NSScreen mainScreen] backingScaleFactor];
 
         hideTimer = NULL;
     }
