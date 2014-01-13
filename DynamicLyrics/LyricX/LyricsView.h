@@ -14,11 +14,15 @@
     NSDistributedNotificationCenter *dnc;
     CALayer *rootLayer;
     CATextLayer *textLayer;
+    CATextLayer *secondTextLayer;
+
     CAGradientLayer *rectangleLayer;
     CAGradientLayer *messageRectangleLayer;
     CATextLayer *messageTextLayer;
     CALayer *messageAlbumLayer;
     NSTimer *hideTimer;
+    NSTimer *switchTimer;
+    BOOL switchFlag;
 }
 
 

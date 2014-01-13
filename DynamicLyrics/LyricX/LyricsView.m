@@ -13,12 +13,16 @@
 @interface LyricsView ()
 
 @property(copy, nonatomic)NSString *currentLyrics;
+@property(copy, nonatomic)NSString *lastLyrics;
+@property(copy, nonatomic)NSString *nextLyrics;
 
 @end
 
 @implementation LyricsView
 
 @synthesize currentLyrics=_currentLyrics;
+@synthesize nextLyrics=_nextLyrics;
+@synthesize lastLyrics=_lastLyrics;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -36,12 +40,14 @@
         [self setWantsLayer:YES];
         
         textLayer = [[CATextLayer layer] retain];
+        secondTextLayer = [[CATextLayer layer] retain];
         rectangleLayer = [[CAGradientLayer layer] retain];
         messageRectangleLayer = [[CAGradientLayer layer] retain];
         messageAlbumLayer = [[CALayer layer] retain];
         messageTextLayer = [[CATextLayer layer] retain];
         [rootLayer addSublayer:rectangleLayer];
         [rootLayer addSublayer:textLayer];
+        [rootLayer addSublayer:secondTextLayer];
         [rootLayer addSublayer:messageRectangleLayer];
 
         [messageRectangleLayer addSublayer:messageAlbumLayer];
@@ -51,8 +57,14 @@
         [dnc addObserver:self selector:@selector(iTunesPlayerInfo:) name:@"com.apple.iTunes.playerInfo" object:nil];
         
         textLayer.contentsScale = [[NSScreen mainScreen] backingScaleFactor];
+        secondTextLayer.contentsScale = [[NSScreen mainScreen] backingScaleFactor];
 
         hideTimer = NULL;
+        switchTimer = NULL;
+        switchFlag = YES;
+        
+        textLayer.string = @"";
+        secondTextLayer.string = @"";
     }
     return self;
 }
@@ -98,6 +110,14 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 		}
     }else{
 		self.currentLyrics = lyrics;
+        if ([[[note userInfo] allKeys] containsObject:@"NextLyrics"]) {
+            self.nextLyrics = [[note userInfo] objectForKey:@"NextLyrics"];
+        } else {
+            self.nextLyrics = @"";
+        }
+        if (!self.currentLyrics || [self.currentLyrics length] == 0) {
+            self.nextLyrics = @""; //不剧透歌词
+        }
 	}
     
 	if ([userDefaults boolForKey:@Pref_Enable_Desktop_Lyrics] || forceUpdate) {
@@ -144,23 +164,97 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 		
 		CGColorRef cgfontColor = CGColorCreateFromNSColor (colorSpace, textColor);
 		
-		textLayer.string = self.currentLyrics;
-		textLayer.fontSize = fontSize;
-		textLayer.frame=CGRectMake(x, y - h/2 + fontSize/2, w, h);
-		textLayer.alignmentMode = kCAAlignmentCenter;
-		textLayer.font = font;
+        textLayer.fontSize = fontSize;
+        textLayer.alignmentMode = kCAAlignmentCenter;
+        textLayer.font = font;
         if ([userDefaults boolForKey:@Pref_Shadow_Style_Text]) {
             textLayer.shadowOpacity = 1.0;
             textLayer.shadowRadius = 2;
             textLayer.shadowOffset = CGSizeMake (0,  0);
         } else {
             textLayer.shadowOpacity = 0;
-
+            
         }
-        
         textLayer.foregroundColor = cgfontColor;
+        
+        
+        secondTextLayer.fontSize = fontSize;
+        secondTextLayer.alignmentMode = kCAAlignmentCenter;
+        secondTextLayer.font = font;
+        if ([userDefaults boolForKey:@Pref_Shadow_Style_Text]) {
+            secondTextLayer.shadowOpacity = 1.0;
+            secondTextLayer.shadowRadius = 2;
+            secondTextLayer.shadowOffset = CGSizeMake (0,  0);
+        } else {
+            secondTextLayer.shadowOpacity = 0;
+        }
+        secondTextLayer.foregroundColor = cgfontColor;
+        
+        if (NO || [self.nextLyrics length] == 0) {
+            //单行歌词
+            textLayer.string = self.currentLyrics;
+            textLayer.frame=CGRectMake(x, y - h/2 + fontSize / 2, w, h); //fontSize / 2 * number of line
+            secondTextLayer.string = @"";
+        } else {
+            ///secondTextLayer start
+            
+            
+            if (switchFlag) {
+                if ([secondTextLayer.string isEqualToString:self.currentLyrics]) {
+                    secondTextLayer.frame=CGRectMake(x, y - h/2 + fontSize, w, h);
+                    
+                    [textLayer removeAllAnimations];
+                    textLayer.hidden = YES;
+                    [textLayer removeAllAnimations];
+                    textLayer.frame=CGRectMake(x, y - h/2  - 5, w, h);
+                    [textLayer removeAllAnimations];
 
+                    textLayer.hidden = NO;
+                    textLayer.string = self.nextLyrics;
+
+                    switchFlag = NO;
+
+                } else {
+                    //RESET!
+                    switchFlag = YES;
+                    textLayer.frame=CGRectMake(x, y - h/2 + fontSize, w, h);
+                    secondTextLayer.frame=CGRectMake(x, y - h/2  - 5, w, h);
+                    textLayer.string = self.currentLyrics;
+                    secondTextLayer.string = self.nextLyrics;
+                }
+            } else {
+                if ([textLayer.string isEqualToString:self.currentLyrics]) {
+                    
+                    textLayer.frame=CGRectMake(x, y - h/2 + fontSize, w, h);
+                    
+                    [secondTextLayer removeAllAnimations];
+                    secondTextLayer.hidden = YES;
+                    [secondTextLayer removeAllAnimations];
+                    secondTextLayer.frame=CGRectMake(x, y - h/2  - 5, w, h);
+                    [secondTextLayer removeAllAnimations];
+                    
+                    secondTextLayer.hidden = NO;
+                    secondTextLayer.string = self.nextLyrics;
+
+
+                } else {
+                    //RESET!
+                    textLayer.frame=CGRectMake(x, y - h/2 + fontSize, w, h);
+                    secondTextLayer.frame=CGRectMake(x, y - h/2  - 5, w, h);
+                    textLayer.string = self.currentLyrics;
+                    secondTextLayer.string = self.nextLyrics;
+                }
+                switchFlag = YES;
+
+            }
+
+        
+            ///secondTextLayer end
+        }
 		
+
+        
+        
 		
 		CGFontRelease(font);
 		CGColorSpaceRelease (colorSpace);

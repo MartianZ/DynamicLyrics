@@ -270,13 +270,16 @@
                 }
                 
                 NSString* lyric = [[NSString alloc]initWithFormat:@"%@",[NSString stringWithString:[[lyrics objectAtIndex:CurrentLyric] objectForKey:@"Content"]]];
+                
+                NSString* nextLyric = !(CurrentLyric < Total - 1) ? @"" : [[NSString alloc]initWithFormat:@"%@",[NSString stringWithString:[[lyrics objectAtIndex:CurrentLyric + 1] objectForKey:@"Content"]]];
+                
                 if (![self.CurrentSongLyrics isEqualToString:lyric])
                 {
                     self.CurrentSongLyrics = lyric;
-                    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
+                    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:self.CurrentSongLyrics, @"Lyrics", nextLyric, @"NextLyrics", nil]];
                     
                 }
-                [lyric release];
+                [nextLyric release];
             }
             @catch (NSException *exception) {
             }
