@@ -49,6 +49,7 @@
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
 		02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Lyrics.png */; };
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
+		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		02BB8A37159CA9E8001334D7 /* Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyrics.png; sourceTree = "<group>"; };
 		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
+		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +309,7 @@
 		02710E95152A839F006D4BFF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA5124CD18840FAD0085C1C8 /* Credits.rtf */,
 				02390275154FA26E00869A2D /* Constants.h */,
 				02147732159F547100B92431 /* Localizable.strings */,
 				02710E96152A839F006D4BFF /* LyricX-Info.plist */,
@@ -443,6 +446,7 @@
 				02710EA5152A839F006D4BFF /* MainMenu.xib in Resources */,
 				025B0784152B1C8700E250BF /* big5.txt in Resources */,
 				025B0785152B1C8700E250BF /* gb.txt in Resources */,
+				CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */,
 				02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */,
 				02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */,
 				0251F443153980A60019F36F /* music-default.gif in Resources */,
