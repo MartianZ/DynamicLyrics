@@ -400,55 +400,56 @@
             </subviews>
         </customView>
         <customView id="2310" userLabel="Donate">
-            <rect key="frame" x="0.0" y="0.0" width="409" height="208"/>
+            <rect key="frame" x="0.0" y="0.0" width="409" height="222"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="2312">
-                    <rect key="frame" x="18" y="144" width="373" height="51"/>
+                    <rect key="frame" x="18" y="124" width="371" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="We are very pleased to see that our software can help you. If you like this App, consider donating to keep development going!" id="2313">
+                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="2313">
                         <font key="font" metaFont="system"/>
+                        <string key="title">DynamicLyrics、fakeThunder等免费、开源软件由MartianZ为您开发，很荣幸看到我开发的软件能够帮助到您。DynamicLyrics是一款免费软件，但是需要消耗时间去制作，同时软件的后台服务器也需要资金去维护，如果您喜欢我的作品，请考虑捐赠以支持我后续的开发。</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" id="2363">
-                    <rect key="frame" x="121" y="103" width="167" height="23"/>
+                    <rect key="frame" x="121" y="94" width="167" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="smallSquare" title="Donate via PayPal" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2364">
+                    <buttonCell key="cell" type="smallSquare" title="通过 PayPal 捐赠" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2364">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" size="13" name="STHeitiSC-Light"/>
                     </buttonCell>
                     <connections>
                         <action selector="DonatePaypal:" target="-2" id="2657"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" id="2389">
-                    <rect key="frame" x="121" y="74" width="167" height="23"/>
+                    <rect key="frame" x="121" y="65" width="167" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="smallSquare" title="Donate via 支付宝" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2391">
+                    <buttonCell key="cell" type="smallSquare" title="通过 支付宝 捐赠" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2391">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" size="13" name="STHeitiSC-Light"/>
                     </buttonCell>
                     <connections>
                         <action selector="DonateAlipay:" target="-2" id="2655"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" id="2397">
-                    <rect key="frame" x="121" y="45" width="167" height="23"/>
+                    <rect key="frame" x="121" y="36" width="167" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="smallSquare" title="Donate via 亚马逊中国" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2399">
+                    <buttonCell key="cell" type="smallSquare" title="通过 亚马逊中国 捐赠" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2399">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" size="13" name="STHeitiSC-Light"/>
                     </buttonCell>
                     <connections>
                         <action selector="DonateAmazon:" target="-2" id="2656"/>
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="2613">
-                    <rect key="frame" x="18" y="6" width="302" height="19"/>
+                    <rect key="frame" x="18" y="5" width="302" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thank you for being awesome!" id="2614">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thank you for being awesome! (っ´ω`c)♡" id="2614">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
