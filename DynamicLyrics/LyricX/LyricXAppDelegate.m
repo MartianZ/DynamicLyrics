@@ -39,7 +39,7 @@
     if ([userDefaults objectForKey:@Pref_Enable_Desktop_Lyrics] == nil)
     {
         [userDefaults setBool:YES forKey:@Pref_Enable_Desktop_Lyrics];
-        [userDefaults setBool:YES forKey:@Pref_Enable_MenuBar_Lyrics];
+        [userDefaults setBool:NO forKey:@Pref_Enable_MenuBar_Lyrics];
     }
     
     
