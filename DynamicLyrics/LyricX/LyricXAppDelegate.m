@@ -43,12 +43,14 @@
     }
     
     
-    if ([userDefaults integerForKey:@"DonationNew"] == 5) {
-        [[NSAlert alertWithMessageText:@"Donate us" defaultButton:@"OKay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"DynamicLyrics is a free and open-source software. We are very pleased to see that our software can help you. If you like this App, consider donating to keep development going! \nYou can click the \"Prefrences\" - \"Donate\" tab to get a specific way of making a donation.\n\nThanks for your support."] runModal];
+    if ([userDefaults integerForKey:@"DonationNewNew"] == 5 || [userDefaults integerForKey:@"DonationNewNew"] == 40) {
+        [[NSAlert alertWithMessageText:NSLocalizedString(@"Donate us", nil) defaultButton:@"OKay" alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Donate", nil)] runModal];
     }
-    if ([userDefaults integerForKey:@"DonationNew"] <= 6) {
-        [userDefaults setInteger:[userDefaults integerForKey:@"DonationNew"] + 1 forKey:@"DonationNew"];
+    if ([userDefaults integerForKey:@"DonationNewNew"] <= 50) {
+        [userDefaults setInteger:[userDefaults integerForKey:@"DonationNewNew"] + 1 forKey:@"DonationNewNew"];
     }
+    [userDefaults synchronize];
+
 }
 
 -(IBAction)OpenAlbumfillerWindow:(id)sender

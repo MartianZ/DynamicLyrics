@@ -3,3 +3,5 @@
 "CurrentDelay" = "Current Delay:";
 "SoftwareUpdateTitle" = "Software Update";
 "SoftwareUpdate" = "A new version of DynamicLyrics is available! Please click \"Check for Updates\" menu to update your software automatically.";
+"Donate" = "DynamicLyrics is a free and open-source software. We are very pleased to see that our software can help you. If you like this App, consider donating to keep development going! \nYou can click the \"Prefrences\" - \"Donate\" tab to get a specific way of making a donation.\n\nThanks for your support.";
+"Donate us" = "Donate us";
