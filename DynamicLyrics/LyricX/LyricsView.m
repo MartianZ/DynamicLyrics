@@ -206,6 +206,8 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
                     [textLayer removeAllAnimations];
                     textLayer.hidden = YES;
                     [textLayer removeAllAnimations];
+                    textLayer.string = @"";
+                    [textLayer removeAllAnimations];
                     textLayer.frame=CGRectMake(x, y - h/2  - 5, w, h);
                     [textLayer removeAllAnimations];
 
@@ -229,6 +231,8 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
                     
                     [secondTextLayer removeAllAnimations];
                     secondTextLayer.hidden = YES;
+                    [secondTextLayer removeAllAnimations];
+                    secondTextLayer.string = @"";
                     [secondTextLayer removeAllAnimations];
                     secondTextLayer.frame=CGRectMake(x, y - h/2  - 5, w, h);
                     [secondTextLayer removeAllAnimations];
