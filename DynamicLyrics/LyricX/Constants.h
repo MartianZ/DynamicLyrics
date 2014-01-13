@@ -35,6 +35,7 @@
 #define Pref_Desktop_Background_Color "PrefDesktopBackgroundColor"
 
 #define Pref_Launch_Quit_With_iTunes "PrefLaunchQuitWithiTunes"
+#define Pref_Lyrics_Show_Next_Line "PrefLyricsShowNextLine"
 
 //NOTIFICATION
 #define Pref_Enable_Notification "PrefEnableNotification"

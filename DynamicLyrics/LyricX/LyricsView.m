@@ -190,7 +190,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
         }
         secondTextLayer.foregroundColor = cgfontColor;
         
-        if (NO || [self.nextLyrics length] == 0) {
+        if (![userDefaults boolForKey:@Pref_Lyrics_Show_Next_Line] || [self.nextLyrics length] == 0) {
             //单行歌词
             textLayer.string = self.currentLyrics;
             textLayer.frame=CGRectMake(x, y - h/2 + fontSize / 2, w, h); //fontSize / 2 * number of line
