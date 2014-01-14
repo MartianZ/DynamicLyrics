@@ -142,11 +142,11 @@
                                     <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3082">
                                         <dictionary key="options">
                                             <bool key="NSValidatesImmediately" value="YES"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
                                             <integer key="NSNotApplicablePlaceholder" value="0"/>
                                             <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
                                             <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -169,8 +169,9 @@
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2126"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopTextColor" id="2216">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopTextColor" id="yod-m1-nQ8">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSValueTransformerName">NSUnarchiveFromData</string>
                                         </dictionary>
@@ -241,8 +242,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2241"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="2238">
+                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="s4M-X9-JXf">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">150</string>
                                         </dictionary>
                                     </binding>
@@ -258,8 +261,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2243"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="2239">
+                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="sev-Mg-Nct">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">100</string>
                                         </dictionary>
                                     </binding>
@@ -275,8 +280,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2245"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="2658">
+                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="pv6-8K-jBv">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">100</string>
                                         </dictionary>
                                     </binding>
@@ -288,7 +295,12 @@
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1946"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2242"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="2231"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="MTq-iX-4Td">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="1935">
@@ -297,7 +309,12 @@
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1945"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2244"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="2233"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="kip-eb-ul8">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="1936">
@@ -306,7 +323,12 @@
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1944"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2246"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="2235"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="FSR-wH-COy">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <textField verticalHuggingPriority="750" id="1937">
@@ -319,8 +341,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2247"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="2249">
+                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="eQd-fD-Y3g">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">1000</string>
                                         </dictionary>
                                     </binding>
@@ -332,7 +356,12 @@
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1941"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2248"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="2237"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="bvd-y0-wjm">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <textField verticalHuggingPriority="750" id="1923">
@@ -350,8 +379,9 @@
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2127"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopBackgroundColor" id="2220">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopBackgroundColor" id="TSe-Jd-Z7Z">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSValueTransformerName">NSUnarchiveFromData</string>
                                         </dictionary>

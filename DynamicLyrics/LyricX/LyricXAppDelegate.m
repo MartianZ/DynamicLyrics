@@ -8,38 +8,44 @@
 
 #import "LyricXAppDelegate.h"
 #import "Constants.h"
+#import <Carbon/Carbon.h>
 @implementation AppDelegate
 
+//保存快捷键事件回调的引用
+static EventHandlerRef g_EventHandlerRef = NULL;
+//保存快捷键注册的引用
+static EventHotKeyRef a_HotKeyRef = NULL;
+//快捷键注册使用的信息
+static EventHotKeyID a_HotKeyID = {'keyA',1};
+
++ (void)initialize {
+	if ( self == [AppDelegate class] ) {
+        //set default preference values
+        NSDictionary *defaultValues = @{@Pref_Desktop_Text_Color: [NSArchiver archivedDataWithRootObject:[NSColor yellowColor]],
+                                        @Pref_Desktop_Background_Color: [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0 alpha:0.25]],
+                                        @Pref_Enable_Desktop_Lyrics: @(YES),
+                                        @Pref_Enable_MenuBar_Lyrics: @(NO),
+                                        @Pref_hotkeyCodeWriteLyrics: [NSNumber numberWithInt:kVK_ANSI_W],
+                                        @Pref_hotkeyModifiersWriteLyrics:[NSNumber numberWithInt:optionKey]
+                                        };
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+        [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues];
+        [[NSUserDefaults standardUserDefaults] synchronize];  //And sync them
+
+    }
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     //Initialize application
     //Start coding at 2012-04-03 10:51 =。=
-    //By Martian
+    //By MartianZ
     Controller = [[MainController alloc] initWithMenu:AppMenu initWithDelayItem:currentDelay];
-    
-    //设置默认配置
+
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@",[userDefaults objectForKey:@Pref_Desktop_Text_Color]);
-    if ([userDefaults objectForKey:@Pref_Desktop_Text_Color] == nil) {
-        NSData *theData=[NSArchiver archivedDataWithRootObject:[NSColor whiteColor]];
-        [userDefaults setObject:theData forKey:@Pref_Desktop_Text_Color];
-    }
-    
-    if ([userDefaults objectForKey:@Pref_Desktop_Background_Color] == nil) {
-        NSData *theData=[NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0 alpha:0.25]];
-        [userDefaults setObject:theData forKey:@Pref_Desktop_Background_Color];
-    }
-    
     if ([userDefaults floatForKey:@Pref_Lyrics_W] <= 0)
     {
         [userDefaults setInteger:NSScreen.mainScreen.frame.size.width-300 forKey:@Pref_Lyrics_W];
-    }
-    
-    if ([userDefaults objectForKey:@Pref_Enable_Desktop_Lyrics] == nil)
-    {
-        [userDefaults setBool:YES forKey:@Pref_Enable_Desktop_Lyrics];
-        [userDefaults setBool:NO forKey:@Pref_Enable_MenuBar_Lyrics];
     }
     
     
@@ -50,7 +56,69 @@
         [userDefaults setInteger:[userDefaults integerForKey:@"DonationNewNew"] + 1 forKey:@"DonationNewNew"];
     }
     [userDefaults synchronize];
+    
+    //EventTypeSpec eventSpecs[] = {{kEventClassKeyboard,kEventHotKeyPressed}};
+    //InstallApplicationEventHandler(NewEventHandlerUPP(myHotKeyHandler),GetEventTypeCount(eventSpecs), eventSpecs, (void *)self, &g_EventHandlerRef);
+        
+    //注册快捷键:option+B
+    //RegisterEventHotKey((UInt32)[userDefaults integerForKey:@Pref_hotkeyCodeWriteLyrics], (UInt32)[userDefaults integerForKey:@Pref_hotkeyModifiersWriteLyrics], a_HotKeyID, GetApplicationEventTarget(), 0, &a_HotKeyRef);
 
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+    /*
+    //注销快捷键
+    if (a_HotKeyRef)
+    {
+        UnregisterEventHotKey(a_HotKeyRef);
+        a_HotKeyRef = NULL;
+    }
+
+    //注销快捷键的事件回调
+    if (g_EventHandlerRef)
+    {
+        RemoveEventHandler(g_EventHandlerRef);
+        g_EventHandlerRef = NULL;
+    }*/
+}
+
+
+
+OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent, void *inUserData)
+{
+    //判定事件的类型是否与所注册的一致
+    if (GetEventClass(inEvent) == kEventClassKeyboard && GetEventKind(inEvent) == kEventHotKeyPressed)
+    {
+        //获取快捷键信息，以判定是哪个快捷键被触发
+        EventHotKeyID keyID;
+        GetEventParameter(inEvent,
+                          kEventParamDirectObject,
+                          typeEventHotKeyID,
+                          NULL,
+                          sizeof(keyID),
+                          NULL,
+                          &keyID);
+        if (keyID.id == a_HotKeyID.id) {
+            NSLog(@"Key pressed!");
+            AppDelegate * mySelf = (AppDelegate *) inUserData;
+            
+            @try {
+                [mySelf WriteLyricsToiTunes:nil];
+            }
+            @catch (NSException *exception) {
+                //
+            }
+            @finally {
+                [[NSSound soundNamed:@"Ping"] play];
+
+            }
+
+            
+            
+        }
+    }
+    return noErr;
 }
 
 -(IBAction)OpenAlbumfillerWindow:(id)sender

@@ -51,6 +51,9 @@
 		CA49F83E188535AD006B6E81 /* DynamicLyrics.icns in Resources */ = {isa = PBXBuildFile; fileRef = CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */; };
 		CA49F842188535D2006B6E81 /* StatusIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F841188535D2006B6E81 /* StatusIcon@2x.png */; };
 		CA49F844188536DA006B6E81 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F843188536DA006B6E81 /* StatusIcon.png */; };
+		CA508EE8188545050050F1BE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA508EE7188545050050F1BE /* Carbon.framework */; };
+		CA508EF2188558D30050F1BE /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
+		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0214771B159EC65900B92431 /* Sparkle.framework in CopyFiles */,
+				CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +168,8 @@
 		CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DynamicLyrics.icns; sourceTree = "<group>"; };
 		CA49F841188535D2006B6E81 /* StatusIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusIcon@2x.png"; sourceTree = "<group>"; };
 		CA49F843188536DA006B6E81 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
+		CA508EE7188545050050F1BE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA508EF2188558D30050F1BE /* ShortcutRecorder.framework in Frameworks */,
+				CA508EE8188545050050F1BE /* Carbon.framework in Frameworks */,
 				020038E7158F89C700F478DE /* ServiceManagement.framework in Frameworks */,
 				024B8BDF1584EFB000444B78 /* Quartz.framework in Frameworks */,
 				024B8BE01584EFB000444B78 /* QuartzCore.framework in Frameworks */,
@@ -276,6 +284,8 @@
 		02710E8D152A839F006D4BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */,
+				CA508EE7188545050050F1BE /* Carbon.framework */,
 				02147715159EC55800B92431 /* Sparkle.framework */,
 				020038E6158F89C700F478DE /* ServiceManagement.framework */,
 				024B8BDD1584EFB000444B78 /* Quartz.framework */,
@@ -626,7 +636,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/MartianZ/Documents/Xcode/DynamicLyrics/DynamicLyrics,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
@@ -647,7 +658,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/MartianZ/Documents/Xcode/DynamicLyrics/DynamicLyrics,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";

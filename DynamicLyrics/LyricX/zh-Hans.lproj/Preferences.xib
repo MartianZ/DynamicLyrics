@@ -86,18 +86,18 @@
             </subviews>
         </customView>
         <customView id="824" userLabel="Advanced">
-            <rect key="frame" x="0.0" y="0.0" width="434" height="291"/>
+            <rect key="frame" x="0.0" y="0.0" width="434" height="294"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box autoresizesSubviews="NO" title="行为设置:" borderType="line" id="1865">
-                    <rect key="frame" x="23" y="6" width="388" height="102"/>
+                    <rect key="frame" x="23" y="8" width="388" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="386" height="86"/>
+                        <rect key="frame" x="1" y="1" width="386" height="87"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button id="2672">
-                                <rect key="frame" x="16" y="46" width="141" height="37"/>
+                                <rect key="frame" x="16" y="47" width="141" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="随iTunes启动和退出" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2673">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button id="3037">
-                                <rect key="frame" x="16" y="33" width="180" height="18"/>
+                                <rect key="frame" x="16" y="34" width="180" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="iTunes暂停播放时显示歌词" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3038">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -132,21 +132,21 @@
                                 </connections>
                             </button>
                             <button id="3073">
-                                <rect key="frame" x="16" y="11" width="308" height="18"/>
+                                <rect key="frame" x="16" y="12" width="295" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="在所有的屏幕空间中显示歌词窗口（重启后生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3074">
+                                <buttonCell key="cell" type="check" title="在所有的屏幕空间中显示歌词窗口（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3074">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
                                 </buttonCell>
                                 <connections>
                                     <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3117">
                                         <dictionary key="options">
                                             <bool key="NSValidatesImmediately" value="YES"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
                                             <integer key="NSNotApplicablePlaceholder" value="0"/>
                                             <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
                                             <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -157,7 +157,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <box autoresizesSubviews="NO" title="桌面歌词设置:" borderType="line" id="1887">
-                    <rect key="frame" x="23" y="112" width="388" height="168"/>
+                    <rect key="frame" x="23" y="115" width="388" height="168"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="386" height="152"/>
@@ -169,8 +169,9 @@
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2126"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopTextColor" id="2216">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopTextColor" id="YNL-Ix-7fK">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSValueTransformerName">NSUnarchiveFromData</string>
                                         </dictionary>
@@ -204,8 +205,10 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsDisplayFont" id="2659">
+                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsDisplayFont" id="ZRw-Sh-Lyd">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">Helvetica, 28.0</string>
                                         </dictionary>
                                     </binding>
@@ -241,8 +244,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2241"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="2238">
+                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="oCl-tj-WAN">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">150</string>
                                         </dictionary>
                                     </binding>
@@ -258,8 +263,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2243"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="2239">
+                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="aMB-DZ-Vsr">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">100</string>
                                         </dictionary>
                                     </binding>
@@ -275,8 +282,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2245"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="2658">
+                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="hCX-cY-m2G">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">100</string>
                                         </dictionary>
                                     </binding>
@@ -319,8 +328,10 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2247"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="2249">
+                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="y41-oZ-jKC">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSNullPlaceholder">1000</string>
                                         </dictionary>
                                     </binding>
@@ -350,8 +361,9 @@
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2127"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopBackgroundColor" id="2220">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopBackgroundColor" id="yz3-mo-3il">
                                         <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
                                             <string key="NSValueTransformerName">NSUnarchiveFromData</string>
                                         </dictionary>
