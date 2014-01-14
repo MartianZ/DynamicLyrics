@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		020038E7158F89C700F478DE /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020038E6158F89C700F478DE /* ServiceManagement.framework */; };
-		02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02035AA21554367B00AB5AB6 /* StatusIcon.png */; };
 		02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02135B531586F99F001480AD /* LyricsSearchWnd.xib */; };
 		02147716159EC55800B92431 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; };
 		02147718159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */; };
@@ -49,6 +48,9 @@
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
 		02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Lyrics.png */; };
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
+		CA49F83E188535AD006B6E81 /* DynamicLyrics.icns in Resources */ = {isa = PBXBuildFile; fileRef = CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */; };
+		CA49F842188535D2006B6E81 /* StatusIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F841188535D2006B6E81 /* StatusIcon@2x.png */; };
+		CA49F844188536DA006B6E81 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F843188536DA006B6E81 /* StatusIcon.png */; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +89,6 @@
 
 /* Begin PBXFileReference section */
 		020038E6158F89C700F478DE /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		02035AA21554367B00AB5AB6 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
 		02135B521586F99F001480AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LyricsSearchWnd.xib; sourceTree = "<group>"; };
 		02135B541586F9A4001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LyricsSearchWnd.xib"; sourceTree = "<group>"; };
 		02147715159EC55800B92431 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
@@ -160,6 +161,9 @@
 		02BB8A37159CA9E8001334D7 /* Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyrics.png; sourceTree = "<group>"; };
 		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
+		CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DynamicLyrics.icns; sourceTree = "<group>"; };
+		CA49F841188535D2006B6E81 /* StatusIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusIcon@2x.png"; sourceTree = "<group>"; };
+		CA49F843188536DA006B6E81 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,11 +237,12 @@
 		025B0781152B1C7300E250BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CA49F843188536DA006B6E81 /* StatusIcon.png */,
+				CA49F841188535D2006B6E81 /* StatusIcon@2x.png */,
 				02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */,
 				02ACCFB21566932D004CC95A /* Donate.png */,
 				02BB8A37159CA9E8001334D7 /* Lyrics.png */,
 				02BB8A3A159CAA9B001334D7 /* Notification.png */,
-				02035AA21554367B00AB5AB6 /* StatusIcon.png */,
 				0239025E154F9D7A00869A2D /* General.png */,
 				0251F442153980A60019F36F /* music-default.gif */,
 				025B0782152B1C8700E250BF /* big5.txt */,
@@ -249,6 +254,7 @@
 		02710E7F152A839F006D4BFF = {
 			isa = PBXGroup;
 			children = (
+				CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */,
 				029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */,
 				021B9E91158E209900039011 /* DynamicLyrics.entitlements */,
 				02BA4D8E1591A93400BB03CD /* ico512.icns */,
@@ -444,7 +450,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				02710EA5152A839F006D4BFF /* MainMenu.xib in Resources */,
+				CA49F842188535D2006B6E81 /* StatusIcon@2x.png in Resources */,
+				CA49F844188536DA006B6E81 /* StatusIcon.png in Resources */,
 				025B0784152B1C8700E250BF /* big5.txt in Resources */,
+				CA49F83E188535AD006B6E81 /* DynamicLyrics.icns in Resources */,
 				025B0785152B1C8700E250BF /* gb.txt in Resources */,
 				CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */,
 				02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */,
@@ -452,7 +461,6 @@
 				0251F443153980A60019F36F /* music-default.gif in Resources */,
 				02A561021586F74200E37C6C /* Preferences.xib in Resources */,
 				0239025F154F9D7A00869A2D /* General.png in Resources */,
-				02035AA31554367B00AB5AB6 /* StatusIcon.png in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
 				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
 				02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */,

@@ -29,7 +29,7 @@
         [bar removeStatusItem:_statusItem];
         [bar _insertStatusItem:_statusItem withPriority:INT_MIN];
         [_statusItem setLength:NSVariableStatusItemLength];
-        [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+        [_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
         [_statusItem setHighlightMode:YES];
         [_statusItem setMenu:AppMenu];
         nc = [NSNotificationCenter defaultCenter];
@@ -112,7 +112,7 @@
 		if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
 			[_queue cancelAllOperations];
 			[_statusItem setAttributedTitle:nil];
-			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 			
 			[pool release];
 			return;
@@ -128,7 +128,7 @@
     if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
 		if ([self.CurrentSongLyrics isEqualToString:@""]) {
 			[_statusItem setAttributedTitle:nil];
-			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 		}else{
 			[_statusItem setImage:nil];
 			NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(showSmoothTitle:) object:self.CurrentSongLyrics];
@@ -137,7 +137,7 @@
 		}
     } else {
 		[_statusItem setAttributedTitle:nil];
-		[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+		[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
     }
     
     [pool release];
