@@ -191,6 +191,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="818"/>
+                <menuItem title="捐赠..." id="keS-gD-NAJ">
+                    <connections>
+                        <action selector="donate:" target="768" id="Wbk-6B-HJT"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Jcm-it-HSZ"/>
                 <menuItem title="关于 DynamicLyrics..." id="819">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

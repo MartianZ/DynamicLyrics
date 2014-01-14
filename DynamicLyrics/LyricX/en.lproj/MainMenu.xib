@@ -191,6 +191,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="818"/>
+                <menuItem title="Donate..." id="aIh-NC-eiR">
+                    <connections>
+                        <action selector="donate:" target="768" id="Dte-z1-T50"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="4zy-Hc-QxD"/>
                 <menuItem title="About DynamicLyrics..." id="819">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

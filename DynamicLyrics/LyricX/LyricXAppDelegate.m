@@ -212,10 +212,17 @@
     [nc postNotificationName:@NC_LyricsChanged object:self userInfo:[NSDictionary dictionaryWithObject:@NC_Changed_DesktopLyrics forKey:@"Lyrics"]];
 }
 
-- (IBAction)aboutDynamicLyrics:(id)sender
+- (IBAction)donate:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://martianz.cn/dynamiclyrics/"];
-    [[NSWorkspace sharedWorkspace] openURL:url];
+    //NSURL *url = [NSURL URLWithString:@"http://donate.martianz.cn"];
+    
+    //[[NSWorkspace sharedWorkspace] openURL:url];
+    
+    [[AppPrefsWindowController sharedPrefsWindowController] showWindow:nil];
+
+    [[[[AppPrefsWindowController sharedPrefsWindowController] window] toolbar] setSelectedItemIdentifier:@"Donate"];
+    
+    [[AppPrefsWindowController sharedPrefsWindowController] displayViewForIdentifier:@"Donate" animate:NO];
 }
 
 - (IBAction)adjustLyricsDelay:(id)sender
