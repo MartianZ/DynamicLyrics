@@ -32,7 +32,8 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
                                         @Pref_Enable_Desktop_Lyrics: @(YES),
                                         @Pref_Enable_MenuBar_Lyrics: @(NO),
                                         @Pref_hotkeyCodeWriteLyrics: [NSNumber numberWithInt:kVK_ANSI_W],
-                                        @Pref_hotkeyModifiersWriteLyrics:[NSNumber numberWithInt:optionKey]
+                                        @Pref_hotkeyModifiersWriteLyrics:[NSNumber numberWithInt:optionKey],
+                                        @Pref_hotkeyEnable:@(NO)
                                         };
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
         [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues];
@@ -65,9 +66,11 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
     
     EventTypeSpec eventSpecs[] = {{kEventClassKeyboard,kEventHotKeyPressed}};
     InstallApplicationEventHandler(NewEventHandlerUPP(myHotKeyHandler),GetEventTypeCount(eventSpecs), eventSpecs, (void *)self, &g_EventHandlerRef);
-        
-    //注册快捷键:option+W 写入歌词
-    //RegisterEventHotKey((UInt32)[userDefaults integerForKey:@Pref_hotkeyCodeWriteLyrics], (UInt32)[userDefaults integerForKey:@Pref_hotkeyModifiersWriteLyrics], a_HotKeyID, GetApplicationEventTarget(), 0, &a_HotKeyRef);
+    
+    if ([userDefaults boolForKey:@Pref_hotkeyEnable]) {
+        //注册快捷键:option+W 写入歌词
+        RegisterEventHotKey((UInt32)[userDefaults integerForKey:@Pref_hotkeyCodeWriteLyrics], (UInt32)[userDefaults integerForKey:@Pref_hotkeyModifiersWriteLyrics], a_HotKeyID, GetApplicationEventTarget(), 0, &a_HotKeyRef);
+    }
 
     //监视系统截图按键，关闭桌面歌词，防止影响截图
     RegisterEventHotKey(kVK_ANSI_4, cmdKey | shiftKey, b_HotKeyID, GetApplicationEventTarget(), 0, &b_HotKeyRef);

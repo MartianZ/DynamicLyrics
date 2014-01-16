@@ -29,6 +29,7 @@
 
 #define Pref_hotkeyCodeWriteLyrics "hotkeyCodeWriteLyrics"
 #define Pref_hotkeyModifiersWriteLyrics "hotkeyModifiersWriteLyrics"
+#define Pref_hotkeyEnable "hotkeyEnable"
 
 #define NC_LyricsChanged "LyricsChanged"
 #define NC_Disabled_MenuBarLyrics "NCDisabledMenuBarLyrics"
