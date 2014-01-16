@@ -27,8 +27,6 @@
         lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
         [self.contentView addSubview:lyricsView];
         [self setSharingType:NSWindowSharingNone];
-        //[self center];
-        [self orderOut:self];
         
         nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(hideLyricsWindow:) name:@NC_Hide_DesktopLyrics object:nil];

@@ -35,5 +35,4 @@
 - (IBAction)DisabledMenuBarLyrics:(id)sender;
 - (IBAction)DisabledDesktopLyrics:(id)sender;
 OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent, void *inUserData);
-- (NSArray*)getCarbonProcessList;
 @end
