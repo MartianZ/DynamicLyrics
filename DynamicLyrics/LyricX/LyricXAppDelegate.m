@@ -9,14 +9,25 @@
 #import "LyricXAppDelegate.h"
 #import "Constants.h"
 #import <Carbon/Carbon.h>
+#include <assert.h>
+#include <errno.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/sysctl.h>
+
 @implementation AppDelegate
 
 //保存快捷键事件回调的引用
 static EventHandlerRef g_EventHandlerRef = NULL;
 //保存快捷键注册的引用
 static EventHotKeyRef a_HotKeyRef = NULL;
+static EventHotKeyRef b_HotKeyRef = NULL;
+
 //快捷键注册使用的信息
 static EventHotKeyID a_HotKeyID = {'keyA',1};
+static EventHotKeyID b_HotKeyID = {'keyB',2};
 
 + (void)initialize {
 	if ( self == [AppDelegate class] ) {
@@ -57,22 +68,161 @@ static EventHotKeyID a_HotKeyID = {'keyA',1};
     }
     [userDefaults synchronize];
     
-    //EventTypeSpec eventSpecs[] = {{kEventClassKeyboard,kEventHotKeyPressed}};
-    //InstallApplicationEventHandler(NewEventHandlerUPP(myHotKeyHandler),GetEventTypeCount(eventSpecs), eventSpecs, (void *)self, &g_EventHandlerRef);
+    EventTypeSpec eventSpecs[] = {{kEventClassKeyboard,kEventHotKeyPressed}};
+    InstallApplicationEventHandler(NewEventHandlerUPP(myHotKeyHandler),GetEventTypeCount(eventSpecs), eventSpecs, (void *)self, &g_EventHandlerRef);
         
-    //注册快捷键:option+B
+    //注册快捷键:option+W 写入歌词
     //RegisterEventHotKey((UInt32)[userDefaults integerForKey:@Pref_hotkeyCodeWriteLyrics], (UInt32)[userDefaults integerForKey:@Pref_hotkeyModifiersWriteLyrics], a_HotKeyID, GetApplicationEventTarget(), 0, &a_HotKeyRef);
 
+    //监视系统截图按键，关闭桌面歌词，防止影响截图
+    RegisterEventHotKey(kVK_ANSI_4, cmdKey | shiftKey, b_HotKeyID, GetApplicationEventTarget(), 0, &b_HotKeyRef);
+    
+}
+
+
+static int GetBSDProcessList(struct kinfo_proc **procList, size_t *procCount)
+// Returns a list of all BSD processes on the system.  This routine
+// allocates the list and puts it in *procList and a count of the
+// number of entries in *procCount.  You are responsible for freeing
+// this list (use "free" from System framework).
+// On success, the function returns 0.
+// On error, the function returns a BSD errno value.
+{
+    int                 err;
+    struct kinfo_proc *        result;
+    bool                done;
+    static const int    name[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL, 0 };
+    // Declaring name as const requires us to cast it when passing it to
+    // sysctl because the prototype doesn't include the const modifier.
+    size_t              length;
+    
+    //    assert( procList != NULL);
+    //    assert(*procList == NULL);
+    //    assert(procCount != NULL);
+    
+    *procCount = 0;
+    
+    // We start by calling sysctl with result == NULL and length == 0.
+    // That will succeed, and set length to the appropriate length.
+    // We then allocate a buffer of that size and call sysctl again
+    // with that buffer.  If that succeeds, we're done.  If that fails
+    // with ENOMEM, we have to throw away our buffer and loop.  Note
+    // that the loop causes use to call sysctl with NULL again; this
+    // is necessary because the ENOMEM failure case sets length to
+    // the amount of data returned, not the amount of data that
+    // could have been returned.
+    
+    result = NULL;
+    done = false;
+    do {
+        assert(result == NULL);
+        
+        // Call sysctl with a NULL buffer.
+        
+        length = 0;
+        err = sysctl( (int *) name, (sizeof(name) / sizeof(*name)) - 1,
+                     NULL, &length,
+                     NULL, 0);
+        if (err == -1) {
+            err = errno;
+        }
+        
+        // Allocate an appropriately sized buffer based on the results
+        // from the previous call.
+        
+        if (err == 0) {
+            result = malloc(length);
+            if (result == NULL) {
+                err = ENOMEM;
+            }
+        }
+        
+        // Call sysctl again with the new buffer.  If we get an ENOMEM
+        // error, toss away our buffer and start again.
+        
+        if (err == 0) {
+            err = sysctl( (int *) name, (sizeof(name) / sizeof(*name)) - 1,
+                         result, &length,
+                         NULL, 0);
+            if (err == -1) {
+                err = errno;
+            }
+            if (err == 0) {
+                done = true;
+            } else if (err == ENOMEM) {
+                assert(result != NULL);
+                free(result);
+                result = NULL;
+                err = 0;
+            }
+        }
+    } while (err == 0 && ! done);
+    
+    // Clean up and establish post conditions.
+    
+    if (err != 0 && result != NULL) {
+        free(result);
+        result = NULL;
+    }
+    *procList = result;
+    if (err == 0) {
+        *procCount = length / sizeof(struct kinfo_proc);
+    }
+    
+    assert( (err == 0) == (*procList != NULL) );
+    
+    return err;
+}
+
+
+
+- (NSDictionary *)infoForPID:(pid_t)pid
+{
+    NSDictionary *ret = nil;
+    ProcessSerialNumber psn = { kNoProcess, kNoProcess };
+    if (GetProcessForPID(pid, &psn) == noErr) {
+        CFDictionaryRef cfDict = ProcessInformationCopyDictionary(&psn,kProcessDictionaryIncludeAllInformationMask);
+        ret = [NSDictionary dictionaryWithDictionary:(NSDictionary *)cfDict];
+        CFRelease(cfDict);
+    }
+    return ret;
+}
+
+- (BOOL)isScreencCaptureRunning
+{
+    struct kinfo_proc  *mylist;
+    size_t mycount = 0;
+    mylist = (struct kinfo_proc *)malloc(sizeof(struct kinfo_proc));
+    GetBSDProcessList(&mylist, &mycount);
+    int k;
+    for(k = 0; k < mycount; k++) {
+        struct kinfo_proc *proc = NULL;
+        proc = &mylist[k];
+        NSString *fullName = [[self infoForPID:proc->kp_proc.p_pid] objectForKey:(id)kCFBundleNameKey];
+        if (fullName == nil) fullName = [NSString stringWithFormat:@"%s",proc->kp_proc.p_comm];
+        if ([fullName isEqualToString:@"screencapture"]) {
+            free(mylist);
+            return YES;
+        }
+    }
+    free(mylist);
+    return NO;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
-    /*
+    
     //注销快捷键
     if (a_HotKeyRef)
     {
         UnregisterEventHotKey(a_HotKeyRef);
         a_HotKeyRef = NULL;
+    }
+    
+    if (b_HotKeyRef)
+    {
+        UnregisterEventHotKey(b_HotKeyRef);
+        b_HotKeyRef = NULL;
     }
 
     //注销快捷键的事件回调
@@ -80,7 +230,7 @@ static EventHotKeyID a_HotKeyID = {'keyA',1};
     {
         RemoveEventHandler(g_EventHandlerRef);
         g_EventHandlerRef = NULL;
-    }*/
+    }
 }
 
 
@@ -99,9 +249,12 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
                           sizeof(keyID),
                           NULL,
                           &keyID);
+        
+        AppDelegate * mySelf = (AppDelegate *) inUserData;
+
+        
         if (keyID.id == a_HotKeyID.id) {
             NSLog(@"Key pressed!");
-            AppDelegate * mySelf = (AppDelegate *) inUserData;
             
             @try {
                 [mySelf WriteLyricsToiTunes:nil];
@@ -113,9 +266,26 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
                 [[NSSound soundNamed:@"Ping"] play];
 
             }
+        }
+        
+        if (keyID.id == b_HotKeyID.id) {
+            NSLog(@"Screen Capture!");
+            
+            /*
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@Pref_Enable_Desktop_Lyrics];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            */
+            NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+             
+            [nc postNotificationName:@NC_Hide_DesktopLyrics object:mySelf];
+        
+            while ([mySelf isScreencCaptureRunning]) {
+                sleep(1);
+            }
+            
+            [nc postNotificationName:@NC_Show_DesktopLyrics object:mySelf];
+            
 
-            
-            
         }
     }
     return noErr;

@@ -33,6 +33,8 @@
 #define NC_LyricsChanged "LyricsChanged"
 #define NC_Disabled_MenuBarLyrics "NCDisabledMenuBarLyrics"
 #define NC_Changed_DesktopLyrics "NCChangedDesktopLyrics"
+#define NC_Hide_DesktopLyrics "NCHideDesktopLyrics"
+#define NC_Show_DesktopLyrics "NCShowDesktopLyrics"
 
 #define Pref_Desktop_Text_Color "PrefDesktopTextColor"
 #define Pref_Desktop_Background_Color "PrefDesktopBackgroundColor"
@@ -44,6 +46,6 @@
 #define Pref_Enable_Notification "PrefEnableNotification"
 #define Pref_Notification_Mode "PrefNotificationMode" //ABANDON
 #define Pref_Notification_Time "PrefNotificationTime"
-
+#
 
 #endif

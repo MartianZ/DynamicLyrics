@@ -14,6 +14,8 @@
 
 @interface LyricsFloatWindow : NSPanel {
     LyricsView *lyricsView;
+    NSNotificationCenter *nc;
+
 
 }
 

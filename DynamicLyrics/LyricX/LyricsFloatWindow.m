@@ -26,13 +26,28 @@
         }
         lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
         [self.contentView addSubview:lyricsView];
+        [self setSharingType:NSWindowSharingNone];
         //[self center];
-                 
+        [self orderOut:self];
+        
+        nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(hideLyricsWindow:) name:@NC_Hide_DesktopLyrics object:nil];
+        [nc addObserver:self selector:@selector(showLyricsWindow:) name:@NC_Show_DesktopLyrics object:nil];
+
     }
     return self;
 }
 
+-(void)hideLyricsWindow:(NSNotification *)note
+{
+    NSLog(@"HIDE");
+    [self orderOut:self];
+}
 
-
+-(void)showLyricsWindow:(NSNotification *)note
+{
+    NSLog(@"SHOW");
+    [self orderBack:self];
+}
 
 @end
