@@ -55,6 +55,7 @@
 		CA508EF2188558D30050F1BE /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
 		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
+		CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8DE6F118A8DCBA00611593 /* TextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		CA508EE7188545050050F1BE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		CF8DE6F018A8DCBA00611593 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
+		CF8DE6F118A8DCBA00611593 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
 		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,6 +353,8 @@
 				02710EDB152AA8A5006D4BFF /* RequestSender.m */,
 				02710ED7152AA87F006D4BFF /* QianQianLyrics.h */,
 				02710ED8152AA87F006D4BFF /* QianQianLyrics.m */,
+				CF8DE6F018A8DCBA00611593 /* TextField.h */,
+				CF8DE6F118A8DCBA00611593 /* TextField.m */,
 				02710EC5152A9B28006D4BFF /* MainController.h */,
 				02710EC6152A9B28006D4BFF /* MainController.m */,
 			);
@@ -510,6 +515,7 @@
 				02710ED9152AA87F006D4BFF /* QianQianLyrics.m in Sources */,
 				02710EDC152AA8A6006D4BFF /* RequestSender.m in Sources */,
 				02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */,
+				CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */,
 				02710EE2152AA9DE006D4BFF /* BingTranslator.m in Sources */,
 				02710EE5152AAB7F006D4BFF /* RegexKitLite.m in Sources */,
 				025B0777152B14F400E250BF /* MenuBarLyrics.m in Sources */,
