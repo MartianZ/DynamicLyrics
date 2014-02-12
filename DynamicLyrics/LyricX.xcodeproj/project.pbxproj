@@ -56,6 +56,9 @@
 		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
 		CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8DE6F118A8DCBA00611593 /* TextField.m */; };
+		CFDEFD0B18AB5C1B00FA2A11 /* EditLyricsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */; };
+		CFDEFD1218AB651F00FA2A11 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD1118AB651F00FA2A11 /* TextView.m */; };
+		CFDEFD1718AB75A100FA2A11 /* EditLyricsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDEFD1518AB75A100FA2A11 /* EditLyricsWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,8 +175,14 @@
 		CA508EE7188545050050F1BE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		CF7BD31F18AB77A200CE5EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/EditLyricsWindow.xib"; sourceTree = "<group>"; };
 		CF8DE6F018A8DCBA00611593 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		CF8DE6F118A8DCBA00611593 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
+		CFDEFD0818AB5C1B00FA2A11 /* EditLyricsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLyricsWindowController.h; sourceTree = "<group>"; };
+		CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLyricsWindowController.m; sourceTree = "<group>"; };
+		CFDEFD1018AB651F00FA2A11 /* TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView.h; sourceTree = "<group>"; };
+		CFDEFD1118AB651F00FA2A11 /* TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextView.m; sourceTree = "<group>"; };
+		CFDEFD1618AB75A100FA2A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EditLyricsWindow.xib; sourceTree = "<group>"; };
 		EF68C6CE169BF788006B9128 /* DynamicLyricsHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DynamicLyricsHelper.xcodeproj; path = ../DynamicLyricsHelper/DynamicLyricsHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,6 +364,8 @@
 				02710ED8152AA87F006D4BFF /* QianQianLyrics.m */,
 				CF8DE6F018A8DCBA00611593 /* TextField.h */,
 				CF8DE6F118A8DCBA00611593 /* TextField.m */,
+				CFDEFD1018AB651F00FA2A11 /* TextView.h */,
+				CFDEFD1118AB651F00FA2A11 /* TextView.m */,
 				02710EC5152A9B28006D4BFF /* MainController.h */,
 				02710EC6152A9B28006D4BFF /* MainController.m */,
 			);
@@ -379,6 +390,9 @@
 				028861AD152BD60D00DA6B91 /* LyricsSearchWnd.h */,
 				028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */,
 				02135B531586F99F001480AD /* LyricsSearchWnd.xib */,
+				CFDEFD0818AB5C1B00FA2A11 /* EditLyricsWindowController.h */,
+				CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */,
+				CFDEFD1518AB75A100FA2A11 /* EditLyricsWindow.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -476,6 +490,7 @@
 				0251F443153980A60019F36F /* music-default.gif in Resources */,
 				02A561021586F74200E37C6C /* Preferences.xib in Resources */,
 				0239025F154F9D7A00869A2D /* General.png in Resources */,
+				CFDEFD1718AB75A100FA2A11 /* EditLyricsWindow.xib in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
 				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
 				02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */,
@@ -522,6 +537,8 @@
 				025B0789152B1E8600E250BF /* GB_BIG_Converter.m in Sources */,
 				027C9E88152B23DA00A75EB2 /* LyricsView.m in Sources */,
 				027C9E8F152B243D00A75EB2 /* LyricsFloatWindow.m in Sources */,
+				CFDEFD0B18AB5C1B00FA2A11 /* EditLyricsWindowController.m in Sources */,
+				CFDEFD1218AB651F00FA2A11 /* TextView.m in Sources */,
 				028861B0152BD60D00DA6B91 /* LyricsSearchWnd.m in Sources */,
 				02353CD1152BF84700214998 /* Albumfiller.m in Sources */,
 				02353CD5152C0B8600214998 /* AlbumModel.m in Sources */,
@@ -577,6 +594,15 @@
 				02CEF1BC1586FFF200B800A6 /* zh-Hans */,
 			);
 			name = Albumfiller.xib;
+			sourceTree = "<group>";
+		};
+		CFDEFD1518AB75A100FA2A11 /* EditLyricsWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDEFD1618AB75A100FA2A11 /* en */,
+				CF7BD31F18AB77A200CE5EBD /* zh-Hans */,
+			);
+			name = EditLyricsWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

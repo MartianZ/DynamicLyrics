@@ -153,6 +153,12 @@
                                     <action selector="exportLRC:" target="768" id="858"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Edit LRC..." id="AKl-zR-tZc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="OpenEditLyricsWindow:" target="768" id="g6C-9R-G0k"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="856"/>
                             <menuItem title="Wrong Lyrics!" id="854">
                                 <modifierMask key="keyEquivalentModifierMask"/>
