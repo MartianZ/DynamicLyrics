@@ -278,6 +278,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
     SearchWindow = [[LyricsSearchWnd alloc] initWithArtist:Controller.iTunesCurrentTrack.artist initWithTitle:Controller.iTunesCurrentTrack.name];
 }
 
+-(IBAction)OpenEditLyricsWindow:(id)sender
+{
+    EditLyricsWindow = [[EditLyricsWindowController alloc] initWithLyrics:Controller.SongLyrics artist:Controller.iTunesCurrentTrack.artist name:Controller.iTunesCurrentTrack.name];
+}
+
 -(IBAction)CopyCurrentLyrics:(id)sender
 {
     [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject: NSStringPboardType] owner:nil];

@@ -153,6 +153,12 @@
                                     <action selector="exportLRC:" target="768" id="856"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="编辑LRC歌词..." id="mqX-Cw-9Jv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="OpenEditLyricsWindow:" target="-1" id="BwD-WB-Tg7"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="852"/>
                             <menuItem title="错误的歌词!" id="853">
                                 <modifierMask key="keyEquivalentModifierMask"/>

@@ -11,9 +11,12 @@
 #import "LyricsSearchWnd.h"
 #import "Albumfiller.h"
 #import "AppPrefsWindowController.h"
+#import "EditLyricsWindowController.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     MainController *Controller;
     LyricsSearchWnd *SearchWindow;
+    EditLyricsWindowController *EditLyricsWindow;
     Albumfiller *AlbumfillerWindow;
     IBOutlet NSMenu *AppMenu;
     IBOutlet NSMenuItem *currentDelay;
