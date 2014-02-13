@@ -101,6 +101,7 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
 			// Disable desktop lyrics
 			rectangleLayer.frame = CGRectMake(0, 0, 0, 0);
 			textLayer.frame=CGRectMake(0, 0, 0, 0);
+			secondTextLayer.frame = CGRectMake(0, 0, 0, 0);
 			[pool release];
 			return;
 			
