@@ -25,7 +25,7 @@
             [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
         }
         lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
-        [self.contentView addSubview:lyricsView];
+        [self setContentView:lyricsView];
         [self setSharingType:NSWindowSharingNone];
         
         nc = [NSNotificationCenter defaultCenter];
