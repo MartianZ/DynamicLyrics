@@ -24,10 +24,10 @@
         _queue = [[NSOperationQueue alloc] init]; 
         [_queue setMaxConcurrentOperationCount:1];
         NSStatusBar *bar = [NSStatusBar systemStatusBar];
-        _statusItem = [[bar _statusItemWithLength:0 withPriority:INT_MIN] retain];
+        _statusItem = [[bar _statusItemWithLength:0 withPriority:0] retain];
         //[_statusItem setTitle:@"LyricsX!"];
         [bar removeStatusItem:_statusItem];
-        [bar _insertStatusItem:_statusItem withPriority:INT_MIN];
+        [bar _insertStatusItem:_statusItem withPriority:0];
         [_statusItem setLength:NSVariableStatusItemLength];
         [_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
         [_statusItem setHighlightMode:YES];
