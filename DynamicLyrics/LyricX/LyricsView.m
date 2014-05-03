@@ -190,6 +190,11 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
             secondTextLayer.shadowOpacity = 0;
         }
         secondTextLayer.foregroundColor = cgfontColor;
+        GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+        if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese]) {
+            self.currentLyrics = [_convertManager gbToBig5:self.currentLyrics];
+            self.nextLyrics =[ _convertManager gbToBig5:self.nextLyrics];
+        }
         
         if (![userDefaults boolForKey:@Pref_Lyrics_Show_Next_Line] || [self.nextLyrics length] == 0) {
             //单行歌词

@@ -33,7 +33,8 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
                                         @Pref_Enable_MenuBar_Lyrics: @(NO),
                                         @Pref_hotkeyCodeWriteLyrics: [NSNumber numberWithInt:kVK_ANSI_W],
                                         @Pref_hotkeyModifiersWriteLyrics:[NSNumber numberWithInt:optionKey],
-                                        @Pref_hotkeyEnable:@(NO)
+                                        @Pref_hotkeyEnable:@(NO),
+                                        @Pref_convertToTraditionalChinese:@(NO)
                                         };
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
         [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues];
@@ -286,14 +287,24 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
 -(IBAction)CopyCurrentLyrics:(id)sender
 {
     [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject: NSStringPboardType] owner:nil];
-    [[NSPasteboard generalPasteboard] setString:Controller.CurrentSongLyrics forType: NSStringPboardType];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+    if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+        [[NSPasteboard generalPasteboard] setString:[_convertManager gbToBig5:Controller.CurrentSongLyrics] forType: NSStringPboardType];
+    else
+        [[NSPasteboard generalPasteboard] setString:Controller.CurrentSongLyrics forType: NSStringPboardType];
 }
 
 
 -(IBAction)CopyTotalLRC:(id)sender
 {
     [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject: NSStringPboardType] owner:nil];
-    [[NSPasteboard generalPasteboard] setString:Controller.SongLyrics forType: NSStringPboardType];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+    if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+        [[NSPasteboard generalPasteboard] setString:[_convertManager gbToBig5:Controller.SongLyrics] forType: NSStringPboardType];
+    else
+        [[NSPasteboard generalPasteboard] setString:Controller.SongLyrics forType: NSStringPboardType];
 
 }
 
@@ -305,6 +316,10 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
     for (int i = 0; i < [Controller.lyrics count]; i++) {
         [s setString:[s stringByAppendingString:[NSString stringWithFormat:@"%@\n",[[Controller.lyrics objectAtIndex:i] objectForKey:@"Content"]]]];
     }
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+    if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+        [s setString:[_convertManager gbToBig5:s]];
     [[NSPasteboard generalPasteboard] declareTypes:[NSArray arrayWithObject: NSStringPboardType] owner:nil];
     [[NSPasteboard generalPasteboard] setString: s forType: NSStringPboardType];
     [s release];
@@ -318,7 +333,10 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
     for (int i = 0; i < [Controller.lyrics count]; i++) {
         [s setString:[s stringByAppendingString:[NSString stringWithFormat:@"%@\n",[[Controller.lyrics objectAtIndex:i] objectForKey:@"Content"]]]];
     }
-
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+    if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+        [s setString:[_convertManager gbToBig5:s]];
     Controller.iTunesCurrentTrack.lyrics = s;
     [s release];
 
@@ -368,7 +386,12 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
     [saveDlg setNameFieldStringValue:fileName];
     [saveDlg setDirectoryURL:[NSURL URLWithString:documentsFolder]];
     [saveDlg runModal];
-    [[NSFileManager defaultManager] createFileAtPath:[[saveDlg URL] path] contents:[Controller.SongLyrics dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+    if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+        [[NSFileManager defaultManager] createFileAtPath:[[saveDlg URL] path] contents:[[_convertManager gbToBig5:Controller.SongLyrics] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+    else
+        [[NSFileManager defaultManager] createFileAtPath:[[saveDlg URL] path] contents:[Controller.SongLyrics dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
 
 }
 

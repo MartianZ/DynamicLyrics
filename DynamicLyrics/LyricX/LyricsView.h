@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
+#import "GB_BIG_Converter.h"
 
 @interface LyricsView : NSView  {
     NSNotificationCenter *nc;

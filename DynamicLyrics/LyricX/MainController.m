@@ -147,7 +147,9 @@
             
             return;
         }
-        
+        if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+            self.SongLyrics = [_convertManager gbToBig5:self.SongLyrics];
+//        NSLog(@"%d %@",[userDefaults boolForKey:@Pref_convertToTraditionalChinese],self.SongLyrics);
         [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
     
         [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];

@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "GB_BIG_Converter.h"
 @interface EditLyricsWindowController : NSWindowController
 
 @property (nonatomic, retain) NSString* SongLyrics;
