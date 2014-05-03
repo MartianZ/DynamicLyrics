@@ -12,6 +12,7 @@
 #import "Albumfiller.h"
 #import "AppPrefsWindowController.h"
 #import "EditLyricsWindowController.h"
+#import "GB_BIG_Converter.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     MainController *Controller;

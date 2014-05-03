@@ -121,6 +121,10 @@
 			forceUpdate = YES;
 		}
 	}else{
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+        if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+            lyric = [_convertManager gbToBig5:lyric];
 		self.CurrentSongLyrics = lyric;
 	}
 

@@ -30,6 +30,7 @@
 #define Pref_hotkeyCodeWriteLyrics "hotkeyCodeWriteLyrics"
 #define Pref_hotkeyModifiersWriteLyrics "hotkeyModifiersWriteLyrics"
 #define Pref_hotkeyEnable "hotkeyEnable"
+#define Pref_convertToTraditionalChinese "convertToTraditionalChinese"
 
 #define NC_LyricsChanged "LyricsChanged"
 #define NC_Disabled_MenuBarLyrics "NCDisabledMenuBarLyrics"

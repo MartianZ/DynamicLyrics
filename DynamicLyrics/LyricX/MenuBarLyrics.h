@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GB_BIG_Converter.h"
 
 @interface MenuBarLyrics : NSObject {
     @private

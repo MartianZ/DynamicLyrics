@@ -34,6 +34,10 @@
 - (id)initWithLyrics:(NSString *)Lyrics artist:(NSString *)artist name:(NSString *)name
 {
     if ((self = [super initWithWindowNibName:@"EditLyricsWindow"])) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
+        if ([userDefaults boolForKey:@Pref_convertToTraditionalChinese])
+            Lyrics = [_convertManager gbToBig5:Lyrics];
         self.SongLyrics = Lyrics;
         self.SongArtist = artist;
         self.SongName   = name;
