@@ -60,26 +60,31 @@
   }
   
   //
-  NSString *result = @"";
+  NSMutableString *result = [[[NSMutableString alloc] initWithString:@""] autorelease];
   NSDictionary *useDict = _dict[dictTypeKey];
   int i = 0;
   while (i < oriString.length) {
+      
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
     int max = oriString.length - i;
     int j;
     for (j = max; j > 0; j--) {
       NSRange range = NSMakeRange(i, j);
       NSString *subStr = [oriString substringWithRange:range];
       if (useDict[subStr]) {
-        result = [result stringByAppendingString:useDict[subStr]];
+        [result appendString:useDict[subStr]];
         break;
       }
     }
     if (j == 0) {
-      result = [result stringByAppendingString:[oriString substringWithRange:NSMakeRange(i, 1)]];
-      i++;
+        [result appendString:[oriString substringWithRange:NSMakeRange(i, 1)]];
+        i++;
     } else {
       i += j;
     }
+      
+    [pool release];
   }
   
   return result;
