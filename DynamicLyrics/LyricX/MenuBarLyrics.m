@@ -29,7 +29,9 @@
         [bar removeStatusItem:_statusItem];
         [bar _insertStatusItem:_statusItem withPriority:0];
         [_statusItem setLength:NSVariableStatusItemLength];
-        [_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
+        NSImage *image = [NSImage imageNamed:@"StatusIcon"];
+        [image setTemplate:YES];
+        [_statusItem setImage:image];
         [_statusItem setHighlightMode:YES];
         [_statusItem setMenu:AppMenu];
         nc = [NSNotificationCenter defaultCenter];
