@@ -11,7 +11,7 @@
 		02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02135B531586F99F001480AD /* LyricsSearchWnd.xib */; };
 		02147716159EC55800B92431 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; };
 		02147718159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */; };
-		0214771B159EC65900B92431 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; };
+		0214771B159EC65900B92431 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		02147734159F547100B92431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02147732159F547100B92431 /* Localizable.strings */; };
 		02353CD1152BF84700214998 /* Albumfiller.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CCF152BF84700214998 /* Albumfiller.m */; };
 		02353CD5152C0B8600214998 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02353CD4152C0B8500214998 /* AlbumModel.m */; };
@@ -53,8 +53,9 @@
 		CA49F844188536DA006B6E81 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F843188536DA006B6E81 /* StatusIcon.png */; };
 		CA508EE8188545050050F1BE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA508EE7188545050050F1BE /* Carbon.framework */; };
 		CA508EF2188558D30050F1BE /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
-		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
+		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
+		CAA3BC0E1904D6FA00110A30 /* GeCiMeLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */; };
 		CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8DE6F118A8DCBA00611593 /* TextField.m */; };
 		CFDEFD0B18AB5C1B00FA2A11 /* EditLyricsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */; };
 		CFDEFD1218AB651F00FA2A11 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD1118AB651F00FA2A11 /* TextView.m */; };
@@ -175,6 +176,8 @@
 		CA508EE7188545050050F1BE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		CAA3BC0C1904D6FA00110A30 /* GeCiMeLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeCiMeLyrics.h; sourceTree = "<group>"; };
+		CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeCiMeLyrics.m; sourceTree = "<group>"; };
 		CF7BD31F18AB77A200CE5EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/EditLyricsWindow.xib"; sourceTree = "<group>"; };
 		CF8DE6F018A8DCBA00611593 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		CF8DE6F118A8DCBA00611593 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				02710EDE152AA8B7006D4BFF /* KeyValue_SearchLyrics.m */,
 				02710EDA152AA8A5006D4BFF /* RequestSender.h */,
 				02710EDB152AA8A5006D4BFF /* RequestSender.m */,
+				CAA3BC0C1904D6FA00110A30 /* GeCiMeLyrics.h */,
+				CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */,
 				02710ED7152AA87F006D4BFF /* QianQianLyrics.h */,
 				02710ED8152AA87F006D4BFF /* QianQianLyrics.m */,
 				CF8DE6F018A8DCBA00611593 /* TextField.h */,
@@ -434,7 +439,7 @@
 		02710E81152A839F006D4BFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Martian;
 			};
 			buildConfigurationList = 02710E84152A839F006D4BFF /* Build configuration list for PBXProject "LyricX" */;
@@ -544,6 +549,7 @@
 				02353CD5152C0B8600214998 /* AlbumModel.m in Sources */,
 				028E17A8153051C6006CE85B /* VerticalButtonWindow.m in Sources */,
 				028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */,
+				CAA3BC0E1904D6FA00110A30 /* GeCiMeLyrics.m in Sources */,
 				0239024C154F8EE200869A2D /* AppPrefsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +618,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "Developer ID Application: Zhu Zheng (R5RMP6G3GQ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = ansi;
@@ -642,7 +647,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "Developer ID Application: Zhu Zheng (R5RMP6G3GQ)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
