@@ -136,8 +136,11 @@
     if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
     {
         self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+        self.SongLyrics = [self translate:self.SongLyrics];
+
         if ([[iTunesCurrentTrack name] isEqualToString:SongTitle])
         {
+            
             [self Anylize];  //如果搜索的歌曲是当前正在播放的歌曲，重新加载歌词
             CurrentLyric = 0;
         }
@@ -164,7 +167,8 @@
             
             return;
         }
-        
+        self.SongLyrics = [self translate:self.SongLyrics];
+
         [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
     
         [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
@@ -238,7 +242,6 @@
         if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
         {
             self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
-            //self.SongLyrics = [[NCChineseConverter sharedInstance] convert:self.SongLyrics withDict:NCChineseConverterDictTypezh2TW];
 
             CurrentLyric = 0;
             LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
@@ -347,7 +350,6 @@
 @autoreleasepool {
     NSString *RegEx = @"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$";
     [lyrics removeAllObjects];
-    self.SongLyrics = [self translate:self.SongLyrics];
     NSArray *matchArray = nil;
     matchArray = [self.SongLyrics arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLMultiline | RKLCaseless range:NSMakeRange(0UL, [self.SongLyrics length]) error:nil];
     

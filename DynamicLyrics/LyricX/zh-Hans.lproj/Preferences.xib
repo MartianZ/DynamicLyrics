@@ -86,140 +86,11 @@
             </subviews>
         </customView>
         <customView id="824" userLabel="Advanced">
-            <rect key="frame" x="0.0" y="-1" width="434" height="335"/>
+            <rect key="frame" x="0.0" y="-4" width="434" height="363"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box autoresizesSubviews="NO" title="行为设置:" borderType="line" id="1865">
-                    <rect key="frame" x="23" y="4" width="388" height="148"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="386" height="132"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button id="2672">
-                                <rect key="frame" x="16" y="92" width="141" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="随iTunes启动和退出" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2673">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="LaunchAndQuitWithiTunes:" target="-2" id="2689"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefLaunchQuitWithiTunes" id="2803">
-                                        <dictionary key="options">
-                                            <integer key="NSNullPlaceholder" value="0"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <button id="3037">
-                                <rect key="frame" x="16" y="79" width="180" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="iTunes暂停播放时显示歌词" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3038">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsShowWhenPaused" id="3045">
-                                        <dictionary key="options">
-                                            <integer key="NSNullPlaceholder" value="0"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <button id="3073">
-                                <rect key="frame" x="16" y="57" width="295" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="在所有的屏幕空间中显示歌词窗口（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3074">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="STHeitiSC-Light"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3117">
-                                        <dictionary key="options">
-                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                            <integer key="NSNullPlaceholder" value="0"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <button id="rwL-WD-TJh">
-                                <rect key="frame" x="16" y="35" width="334" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="启用“写入歌词到iTunes”快捷键: ⌥+W（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8YY-Dv-0kS">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.hotkeyEnable" id="K46-19-NdV">
-                                        <dictionary key="options">
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <button id="r4w-eN-jna">
-                                <rect key="frame" x="16" y="12" width="334" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="自动翻译简体中文歌词到" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Bre-gh-XSQ">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="STHeitiSC-Light"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.translatorEnable" id="aQt-VD-saR">
-                                        <dictionary key="options">
-                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                            <integer key="NSNullPlaceholder" value="0"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <comboBox verticalHuggingPriority="750" id="dbt-CJ-XVT">
-                                <rect key="frame" x="184" y="7" width="87" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="vbm-og-9OV">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>台湾正体</string>
-                                        <string>港澳繁体</string>
-                                        <string>新马繁体</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.translatorLan" id="EeB-Ps-U1a">
-                                        <dictionary key="options">
-                                            <string key="NSMultipleValuesPlaceholder">台湾正体</string>
-                                            <string key="NSNoSelectionPlaceholder">台湾正体</string>
-                                            <string key="NSNotApplicablePlaceholder">台湾正体</string>
-                                            <string key="NSNullPlaceholder">台湾正体</string>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </comboBox>
-                        </subviews>
-                    </view>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </box>
                 <box autoresizesSubviews="NO" title="桌面歌词设置:" borderType="line" id="1887">
-                    <rect key="frame" x="23" y="156" width="388" height="168"/>
+                    <rect key="frame" x="23" y="184" width="388" height="168"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="386" height="152"/>
@@ -471,8 +342,137 @@
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
+                <box autoresizesSubviews="NO" title="行为设置:" borderType="line" id="1865">
+                    <rect key="frame" x="23" y="16" width="388" height="164"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="386" height="148"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button id="2672">
+                                <rect key="frame" x="16" y="108" width="141" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="随iTunes启动和退出" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2673">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="LaunchAndQuitWithiTunes:" target="-2" id="2689"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefLaunchQuitWithiTunes" id="2803">
+                                        <dictionary key="options">
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <button id="3037">
+                                <rect key="frame" x="16" y="95" width="180" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="iTunes暂停播放时显示歌词" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3038">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsShowWhenPaused" id="3045">
+                                        <dictionary key="options">
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <button id="3073">
+                                <rect key="frame" x="16" y="73" width="295" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="在所有的屏幕空间中显示歌词窗口（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3074">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3117">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <button id="rwL-WD-TJh">
+                                <rect key="frame" x="16" y="51" width="334" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="启用“写入歌词到iTunes”快捷键: ⌥+W（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8YY-Dv-0kS">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.hotkeyEnable" id="K46-19-NdV">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <button id="r4w-eN-jna">
+                                <rect key="frame" x="16" y="12" width="334" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="自动翻译简体中文歌词到 (仅在新下载歌词时翻译)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Bre-gh-XSQ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.translatorEnable" id="aQt-VD-saR">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <comboBox verticalHuggingPriority="750" id="dbt-CJ-XVT">
+                                <rect key="frame" x="183" y="15" width="87" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="vbm-og-9OV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>台湾正体</string>
+                                        <string>港澳繁体</string>
+                                        <string>新马繁体</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.translatorLan" id="EeB-Ps-U1a">
+                                        <dictionary key="options">
+                                            <string key="NSMultipleValuesPlaceholder">台湾正体</string>
+                                            <string key="NSNoSelectionPlaceholder">台湾正体</string>
+                                            <string key="NSNotApplicablePlaceholder">台湾正体</string>
+                                            <string key="NSNullPlaceholder">台湾正体</string>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </comboBox>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
             </subviews>
-            <point key="canvasLocation" x="522" y="43.5"/>
+            <point key="canvasLocation" x="522" y="57.5"/>
         </customView>
         <customView id="2310" userLabel="Donate">
             <rect key="frame" x="0.0" y="0.0" width="409" height="222"/>
