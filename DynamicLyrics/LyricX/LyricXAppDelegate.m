@@ -56,11 +56,11 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
     }
     
     
-    if ([userDefaults integerForKey:@"DonationNewNew"] == 5 || [userDefaults integerForKey:@"DonationNewNew"] == 40) {
+    if ([userDefaults integerForKey:@"DonationNewAliPayWeChat"] == 5 || [userDefaults integerForKey:@"DonationNewAliPayWeChat"] == 40) {
         [[NSAlert alertWithMessageText:NSLocalizedString(@"Donate us", nil) defaultButton:@"OKay" alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Donate", nil)] runModal];
     }
-    if ([userDefaults integerForKey:@"DonationNewNew"] <= 50) {
-        [userDefaults setInteger:[userDefaults integerForKey:@"DonationNewNew"] + 1 forKey:@"DonationNewNew"];
+    if ([userDefaults integerForKey:@"DonationNewAliPayWeChat"] <= 50) {
+        [userDefaults setInteger:[userDefaults integerForKey:@"DonationNewAliPayWeChat"] + 1 forKey:@"DonationNewAliPayWeChat"];
     }
     [userDefaults synchronize];
     

@@ -75,12 +75,12 @@
 
 - (IBAction)DonatePaypal:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fzyadmin%40gmail%2ecom&item_name=Support%20future%20development%20of%204321.La%20app&no_shipping=1&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8"];
+    NSURL *url = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F49UNSNW4ZAJY"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 - (IBAction)DonateAlipay:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"https://me.alipay.com/martian"];
+    NSURL *url = [NSURL URLWithString:@"http://martianz.cn/dynamiclyrics/donate.html"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
