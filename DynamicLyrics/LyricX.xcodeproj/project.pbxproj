@@ -56,6 +56,9 @@
 		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
 		CAA3BC0E1904D6FA00110A30 /* GeCiMeLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */; };
+		CAB4BD9B19F1706900A42734 /* zh2HK.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9819F1706900A42734 /* zh2HK.txt */; };
+		CAB4BD9C19F1706900A42734 /* zh2SG.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9919F1706900A42734 /* zh2SG.txt */; };
+		CAB4BD9D19F1706900A42734 /* zh2TW.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9A19F1706900A42734 /* zh2TW.txt */; };
 		CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8DE6F118A8DCBA00611593 /* TextField.m */; };
 		CFDEFD0B18AB5C1B00FA2A11 /* EditLyricsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */; };
 		CFDEFD1218AB651F00FA2A11 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD1118AB651F00FA2A11 /* TextView.m */; };
@@ -178,6 +181,9 @@
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CAA3BC0C1904D6FA00110A30 /* GeCiMeLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeCiMeLyrics.h; sourceTree = "<group>"; };
 		CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeCiMeLyrics.m; sourceTree = "<group>"; };
+		CAB4BD9819F1706900A42734 /* zh2HK.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2HK.txt; sourceTree = "<group>"; };
+		CAB4BD9919F1706900A42734 /* zh2SG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2SG.txt; sourceTree = "<group>"; };
+		CAB4BD9A19F1706900A42734 /* zh2TW.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2TW.txt; sourceTree = "<group>"; };
 		CF7BD31F18AB77A200CE5EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/EditLyricsWindow.xib"; sourceTree = "<group>"; };
 		CF8DE6F018A8DCBA00611593 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		CF8DE6F118A8DCBA00611593 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 		025B0781152B1C7300E250BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CAB4BD9819F1706900A42734 /* zh2HK.txt */,
+				CAB4BD9919F1706900A42734 /* zh2SG.txt */,
+				CAB4BD9A19F1706900A42734 /* zh2TW.txt */,
 				CA49F843188536DA006B6E81 /* StatusIcon.png */,
 				CA49F841188535D2006B6E81 /* StatusIcon@2x.png */,
 				02147717159EC56600B92431 /* dynamiclyrics2_dsa_pub_new.pem */,
@@ -487,9 +496,11 @@
 				CA49F842188535D2006B6E81 /* StatusIcon@2x.png in Resources */,
 				CA49F844188536DA006B6E81 /* StatusIcon.png in Resources */,
 				025B0784152B1C8700E250BF /* big5.txt in Resources */,
+				CAB4BD9C19F1706900A42734 /* zh2SG.txt in Resources */,
 				CA49F83E188535AD006B6E81 /* DynamicLyrics.icns in Resources */,
 				025B0785152B1C8700E250BF /* gb.txt in Resources */,
 				CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */,
+				CAB4BD9D19F1706900A42734 /* zh2TW.txt in Resources */,
 				02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */,
 				02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */,
 				0251F443153980A60019F36F /* music-default.gif in Resources */,
@@ -497,6 +508,7 @@
 				0239025F154F9D7A00869A2D /* General.png in Resources */,
 				CFDEFD1718AB75A100FA2A11 /* EditLyricsWindow.xib in Resources */,
 				02ACCFB31566932D004CC95A /* Donate.png in Resources */,
+				CAB4BD9B19F1706900A42734 /* zh2HK.txt in Resources */,
 				02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */,
 				02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */,
 				02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */,
