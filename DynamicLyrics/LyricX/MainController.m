@@ -7,7 +7,7 @@
 //
 
 #import "MainController.h"
-
+#import "NCChineseConverter.h"
 @implementation MainController
 
 @synthesize iTunesCurrentTrack;
@@ -87,6 +87,22 @@
     }
 }
 
+- (NSString *)translate:(NSString *)s
+{
+    if ([userDefaults boolForKey:@Pref_translatorEnable])
+    {
+        if ([[userDefaults stringForKey:@Pref_translatorLang] isEqualToString:@"台湾正体"])
+            return [[NCChineseConverter sharedInstance] convert:s withDict:NCChineseConverterDictTypezh2TW];
+        if ([[userDefaults stringForKey:@Pref_translatorLang] isEqualToString:@"港澳繁体"])
+            return [[NCChineseConverter sharedInstance] convert:s withDict:NCChineseConverterDictTypezh2HK];
+        if ([[userDefaults stringForKey:@Pref_translatorLang] isEqualToString:@"新马繁体"])
+            return [[NCChineseConverter sharedInstance] convert:s withDict:NCChineseConverterDictTypezh2SG];
+        
+    }
+    return s;
+    
+}
+
 
 - (void) iTunesPlayerInfo:(NSNotification *)note
 {
@@ -141,7 +157,8 @@
     
         self.SongLyrics = [QianQianLyrics getLyricsByTitle:[_convertManager big5ToGb:SongTitle] getLyricsByArtist:[_convertManager big5ToGb:SongArtist]];
     
-        
+        //self.SongLyrics = [[NCChineseConverter sharedInstance] convert:self.SongLyrics withDict:NCChineseConverterDictTypezh2TW];
+
         if (!self.SongLyrics) {
             [_convertManager release];
             
@@ -221,6 +238,8 @@
         if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
         {
             self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+            //self.SongLyrics = [[NCChineseConverter sharedInstance] convert:self.SongLyrics withDict:NCChineseConverterDictTypezh2TW];
+
             CurrentLyric = 0;
             LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
             [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
@@ -328,7 +347,7 @@
 @autoreleasepool {
     NSString *RegEx = @"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$";
     [lyrics removeAllObjects];
-    
+    self.SongLyrics = [self translate:self.SongLyrics];
     NSArray *matchArray = nil;
     matchArray = [self.SongLyrics arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLMultiline | RKLCaseless range:NSMakeRange(0UL, [self.SongLyrics length]) error:nil];
     

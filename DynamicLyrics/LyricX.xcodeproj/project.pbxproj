@@ -59,6 +59,8 @@
 		CAB4BD9B19F1706900A42734 /* zh2HK.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9819F1706900A42734 /* zh2HK.txt */; };
 		CAB4BD9C19F1706900A42734 /* zh2SG.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9919F1706900A42734 /* zh2SG.txt */; };
 		CAB4BD9D19F1706900A42734 /* zh2TW.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9A19F1706900A42734 /* zh2TW.txt */; };
+		CAB4BDA319F170FD00A42734 /* NCChineseConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB4BDA019F170FD00A42734 /* NCChineseConverter.m */; };
+		CAB4BDA419F170FD00A42734 /* NSString+NCAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB4BDA219F170FD00A42734 /* NSString+NCAddition.m */; };
 		CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8DE6F118A8DCBA00611593 /* TextField.m */; };
 		CFDEFD0B18AB5C1B00FA2A11 /* EditLyricsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */; };
 		CFDEFD1218AB651F00FA2A11 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFD1118AB651F00FA2A11 /* TextView.m */; };
@@ -184,6 +186,10 @@
 		CAB4BD9819F1706900A42734 /* zh2HK.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2HK.txt; sourceTree = "<group>"; };
 		CAB4BD9919F1706900A42734 /* zh2SG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2SG.txt; sourceTree = "<group>"; };
 		CAB4BD9A19F1706900A42734 /* zh2TW.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2TW.txt; sourceTree = "<group>"; };
+		CAB4BD9F19F170FD00A42734 /* NCChineseConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCChineseConverter.h; sourceTree = "<group>"; };
+		CAB4BDA019F170FD00A42734 /* NCChineseConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCChineseConverter.m; sourceTree = "<group>"; };
+		CAB4BDA119F170FD00A42734 /* NSString+NCAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NCAddition.h"; sourceTree = "<group>"; };
+		CAB4BDA219F170FD00A42734 /* NSString+NCAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NCAddition.m"; sourceTree = "<group>"; };
 		CF7BD31F18AB77A200CE5EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/EditLyricsWindow.xib"; sourceTree = "<group>"; };
 		CF8DE6F018A8DCBA00611593 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		CF8DE6F118A8DCBA00611593 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
@@ -362,6 +368,10 @@
 		02710EC0152A9A53006D4BFF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CAB4BD9F19F170FD00A42734 /* NCChineseConverter.h */,
+				CAB4BDA019F170FD00A42734 /* NCChineseConverter.m */,
+				CAB4BDA119F170FD00A42734 /* NSString+NCAddition.h */,
+				CAB4BDA219F170FD00A42734 /* NSString+NCAddition.m */,
 				025B0787152B1E8600E250BF /* GB_BIG_Converter.h */,
 				025B0788152B1E8600E250BF /* GB_BIG_Converter.m */,
 				02710EE3152AAB7E006D4BFF /* RegexKitLite.h */,
@@ -544,7 +554,9 @@
 				02710E9B152A839F006D4BFF /* main.m in Sources */,
 				02710EA2152A839F006D4BFF /* LyricXAppDelegate.m in Sources */,
 				02710EC7152A9B28006D4BFF /* MainController.m in Sources */,
+				CAB4BDA319F170FD00A42734 /* NCChineseConverter.m in Sources */,
 				02710ED9152AA87F006D4BFF /* QianQianLyrics.m in Sources */,
+				CAB4BDA419F170FD00A42734 /* NSString+NCAddition.m in Sources */,
 				02710EDC152AA8A6006D4BFF /* RequestSender.m in Sources */,
 				02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */,
 				CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */,

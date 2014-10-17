@@ -33,7 +33,9 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
                                         @Pref_Enable_MenuBar_Lyrics: @(NO),
                                         @Pref_hotkeyCodeWriteLyrics: [NSNumber numberWithInt:kVK_ANSI_W],
                                         @Pref_hotkeyModifiersWriteLyrics:[NSNumber numberWithInt:optionKey],
-                                        @Pref_hotkeyEnable:@(NO)
+                                        @Pref_hotkeyEnable:@(NO),
+                                        @Pref_translatorEnable:@(NO),
+                                        @Pref_translatorLang: @"台湾正体"
                                         };
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
         [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues];
@@ -75,6 +77,7 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
     //监视系统截图按键，关闭桌面歌词，防止影响截图
     RegisterEventHotKey(kVK_ANSI_4, cmdKey | shiftKey, b_HotKeyID, GetApplicationEventTarget(), 0, &b_HotKeyRef);
     
+    NSLog(@"%@", [userDefaults stringForKey:@"translatorLanguageX"]);
 }
 
 

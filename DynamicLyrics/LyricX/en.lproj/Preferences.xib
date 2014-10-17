@@ -86,18 +86,18 @@
             </subviews>
         </customView>
         <customView id="824" userLabel="Advanced">
-            <rect key="frame" x="0.0" y="0.0" width="434" height="354"/>
+            <rect key="frame" x="0.0" y="0.0" width="408" height="397"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box autoresizesSubviews="NO" title="Behavioral Settings:" borderType="line" id="1865">
-                    <rect key="frame" x="23" y="4" width="388" height="155"/>
+                    <rect key="frame" x="23" y="6" width="368" height="196"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="386" height="139"/>
+                        <rect key="frame" x="1" y="1" width="366" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button id="2672">
-                                <rect key="frame" x="16" y="92" width="200" height="48"/>
+                                <rect key="frame" x="16" y="133" width="200" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Launch and quit with iTunes" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2673">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button id="3037">
-                                <rect key="frame" x="16" y="83" width="303" height="18"/>
+                                <rect key="frame" x="16" y="124" width="303" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Display desktop lyrics when iTunes is paused" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3038">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button id="3060">
-                                <rect key="frame" x="16" y="44" width="404" height="34"/>
+                                <rect key="frame" x="16" y="85" width="404" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Display desktop lyrics in all desktop spaces (restart required)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3061">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                             <button id="SFs-xE-xJQ">
-                                <rect key="frame" x="16" y="8" width="305" height="34"/>
+                                <rect key="frame" x="16" y="49" width="305" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Enable &quot;Write Lyrics to iTunes&quot; hotkey: ⌥+W (restart required)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dy9-cx-6ai">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -167,16 +167,62 @@
                                     </binding>
                                 </connections>
                             </button>
+                            <button id="5FC-02-3TE">
+                                <rect key="frame" x="16" y="12" width="308" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Automatically translate Simplified  Chinese lyrics into ..." bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="itn-9A-AUh">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.translatorEnable" id="2Jo-UR-J5q">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <comboBox verticalHuggingPriority="750" id="72I-UF-SAc">
+                                <rect key="frame" x="248" y="16" width="87" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="J1S-E8-pjf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>台湾正体</string>
+                                        <string>港澳繁体</string>
+                                        <string>新马繁体</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.translatorLan" id="7mJ-Wd-fd4">
+                                        <dictionary key="options">
+                                            <string key="NSMultipleValuesPlaceholder">台湾正体</string>
+                                            <string key="NSNoSelectionPlaceholder">台湾正体</string>
+                                            <string key="NSNotApplicablePlaceholder">台湾正体</string>
+                                            <string key="NSNullPlaceholder">台湾正体</string>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </comboBox>
                         </subviews>
                     </view>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <box autoresizesSubviews="NO" title="Desktop Lyrics Settings:" borderType="line" id="1887">
-                    <rect key="frame" x="23" y="163" width="388" height="186"/>
+                    <rect key="frame" x="23" y="206" width="368" height="186"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="386" height="170"/>
+                        <rect key="frame" x="1" y="1" width="366" height="170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <colorWell id="1926">
@@ -444,6 +490,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
             </subviews>
+            <point key="canvasLocation" x="639" y="81.5"/>
         </customView>
         <customView id="2310" userLabel="Donate">
             <rect key="frame" x="0.0" y="0.0" width="409" height="208"/>
