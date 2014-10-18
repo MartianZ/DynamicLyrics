@@ -417,12 +417,11 @@
                 PlayerPosition = [iTunesOLD playerPosition];
             }
             
-            if ((currentPlayerPosition / 1000) != PlayerPosition)
+            if ((currentPlayerPosition / 1000) != PlayerPosition && currentPlayerPosition % 1000 < 900)
                 currentPlayerPosition = PlayerPosition * 1000;
-            
             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
             
-            
+
             [dict setObject:@"iTunesPosition" forKey:@"Type"];
             [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
             [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
