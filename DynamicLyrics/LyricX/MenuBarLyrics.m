@@ -54,11 +54,13 @@
 -(void) showSmoothTitle:(NSString *)title
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
+    
     for (float alpha = 0.3; alpha < 1.01; alpha+=0.02)
     {
         
-        NSColor *color = [NSColor colorWithCalibratedWhite:0 alpha:alpha];
-        
+        NSColor *color = [NSColor colorWithCalibratedWhite:white alpha:alpha];
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
         [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
@@ -81,9 +83,13 @@
     long sT = ([sleepTime longValue] - 800)*1000;
     if (sT < 0) return;
     usleep((unsigned int)sT);
+    
+    NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
+
     for (float alpha = 0.7; alpha > 0; alpha-=0.02)
     {
-        NSColor *color = [NSColor colorWithCalibratedWhite:0 alpha:alpha];
+        NSColor *color = [NSColor colorWithCalibratedWhite:white alpha:alpha];
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
         [d setObject:[NSFont fontWithName: @"Helvetica" size: 15] forKey:NSFontAttributeName];
