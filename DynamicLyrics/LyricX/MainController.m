@@ -110,22 +110,30 @@
         
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     
-    if ([[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Stopped"]) {
+    NSString*state=[[note userInfo] objectForKey:@"Player State"];
+        
+    if ([state isEqualToString:@"Stopped"]) {
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:@"DynamicLyrics!" forKey:@"Lyrics"]];
         return;
+    }else if([state isEqualToString:@"Paused"]){
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setObject:@"iTunesPause" forKey:@"Type"];
+        [dict setObject:@YES forKey:@"isPausing"];
+        [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
+    }else if([state isEqualToString:@"Playing"]){
+        {
+            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+            [dict setObject:@"iTunesPause" forKey:@"Type"];
+            [dict setObject:@NO forKey:@"isPausing"];
+            [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
+        }
+        
+        if (self.iTunesCurrentTrack == [iTunes currentTrack])return;
+        self.iTunesCurrentTrack = [iTunes currentTrack];
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setObject:@"iTunesSongChanged" forKey:@"Type"];
+        [self WorkingThread:dict];
     }
-    
-    
-    if ((note != nil) && (![[[note userInfo] objectForKey:@"Player State"] isEqualToString:@"Playing"])) {
-        return;
-    }
-    
-    if (self.iTunesCurrentTrack == [iTunes currentTrack]) return;
-    self.iTunesCurrentTrack = [iTunes currentTrack];
-
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:@"iTunesSongChanged" forKey:@"Type"];
-    [self WorkingThread:dict];
     }
 }
 
@@ -221,7 +229,8 @@
     //this thread should work in main thread
     //iTunesPosition or iTunesSongChanged handler
     @autoreleasepool {
-    if ([[tmpDict objectForKey:@"Type"] isEqualToString:@"iTunesSongChanged"])
+    NSString*type=[tmpDict objectForKey:@"Type"];
+    if ([type isEqualToString:@"iTunesSongChanged"])
     {
         //iTunesSongChanged
         NSLog(@"%@",[iTunesCurrentTrack name]);
@@ -260,7 +269,7 @@
 
         
     }
-    else
+    else if([type isEqualToString:@"iTunesPosition"])
     {
         //iTunesPosition
         NSString *_currentPlayerPosition = [NSString stringWithString:[tmpDict objectForKey:@"currentPlayerPosition"]];
@@ -316,6 +325,9 @@
             
         }
 
+    }else if([type isEqualToString:@"iTunesPause"]){
+        id obj=[tmpDict objectForKey:@"isPausing"];
+        [nc postNotificationName:@"iTunesPaused" object:self userInfo:[NSDictionary dictionaryWithObject:obj forKey:@"isPausing"]];
     }
     }
 }
@@ -407,29 +419,28 @@
             [[NSApplication sharedApplication] terminate:self];
             //exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
         }
-        if ([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) {
-            if (iTunesVersion >= 1103042001000000)
-            {
-                PlayerPosition = [iTunesNEW playerPosition];
+        if ([iTunes isRunning]) {
+            if([iTunes playerState] == iTunesEPlSPlaying){
                 
-            } else
-            {
-                PlayerPosition = [iTunesOLD playerPosition];
-            }
-            
-            if ((currentPlayerPosition / 1000) != PlayerPosition && currentPlayerPosition % 1000 < 900)
-                currentPlayerPosition = PlayerPosition * 1000;
-            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-            
-
-            [dict setObject:@"iTunesPosition" forKey:@"Type"];
-            [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
-            [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
-
-        }
-        else {
-            sleep(1);
-        }
+                if (iTunesVersion >= 1103042001000000)
+                {
+                    PlayerPosition = [iTunesNEW playerPosition];
+                    
+                } else
+                {
+                    PlayerPosition = [iTunesOLD playerPosition];
+                }
+                
+                if ((currentPlayerPosition / 1000) != PlayerPosition && currentPlayerPosition % 1000 < 900)
+                    currentPlayerPosition = PlayerPosition * 1000;
+                NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+                
+                
+                [dict setObject:@"iTunesPosition" forKey:@"Type"];
+                [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
+                [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];
+            }else sleep(1);
+        }else sleep(1);
         }
     }
 }

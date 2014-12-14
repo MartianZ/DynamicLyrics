@@ -36,6 +36,7 @@
         [_statusItem setMenu:AppMenu];
         nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(iTunesLyricsChanged:) name:@NC_LyricsChanged object:nil];
+        [nc addObserver:self selector:@selector(iTunesPaused:) name:@"iTunesPaused" object:nil];
         
         NSLog(@"%@",@"MenuBarLyrics");
 
@@ -104,6 +105,12 @@
     [pool release];
 }
 
+-(void)iTunesPaused:(NSNotification*)notification{
+    bool pausing=[[[notification userInfo]valueForKey:@"isPausing"]boolValue];
+    NSLog(@"%s",pausing?"Paused":"Playing");
+    [_statusItem setAttributedTitle:nil];
+    [_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
+}
 
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
@@ -134,7 +141,9 @@
 
 	[_queue cancelAllOperations];
     if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
-		if ([self.CurrentSongLyrics isEqualToString:@""]) {
+//        NSString*trimmed=[self.CurrentSongLyrics stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString*trimmed=self.CurrentSongLyrics;
+		if ([trimmed isEqualToString:@""]){
 			[_statusItem setAttributedTitle:nil];
 			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 		}else{
