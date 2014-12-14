@@ -68,11 +68,24 @@
     [_statusItem release];
     [super dealloc];
 }
+-(bool)isStatusBarWideEnoughToDisplayLyrics{
+    // TODO
+    return true;
+}
 -(void) showSmoothTitle:(NSString *)title
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
     CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
+    {
+        NSMutableDictionary *d = [NSMutableDictionary dictionary];
+        [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
+        NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
+        [_statusItem setAttributedTitle:shadowTitle];
+        if(![self isStatusBarWideEnoughToDisplayLyrics])
+            title=@"…";
+    }
+    
     
     for (float alpha = 0.3; alpha < 1.01; alpha+=0.02)
     {
