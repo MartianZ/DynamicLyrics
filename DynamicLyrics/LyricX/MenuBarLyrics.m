@@ -7,6 +7,7 @@
 //
 
 #import "MenuBarLyrics.h"
+#import "LyricXAppDelegate.h"
 #import "Constants.h"
 
 @interface NSStatusBar (NSStatusBar_Private)
@@ -33,7 +34,10 @@
         [image setTemplate:YES];
         [_statusItem setImage:image];
         [_statusItem setHighlightMode:YES];
-        [_statusItem setMenu:AppMenu];
+        self.AppMenu=AppMenu;
+        [_statusItem setTarget:self];
+        [_statusItem setAction:@selector(toggleDesktopLyrics:)];
+        [_statusItem sendActionOn:NSLeftMouseUpMask|NSRightMouseUpMask];
         nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(iTunesLyricsChanged:) name:@NC_LyricsChanged object:nil];
         [nc addObserver:self selector:@selector(iTunesPaused:) name:@"iTunesPaused" object:nil];
@@ -43,7 +47,20 @@
     }
     return self;
 }
-
+-(void)toggleDesktopLyrics:(id)sender{
+    NSEvent*event=[NSApp currentEvent];
+    if([event type]!=NSRightMouseUp&&!([event modifierFlags]&NSControlKeyMask)){
+        NSUserDefaults*df=[NSUserDefaults standardUserDefaults];
+        bool edl=[[df valueForKey:@Pref_Enable_Desktop_Lyrics]boolValue];
+        [df setBool:!edl forKey:@Pref_Enable_Desktop_Lyrics];
+        // FIXME refreshing problems, response is delayed
+        // this is main thread, no need for performSelectorOnMainThread
+        [(AppDelegate*)[NSApp delegate]DisabledDesktopLyrics:self];
+        [self showSmoothTitle:@"PleaseWait…"];
+        // fuck [NSEvent keyEventWithType:<#(NSEventType)#> location:<#(NSPoint)#> modifierFlags:<#(NSEventModifierFlags)#> timestamp:<#(NSTimeInterval)#> windowNumber:<#(NSInteger)#> context:<#(NSGraphicsContext *)#> characters:<#(NSString *)#> charactersIgnoringModifiers:<#(NSString *)#> isARepeat:<#(BOOL)#> keyCode:<#(unsigned short)#>]
+        // are apple's engineers all have shit in there brain!?
+    }else [_statusItem popUpStatusItemMenu:self.AppMenu];
+}
 -(void) dealloc
 {
     self.CurrentSongLyrics = nil;
@@ -51,7 +68,6 @@
     [_statusItem release];
     [super dealloc];
 }
-
 -(void) showSmoothTitle:(NSString *)title
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -104,14 +120,12 @@
     [_statusItem setTitle:@""];
     [pool release];
 }
-
 -(void)iTunesPaused:(NSNotification*)notification{
     bool pausing=[[[notification userInfo]valueForKey:@"isPausing"]boolValue];
     NSLog(@"%s",pausing?"Paused":"Playing");
     [_statusItem setAttributedTitle:nil];
     [_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 }
-
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];

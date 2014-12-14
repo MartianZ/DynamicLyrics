@@ -13,10 +13,10 @@
     NSNotificationCenter *nc;
     NSStatusItem *_statusItem;
     NSOperationQueue *_queue;
-    
 }
 
 @property(nonatomic, retain) NSString *CurrentSongLyrics;
+@property(retain)NSMenu*AppMenu;
 
 -(id) initWithMenu:(NSMenu *)AppMenu;
 
