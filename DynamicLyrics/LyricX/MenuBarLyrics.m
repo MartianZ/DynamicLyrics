@@ -47,18 +47,38 @@
     }
     return self;
 }
+-(bool)_toggleDesktopLyrics:(NSMenuItem*)item{
+    CGKeyCode key=kVK_ANSI_X;NSString*kx=@"x";
+    CGEventRef kd=CGEventCreateKeyboardEvent(nil,key,true);
+    CGEventRef ku=CGEventCreateKeyboardEvent(nil,key,false);
+    if(!kd||!ku){
+        [_statusItem performSelectorOnMainThread:@selector(setEnabled:) withObject:true waitUntilDone:false];
+        if(kd)CFRelease(kd);
+        if(ku)CFRelease(ku);
+        return false;
+    }
+    NSString*kv=[item keyEquivalent];
+    NSUInteger km=[item keyEquivalentModifierMask];
+    [item setKeyEquivalent:kx];
+    [item setKeyEquivalentModifierMask:0];
+    [NSThread sleepForTimeInterval:0.1];
+    CGEventTapLocation loc=kCGHIDEventTap;
+    CGEventPost(loc,kd);
+    CGEventPost(loc,ku);
+    [NSThread sleepForTimeInterval:0.1];
+    [item setKeyEquivalent:kv];
+    [item setKeyEquivalentModifierMask:km];
+    CFRelease(kd);CFRelease(ku);
+    [_statusItem performSelectorOnMainThread:@selector(setEnabled:) withObject:true waitUntilDone:false];
+    return true;
+}
 -(void)toggleDesktopLyrics:(id)sender{
     NSEvent*event=[NSApp currentEvent];
     if([event type]!=NSRightMouseUp&&!([event modifierFlags]&NSControlKeyMask)){
-        NSUserDefaults*df=[NSUserDefaults standardUserDefaults];
-        bool edl=[[df valueForKey:@Pref_Enable_Desktop_Lyrics]boolValue];
-        [df setBool:!edl forKey:@Pref_Enable_Desktop_Lyrics];
-        // FIXME refreshing problems, response is delayed
-        // this is main thread, no need for performSelectorOnMainThread
-        [(AppDelegate*)[NSApp delegate]DisabledDesktopLyrics:self];
-        [self showSmoothTitle:@"PleaseWait…"];
-        // fuck [NSEvent keyEventWithType:<#(NSEventType)#> location:<#(NSPoint)#> modifierFlags:<#(NSEventModifierFlags)#> timestamp:<#(NSTimeInterval)#> windowNumber:<#(NSInteger)#> context:<#(NSGraphicsContext *)#> characters:<#(NSString *)#> charactersIgnoringModifiers:<#(NSString *)#> isARepeat:<#(BOOL)#> keyCode:<#(unsigned short)#>]
-        // are apple's engineers all have shit in there brain!?
+        [_statusItem setEnabled:false];
+        NSMenuItem*item=[self.AppMenu itemWithTag:100];
+        [self performSelectorInBackground:@selector(_toggleDesktopLyrics:) withObject:item];
+        [_statusItem popUpStatusItemMenu:self.AppMenu];
     }else [_statusItem popUpStatusItemMenu:self.AppMenu];
 }
 -(void) dealloc
