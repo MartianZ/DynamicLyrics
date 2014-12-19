@@ -94,12 +94,13 @@
 }
 -(void) showSmoothTitle:(NSString *)title
 {
+    NSString*font=@"Bradley Hand";
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
     CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
     {
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
-        [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
+        [d setObject:[NSFont fontWithName: font size: 15] forKey:NSFontAttributeName];
         NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
         [_statusItem setAttributedTitle:shadowTitle];
         if(![self isStatusBarWideEnoughToDisplayLyrics])
@@ -113,7 +114,7 @@
         NSColor *color = [NSColor colorWithCalibratedWhite:white alpha:alpha];
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
-        [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
+        [d setObject:[NSFont fontWithName: font size: 15] forKey:NSFontAttributeName];
         
         NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
         
