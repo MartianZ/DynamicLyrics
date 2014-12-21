@@ -95,10 +95,10 @@
 -(void) showSmoothTitle:(NSString *)title
 {
     NSString*font=@"Bradley Hand";
-//    font=@"Comic Sans MS";
+//    font=@"Jxixinkai";
     NSMutableDictionary *d = [NSMutableDictionary dictionary];
     [d setObject:[NSFont fontWithName: font size: 15] forKey:NSFontAttributeName];
-    [d setObject:[NSNumber numberWithInt: 0] forKey:NSBaselineOffsetAttributeName];
+    [d setObject:[NSNumber numberWithInt: 1] forKey:NSBaselineOffsetAttributeName];
     
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
