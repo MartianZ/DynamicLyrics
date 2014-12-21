@@ -29,7 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self selector:@selector(iTunesLyricsChanged:) name:@"LyricsChanged" object:nil];
+        [nc addObserver:self selector:@selector(iTunesLyricsChanged:) name:@NC_LyricsChanged object:nil];
 
         
         rootLayer = [[CALayer layer] retain];

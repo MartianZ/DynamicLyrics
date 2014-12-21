@@ -7,6 +7,7 @@
 //
 
 #import "MenuBarLyrics.h"
+#import "LyricXAppDelegate.h"
 #import "Constants.h"
 
 @interface NSStatusBar (NSStatusBar_Private)
@@ -33,16 +34,53 @@
         [image setTemplate:YES];
         [_statusItem setImage:image];
         [_statusItem setHighlightMode:YES];
-        [_statusItem setMenu:AppMenu];
+        self.AppMenu=AppMenu;
+        [_statusItem setTarget:self];
+        [_statusItem setAction:@selector(toggleDesktopLyrics:)];
+        [_statusItem sendActionOn:NSLeftMouseUpMask|NSRightMouseUpMask];
         nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(iTunesLyricsChanged:) name:@NC_LyricsChanged object:nil];
+        [nc addObserver:self selector:@selector(iTunesPaused:) name:@"iTunesPaused" object:nil];
         
         NSLog(@"%@",@"MenuBarLyrics");
 
     }
     return self;
 }
-
+-(bool)_toggleDesktopLyrics:(NSMenuItem*)item{
+    CGKeyCode key=kVK_ANSI_X;NSString*kx=@"x";
+    CGEventRef kd=CGEventCreateKeyboardEvent(nil,key,true);
+    CGEventRef ku=CGEventCreateKeyboardEvent(nil,key,false);
+    if(!kd||!ku){
+        [_statusItem performSelectorOnMainThread:@selector(setEnabled:) withObject:true waitUntilDone:false];
+        if(kd)CFRelease(kd);
+        if(ku)CFRelease(ku);
+        return false;
+    }
+    NSString*kv=[item keyEquivalent];
+    NSUInteger km=[item keyEquivalentModifierMask];
+    [item setKeyEquivalent:kx];
+    [item setKeyEquivalentModifierMask:0];
+    [NSThread sleepForTimeInterval:0.1];
+    CGEventTapLocation loc=kCGHIDEventTap;
+    CGEventPost(loc,kd);
+    CGEventPost(loc,ku);
+    [NSThread sleepForTimeInterval:0.1];
+    [item setKeyEquivalent:kv];
+    [item setKeyEquivalentModifierMask:km];
+    CFRelease(kd);CFRelease(ku);
+    [_statusItem performSelectorOnMainThread:@selector(setEnabled:) withObject:true waitUntilDone:false];
+    return true;
+}
+-(void)toggleDesktopLyrics:(id)sender{
+    NSEvent*event=[NSApp currentEvent];
+    if([event type]!=NSRightMouseUp&&!([event modifierFlags]&NSControlKeyMask)){
+        [_statusItem setEnabled:false];
+        NSMenuItem*item=[self.AppMenu itemWithTag:100];
+        [self performSelectorInBackground:@selector(_toggleDesktopLyrics:) withObject:item];
+        [_statusItem popUpStatusItemMenu:self.AppMenu];
+    }else [_statusItem popUpStatusItemMenu:self.AppMenu];
+}
 -(void) dealloc
 {
     self.CurrentSongLyrics = nil;
@@ -50,20 +88,35 @@
     [_statusItem release];
     [super dealloc];
 }
-
+-(bool)isStatusBarWideEnoughToDisplayLyrics{
+    // TODO
+    return true;
+}
 -(void) showSmoothTitle:(NSString *)title
 {
+    NSString*font=@"Bradley Hand";
+//    font=@"Jxixinkai";
+    NSMutableDictionary *d = [NSMutableDictionary dictionary];
+    [d setObject:[NSFont fontWithName: font size: 15] forKey:NSFontAttributeName];
+    [d setObject:[NSNumber numberWithInt: 1] forKey:NSBaselineOffsetAttributeName];
+    
+    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
     CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
+    {
+        NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
+        [_statusItem setAttributedTitle:shadowTitle];
+        if(![self isStatusBarWideEnoughToDisplayLyrics])
+            title=@"…";
+    }
+    
     
     for (float alpha = 0.3; alpha < 1.01; alpha+=0.02)
     {
         
         NSColor *color = [NSColor colorWithCalibratedWhite:white alpha:alpha];
-        NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
-        [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
         
         NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
         
@@ -103,8 +156,12 @@
     [_statusItem setTitle:@""];
     [pool release];
 }
-
-
+-(void)iTunesPaused:(NSNotification*)notification{
+    bool pausing=[[[notification userInfo]valueForKey:@"isPausing"]boolValue];
+    NSLog(@"%s",pausing?"Paused":"Playing");
+    [_statusItem setAttributedTitle:nil];
+    [_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
+}
 -(void)iTunesLyricsChanged:(NSNotification *)note
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -134,7 +191,9 @@
 
 	[_queue cancelAllOperations];
     if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
-		if ([self.CurrentSongLyrics isEqualToString:@""]) {
+//        NSString*trimmed=[self.CurrentSongLyrics stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString*trimmed=self.CurrentSongLyrics;
+		if ([trimmed isEqualToString:@""]){
 			[_statusItem setAttributedTitle:nil];
 			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 		}else{
