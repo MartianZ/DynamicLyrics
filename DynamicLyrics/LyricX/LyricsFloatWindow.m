@@ -20,7 +20,7 @@
         self.opaque = NO;
         self.hasShadow = NO;
         self.hidesOnDeactivate = NO;
-        self.IgnoresMouseEvents = YES;
+        self.ignoresMouseEvents = YES;
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@Pref_Attach_LyricsWindow_To_All_Spaces]) {
             [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
         }
