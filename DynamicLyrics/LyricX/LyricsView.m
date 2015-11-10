@@ -169,8 +169,11 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
         textLayer.alignmentMode = kCAAlignmentCenter;
         textLayer.font = font;
         if ([userDefaults boolForKey:@Pref_Shadow_Style_Text]) {
+            NSColor *shadowColor=[NSUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@PrefDesktopShadowColor]];
+            double shadowRadius=[userDefaults doubleForKey:@PrefDesktopShadowRadius];
+            textLayer.shadowColor=CGColorCreateFromNSColor(colorSpace,shadowColor);
             textLayer.shadowOpacity = 1.0;
-            textLayer.shadowRadius = 2;
+            textLayer.shadowRadius = shadowRadius;
             textLayer.shadowOffset = CGSizeMake (0,  0);
         } else {
             textLayer.shadowOpacity = 0;
@@ -183,8 +186,11 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef colorSpace, NSColor 
         secondTextLayer.alignmentMode = kCAAlignmentCenter;
         secondTextLayer.font = font;
         if ([userDefaults boolForKey:@Pref_Shadow_Style_Text]) {
+            NSColor *shadowColor=[NSUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@PrefDesktopShadowColor]];
+            double shadowRadius=[userDefaults doubleForKey:@PrefDesktopShadowRadius];
+            secondTextLayer.shadowColor=CGColorCreateFromNSColor(colorSpace,shadowColor);
             secondTextLayer.shadowOpacity = 1.0;
-            secondTextLayer.shadowRadius = 2;
+            secondTextLayer.shadowRadius = shadowRadius;
             secondTextLayer.shadowOffset = CGSizeMake (0,  0);
         } else {
             secondTextLayer.shadowOpacity = 0;
