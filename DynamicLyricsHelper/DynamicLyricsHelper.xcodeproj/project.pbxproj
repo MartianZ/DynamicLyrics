@@ -132,6 +132,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0600;
+				TargetAttributes = {
+					02947A301567622400DA746B = {
+						DevelopmentTeam = V7RJA6U5A6;
+					};
+				};
 			};
 			buildConfigurationList = 02947A2B1567622400DA746B /* Build configuration list for PBXProject "DynamicLyricsHelper" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -252,7 +257,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyricsHelper/DynamicLyricsHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Zhu Zheng (R5RMP6G3GQ)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -260,6 +266,7 @@
 				INFOPLIST_FILE = "DynamicLyricsHelper/DynamicLyricsHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -270,7 +277,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DynamicLyricsHelper/DynamicLyricsHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Zhu Zheng (R5RMP6G3GQ)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -278,6 +286,7 @@
 				INFOPLIST_FILE = "DynamicLyricsHelper/DynamicLyricsHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;

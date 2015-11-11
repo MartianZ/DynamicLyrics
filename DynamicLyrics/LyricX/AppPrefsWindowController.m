@@ -59,7 +59,7 @@
 
 - (NSUInteger)validModesForFontPanel:(NSFontPanel *)fontPanel 
 {
-    return  NSFontPanelSizeModeMask | NSFontPanelCollectionModeMask | NSFontPanelShadowEffectModeMask;
+    return  NSFontPanelSizeModeMask | NSFontPanelCollectionModeMask | NSFontPanelFaceModeMask;
 }
 
 -(IBAction)openFontPanel:(id)sender

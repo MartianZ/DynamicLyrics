@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button id="2761">
-                    <rect key="frame" x="114" y="82" width="191" height="18"/>
+                    <rect key="frame" x="49" y="82" width="321" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <buttonCell key="cell" type="check" title="歌曲切换时显示专辑相关信息" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2762">
+                    <buttonCell key="cell" type="check" title="Show track info when the playing song changes" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2762">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -51,10 +51,10 @@
                     </connections>
                 </slider>
                 <textField verticalHuggingPriority="750" id="2892">
-                    <rect key="frame" x="27" y="43" width="87" height="17"/>
+                    <rect key="frame" x="27" y="43" width="101" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="显示停留时间:" id="2893">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Displayed time:" id="2893">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -71,10 +71,10 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="2930">
-                    <rect key="frame" x="257" y="16" width="15" height="17"/>
+                    <rect key="frame" x="241" y="16" width="47" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="秒" id="2931">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="seconds" id="2931">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -94,21 +94,21 @@
             <animations/>
         </customView>
         <customView id="824" userLabel="Advanced">
-            <rect key="frame" x="0.0" y="0.0" width="434" height="387"/>
+            <rect key="frame" x="0.0" y="0.0" width="408" height="416"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box autoresizesSubviews="NO" title="行为设置:" borderType="line" id="1865">
-                    <rect key="frame" x="23" y="9" width="388" height="185"/>
+                <box autoresizesSubviews="NO" title="Behavioral Settings:" borderType="line" id="1865">
+                    <rect key="frame" x="23" y="6" width="368" height="196"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="386" height="169"/>
+                        <rect key="frame" x="1" y="1" width="366" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button id="2672">
-                                <rect key="frame" x="16" y="129" width="141" height="37"/>
+                                <rect key="frame" x="16" y="133" width="200" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="check" title="随iTunes启动和退出" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2673">
+                                <buttonCell key="cell" type="check" title="Launch and quit with iTunes" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2673">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -124,10 +124,10 @@
                                 </connections>
                             </button>
                             <button id="3037">
-                                <rect key="frame" x="16" y="116" width="180" height="18"/>
+                                <rect key="frame" x="16" y="124" width="303" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="check" title="iTunes暂停播放时显示歌词" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3038">
+                                <buttonCell key="cell" type="check" title="Display desktop lyrics when iTunes is paused" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3038">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -141,54 +141,16 @@
                                     </binding>
                                 </connections>
                             </button>
-                            <button id="3073">
-                                <rect key="frame" x="16" y="69" width="295" height="18"/>
+                            <button id="3060">
+                                <rect key="frame" x="16" y="85" width="404" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="check" title="在所有的屏幕空间中显示歌词窗口（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3074">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="STHeitiSC-Light"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3117">
-                                        <dictionary key="options">
-                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                            <integer key="NSNullPlaceholder" value="0"/>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <button id="rwL-WD-TJh">
-                                <rect key="frame" x="16" y="47" width="334" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="启用“写入歌词到iTunes”快捷键: ⌥+W（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8YY-Dv-0kS">
+                                <buttonCell key="cell" type="check" title="Display desktop lyrics in all desktop spaces (restart required)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3061">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.hotkeyEnable" id="K46-19-NdV">
-                                        <dictionary key="options">
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
-                            <button id="r4w-eN-jna">
-                                <rect key="frame" x="16" y="12" width="334" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="自动翻译简体中文歌词到 (仅在新下载歌词时翻译)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Bre-gh-XSQ">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="STHeitiSC-Light"/>
-                                </buttonCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.translatorEnable" id="aQt-VD-saR">
+                                    <binding destination="2099" name="value" keyPath="values.PrefAttachLyricsWindowToAllSpace" id="3082">
                                         <dictionary key="options">
                                             <integer key="NSMultipleValuesPlaceholder" value="0"/>
                                             <integer key="NSNoSelectionPlaceholder" value="0"/>
@@ -200,16 +162,16 @@
                                     </binding>
                                 </connections>
                             </button>
-                            <button id="QGD-v1-ApE">
-                                <rect key="frame" x="16" y="85" width="345" height="34"/>
+                            <button id="SFs-xE-xJQ">
+                                <rect key="frame" x="16" y="49" width="305" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="check" title="屏幕截图时关闭歌词（重启生效）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Naw-QU-ieq">
+                                <buttonCell key="cell" type="check" title="Enable &quot;Write Lyrics to iTunes&quot; hotkey: ⌥+W (restart required)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dy9-cx-6ai">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.WhetherDisableWhenSnapshot" id="pNT-Zv-GnH">
+                                    <binding destination="2099" name="value" keyPath="values.hotkeyEnable" id="H4c-4y-sKl">
                                         <dictionary key="options">
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
@@ -217,11 +179,32 @@
                                     </binding>
                                 </connections>
                             </button>
-                            <comboBox verticalHuggingPriority="750" id="dbt-CJ-XVT">
-                                <rect key="frame" x="194" y="15" width="87" height="26"/>
+                            <button id="5FC-02-3TE">
+                                <rect key="frame" x="16" y="12" width="308" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="vbm-og-9OV">
+                                <buttonCell key="cell" type="check" title="Automatically translate Simplified  Chinese lyrics into ..." bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="itn-9A-AUh">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="2099" name="value" keyPath="values.translatorEnable" id="2Jo-UR-J5q">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </button>
+                            <comboBox verticalHuggingPriority="750" id="72I-UF-SAc">
+                                <rect key="frame" x="248" y="16" width="87" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <animations/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="J1S-E8-pjf">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -232,7 +215,7 @@
                                     </objectValues>
                                 </comboBoxCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.translatorLan" id="EeB-Ps-U1a">
+                                    <binding destination="2099" name="value" keyPath="values.translatorLan" id="7mJ-Wd-fd4">
                                         <dictionary key="options">
                                             <string key="NSMultipleValuesPlaceholder">台湾正体</string>
                                             <string key="NSNoSelectionPlaceholder">台湾正体</string>
@@ -251,21 +234,21 @@
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <box autoresizesSubviews="NO" title="桌面歌词设置:" borderType="line" id="1887">
-                    <rect key="frame" x="23" y="198" width="388" height="189"/>
+                <box autoresizesSubviews="NO" title="Desktop Lyrics Settings:" borderType="line" id="1887">
+                    <rect key="frame" x="23" y="200" width="368" height="216"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="386" height="173"/>
+                        <rect key="frame" x="1" y="1" width="366" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <colorWell id="1926">
-                                <rect key="frame" x="102" y="113" width="51" height="23"/>
+                                <rect key="frame" x="102" y="140" width="51" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2126"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopTextColor" id="YNL-Ix-7fK">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopTextColor" id="yod-m1-nQ8">
                                         <dictionary key="options">
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
@@ -275,27 +258,27 @@
                                 </connections>
                             </colorWell>
                             <textField verticalHuggingPriority="750" id="1927">
-                                <rect key="frame" x="25" y="116" width="61" height="17"/>
+                                <rect key="frame" x="25" y="143" width="74" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="文字颜色:" id="1956">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Color:" id="1956">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="1928">
-                                <rect key="frame" x="25" y="143" width="35" height="17"/>
+                                <rect key="frame" x="25" y="170" width="36" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="字体:" id="1955">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font:" id="1955">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="1925">
-                                <rect key="frame" x="102" y="141" width="165" height="22"/>
+                                <rect key="frame" x="102" y="168" width="165" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="1960">
@@ -304,20 +287,18 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsDisplayFont" id="ZRw-Sh-Lyd">
+                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsDisplayFont" id="2659">
                                         <dictionary key="options">
                                             <string key="NSNullPlaceholder">Helvetica, 28.0</string>
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
                                         </dictionary>
                                     </binding>
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" id="1929">
-                                <rect key="frame" x="269" y="135" width="66" height="32"/>
+                                <rect key="frame" x="269" y="162" width="77" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="选择" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1954">
+                                <buttonCell key="cell" type="push" title="Select" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1954">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -326,17 +307,17 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" id="1930">
-                                <rect key="frame" x="25" y="65" width="224" height="17"/>
+                                <rect key="frame" x="25" y="94" width="279" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="窗口位置:(左间距,底部间距,高度,宽度)" id="1953">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Window Position:(Left,Bottom,Height,Width)" id="1953">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="1931">
-                                <rect key="frame" x="27" y="35" width="50" height="22"/>
+                                <rect key="frame" x="27" y="64" width="50" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="1952">
@@ -346,7 +327,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2241"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="oCl-tj-WAN">
+                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="s4M-X9-JXf">
                                         <dictionary key="options">
                                             <string key="NSNullPlaceholder">150</string>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
@@ -356,7 +337,7 @@
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="1932">
-                                <rect key="frame" x="103" y="35" width="50" height="22"/>
+                                <rect key="frame" x="103" y="64" width="50" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="1950">
@@ -366,7 +347,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2243"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="aMB-DZ-Vsr">
+                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="sev-Mg-Nct">
                                         <dictionary key="options">
                                             <string key="NSNullPlaceholder">100</string>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
@@ -376,7 +357,7 @@
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" id="1933">
-                                <rect key="frame" x="178" y="35" width="50" height="22"/>
+                                <rect key="frame" x="178" y="64" width="50" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="1948">
@@ -386,7 +367,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2245"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="hCX-cY-m2G">
+                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="pv6-8K-jBv">
                                         <dictionary key="options">
                                             <string key="NSNullPlaceholder">100</string>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
@@ -396,37 +377,52 @@
                                 </connections>
                             </textField>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="1934">
-                                <rect key="frame" x="77" y="32" width="19" height="27"/>
+                                <rect key="frame" x="77" y="61" width="19" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1946"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2242"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="2231"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefX" id="MTq-iX-4Td">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="1935">
-                                <rect key="frame" x="152" y="32" width="19" height="27"/>
+                                <rect key="frame" x="152" y="61" width="19" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1945"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2244"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="2233"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefY" id="kip-eb-ul8">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="1936">
-                                <rect key="frame" x="228" y="32" width="19" height="27"/>
+                                <rect key="frame" x="228" y="61" width="19" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1944"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2246"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="2235"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefH" id="FSR-wH-COy">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <textField verticalHuggingPriority="750" id="1937">
-                                <rect key="frame" x="253" y="35" width="50" height="22"/>
+                                <rect key="frame" x="253" y="64" width="50" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="1943">
@@ -436,7 +432,7 @@
                                 </textFieldCell>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2247"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="y41-oZ-jKC">
+                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="eQd-fD-Y3g">
                                         <dictionary key="options">
                                             <string key="NSNullPlaceholder">1000</string>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
@@ -446,33 +442,38 @@
                                 </connections>
                             </textField>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="1938">
-                                <rect key="frame" x="303" y="32" width="19" height="27"/>
+                                <rect key="frame" x="303" y="61" width="19" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="3000" doubleValue="1" id="1941"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2248"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="2237"/>
+                                    <binding destination="2099" name="value" keyPath="values.PrefW" id="bvd-y0-wjm">
+                                        <dictionary key="options">
+                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                            <bool key="NSValidatesImmediately" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </stepper>
                             <textField verticalHuggingPriority="750" id="1923">
-                                <rect key="frame" x="208" y="116" width="61" height="17"/>
+                                <rect key="frame" x="161" y="143" width="121" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="背景颜色:" id="1961">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background Color:" id="1961">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <colorWell id="1922">
-                                <rect key="frame" x="278" y="113" width="51" height="23"/>
+                                <rect key="frame" x="289" y="140" width="51" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="DesktopLyricsChanged:" target="-2" id="2127"/>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopBackgroundColor" id="yz3-mo-3il">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopBackgroundColor" id="TSe-Jd-Z7Z">
                                         <dictionary key="options">
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
@@ -481,16 +482,16 @@
                                     </binding>
                                 </connections>
                             </colorWell>
-                            <button id="UMr-Ph-ryf">
-                                <rect key="frame" x="25" y="9" width="152" height="18"/>
+                            <button id="Vq0-vd-iLB">
+                                <rect key="frame" x="25" y="35" width="233" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="check" title="歌词文字添加阴影效果" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5CN-iI-kXF">
+                                <buttonCell key="cell" type="check" title="Display lyrics in shadow style text" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bh4-bW-S2r">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefShadowLyrics" id="owq-nI-3io">
+                                    <binding destination="2099" name="value" keyPath="values.PrefShadowLyrics" id="N8f-1s-r9S">
                                         <dictionary key="options">
                                             <integer key="NSNullPlaceholder" value="0"/>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
@@ -499,16 +500,16 @@
                                     </binding>
                                 </connections>
                             </button>
-                            <button id="heI-Hn-QOk">
-                                <rect key="frame" x="181" y="9" width="191" height="18"/>
+                            <button id="IM6-1s-anI">
+                                <rect key="frame" x="25" y="15" width="290" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <buttonCell key="cell" type="check" title="显示下一句歌词（双行显示）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4FE-yD-zVx">
+                                <buttonCell key="cell" type="check" title="Display lyrics in two rows" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="6WV-DH-TAW">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsShowNextLine" id="DjL-vU-NVr">
+                                    <binding destination="2099" name="value" keyPath="values.PrefLyricsShowNextLine" id="Jsv-VT-wG6">
                                         <dictionary key="options">
                                             <integer key="NSNullPlaceholder" value="0"/>
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
@@ -517,23 +518,23 @@
                                     </binding>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="9cQ-Hg-jKr">
-                                <rect key="frame" x="25" y="90" width="69" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DOS-OH-DaH">
+                                <rect key="frame" x="25" y="118" width="93" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="阴影颜色：" id="JU9-Jp-EaO">
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Shadow Color:" id="dgt-33-9FS">
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <colorWell id="lmw-ko-D0c">
-                                <rect key="frame" x="102" y="85" width="51" height="23"/>
+                            <colorWell id="Wtz-JB-qo4">
+                                <rect key="frame" x="124" y="113" width="51" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopShadowColor" id="uxa-e5-CBp">
+                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopShadowColor" id="o3B-is-thB">
                                         <dictionary key="options">
                                             <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             <bool key="NSValidatesImmediately" value="YES"/>
@@ -542,34 +543,6 @@
                                     </binding>
                                 </connections>
                             </colorWell>
-                            <textField verticalHuggingPriority="750" id="DQn-Pr-r4Y">
-                                <rect key="frame" x="280" y="85" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="o0c-yR-Gba">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <binding destination="2099" name="value" keyPath="values.PrefDesktopShadowRadius" id="4Lr-sO-WPq">
-                                        <dictionary key="options">
-                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                            <bool key="NSValidatesImmediately" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3gK-6g-Km2">
-                                <rect key="frame" x="208" y="89" width="69" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="阴影半径：" id="dRn-4j-EDn">
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <animations/>
                     </view>
@@ -579,69 +552,68 @@
                 </box>
             </subviews>
             <animations/>
-            <point key="canvasLocation" x="911" y="17.5"/>
+            <point key="canvasLocation" x="941" y="-19"/>
         </customView>
         <customView id="2310" userLabel="Donate">
-            <rect key="frame" x="0.0" y="0.0" width="409" height="222"/>
+            <rect key="frame" x="0.0" y="0.0" width="409" height="208"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="2312">
-                    <rect key="frame" x="18" y="124" width="371" height="85"/>
+                    <rect key="frame" x="18" y="144" width="373" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="2313">
+                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="We are very pleased to see that our software can help you. If you like this App, consider donating to keep development going!" id="2313">
                         <font key="font" metaFont="system"/>
-                        <string key="title">DynamicLyrics、fakeThunder等免费、开源软件由MartianZ为您开发，很荣幸看到我开发的软件能够帮助到您。DynamicLyrics是一款免费软件，但是需要消耗时间去制作，同时软件的后台服务器也需要资金去维护，如果您喜欢我的作品，请考虑捐赠以支持我后续的开发。</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" id="2363">
-                    <rect key="frame" x="121" y="94" width="167" height="23"/>
+                    <rect key="frame" x="102" y="103" width="205" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <buttonCell key="cell" type="smallSquare" title="通过 PayPal 捐赠" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2364">
+                    <buttonCell key="cell" type="smallSquare" title="Donate via PayPal" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2364">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="STHeitiSC-Light"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="DonatePaypal:" target="-2" id="2657"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" id="2389">
-                    <rect key="frame" x="121" y="65" width="167" height="23"/>
+                    <rect key="frame" x="102" y="74" width="205" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <buttonCell key="cell" type="smallSquare" title="通过 支付宝 或 微信 捐赠" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2391">
+                    <buttonCell key="cell" type="smallSquare" title="Donate via AliPay or WeChat" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2391">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="STHeitiSC-Light"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="DonateAlipay:" target="-2" id="2655"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="2397">
-                    <rect key="frame" x="121" y="36" width="167" height="23"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <animations/>
-                    <buttonCell key="cell" type="smallSquare" title="通过 亚马逊中国 捐赠" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2399">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="STHeitiSC-Light"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="DonateAmazon:" target="-2" id="2656"/>
-                    </connections>
-                </button>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="2613">
-                    <rect key="frame" x="18" y="5" width="302" height="19"/>
+                    <rect key="frame" x="18" y="6" width="302" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thank you for being awesome! (っ´ω`c)♡" id="2614">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thank you for being awesome!" id="2614">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" id="2397">
+                    <rect key="frame" x="102" y="45" width="205" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <buttonCell key="cell" type="smallSquare" title="Donate via Amazon.cn" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2399">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="DonateAmazon:" target="-2" id="2656"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
         </customView>

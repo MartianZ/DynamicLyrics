@@ -28,7 +28,10 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
 	if ( self == [AppDelegate class] ) {
         //set default preference values
         NSDictionary *defaultValues = @{@Pref_Desktop_Text_Color: [NSArchiver archivedDataWithRootObject:[NSColor yellowColor]],
+                                         @PrefDesktopShadowColor: [NSArchiver archivedDataWithRootObject:[NSColor blackColor]],
+                                         @PrefDesktopShadowRadius:[NSNumber numberWithDouble:4],
                                         @Pref_Desktop_Background_Color: [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedWhite:0 alpha:0.25]],
+                                         @WhetherDisableWhenSnapshot:[NSNumber numberWithBool:NO],
                                         @Pref_Enable_Desktop_Lyrics: @(YES),
                                         @Pref_Enable_MenuBar_Lyrics: @(NO),
                                         @Pref_hotkeyCodeWriteLyrics: [NSNumber numberWithInt:kVK_ANSI_W],
@@ -73,9 +76,6 @@ static EventHotKeyID b_HotKeyID = {'keyB',2};
         //注册快捷键:option+W 写入歌词
         RegisterEventHotKey((UInt32)[userDefaults integerForKey:@Pref_hotkeyCodeWriteLyrics], (UInt32)[userDefaults integerForKey:@Pref_hotkeyModifiersWriteLyrics], a_HotKeyID, GetApplicationEventTarget(), 0, &a_HotKeyRef);
     }
-
-    //监视系统截图按键，关闭桌面歌词，防止影响截图
-    RegisterEventHotKey(kVK_ANSI_4, cmdKey | shiftKey, b_HotKeyID, GetApplicationEventTarget(), 0, &b_HotKeyRef);
     
     NSLog(@"%@", [userDefaults stringForKey:@"translatorLanguageX"]);
 }
@@ -149,8 +149,6 @@ static int GetBSDProcessList(struct kinfo_proc **procList, size_t *procCount)
     return err;
 }
 
-
-
 - (NSDictionary *)infoForPID:(pid_t)pid
 {
     NSDictionary *ret = nil;
@@ -161,27 +159,6 @@ static int GetBSDProcessList(struct kinfo_proc **procList, size_t *procCount)
         CFRelease(cfDict);
     }
     return ret;
-}
-
-- (BOOL)isScreencCaptureRunning
-{
-    struct kinfo_proc  *mylist;
-    size_t mycount = 0;
-    mylist = (struct kinfo_proc *)malloc(sizeof(struct kinfo_proc));
-    GetBSDProcessList(&mylist, &mycount);
-    int k;
-    for(k = 0; k < mycount; k++) {
-        struct kinfo_proc *proc = NULL;
-        proc = &mylist[k];
-        NSString *fullName = [[self infoForPID:proc->kp_proc.p_pid] objectForKey:(id)kCFBundleNameKey];
-        if (fullName == nil) fullName = [NSString stringWithFormat:@"%s",proc->kp_proc.p_comm];
-        if ([fullName isEqualToString:@"screencapture"]) {
-            free(mylist);
-            return YES;
-        }
-    }
-    free(mylist);
-    return NO;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
@@ -243,23 +220,6 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
             }
         }
         
-        if (keyID.id == b_HotKeyID.id) {
-            NSLog(@"Screen Capture!");
-            
-            
-            NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-             
-            [nc postNotificationName:@NC_Hide_DesktopLyrics object:mySelf];
-        
-            do {
-                sleep(1);
-
-            } while ([mySelf isScreencCaptureRunning]);
-            
-            [nc postNotificationName:@NC_Show_DesktopLyrics object:mySelf];
-            
-
-        }
     }
     return noErr;
 }
