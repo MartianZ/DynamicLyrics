@@ -681,6 +681,7 @@
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -718,6 +719,7 @@
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -727,6 +729,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1477;
 				DEVELOPMENT_TEAM = TT5SA69489;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -751,6 +754,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1477;
 				DEVELOPMENT_TEAM = TT5SA69489;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
