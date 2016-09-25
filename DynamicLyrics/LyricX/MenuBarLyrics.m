@@ -27,7 +27,8 @@
         _statusItem = [[bar _statusItemWithLength:0 withPriority:0] retain];
         //[_statusItem setTitle:@"LyricsX!"];
         [bar removeStatusItem:_statusItem];
-        [bar _insertStatusItem:_statusItem withPriority:0];
+        if([bar respondsToSelector:@selector(_insertStatusItem:withPriority:)])
+            [bar _insertStatusItem:_statusItem withPriority:0];
         [_statusItem setLength:NSVariableStatusItemLength];
         NSImage *image = [NSImage imageNamed:@"StatusIcon"];
         [image setTemplate:YES];
