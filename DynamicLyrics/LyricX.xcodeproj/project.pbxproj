@@ -41,7 +41,6 @@
 		028861B0152BD60D00DA6B91 /* LyricsSearchWnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */; };
 		028E17A8153051C6006CE85B /* VerticalButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17A7153051C6006CE85B /* VerticalButtonWindow.m */; };
 		028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E17AB15305F02006CE85B /* DouBanAPI.m */; };
-		029DB3971591AA8A000598E1 /* DynamicLyricsHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */; };
 		02A561021586F74200E37C6C /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A561041586F74200E37C6C /* Preferences.xib */; };
 		02A561061586F74F00E37C6C /* Albumfiller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A561081586F74F00E37C6C /* Albumfiller.xib */; };
 		02ACCFB31566932D004CC95A /* Donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 02ACCFB21566932D004CC95A /* Donate.png */; };
@@ -95,7 +94,6 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				029DB3971591AA8A000598E1 /* DynamicLyricsHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -166,7 +164,6 @@
 		028E17A7153051C6006CE85B /* VerticalButtonWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalButtonWindow.m; sourceTree = "<group>"; };
 		028E17AA15305F02006CE85B /* DouBanAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBanAPI.h; sourceTree = "<group>"; };
 		028E17AB15305F02006CE85B /* DouBanAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanAPI.m; sourceTree = "<group>"; };
-		029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = DynamicLyricsHelper.app; sourceTree = "<group>"; };
 		02A561031586F74200E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
 		02A561071586F74F00E37C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Albumfiller.xib; sourceTree = "<group>"; };
 		02ACCFB21566932D004CC95A /* Donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donate.png; sourceTree = "<group>"; };
@@ -293,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */,
-				029DB3961591AA8A000598E1 /* DynamicLyricsHelper.app */,
 				021B9E91158E209900039011 /* DynamicLyrics.entitlements */,
 				02BA4D8E1591A93400BB03CD /* ico512.icns */,
 				02710E94152A839F006D4BFF /* LyricX */,
@@ -458,11 +454,11 @@
 		02710E81152A839F006D4BFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Martian;
 				TargetAttributes = {
 					02710E89152A839F006D4BFF = {
-						DevelopmentTeam = V7RJA6U5A6;
+						DevelopmentTeam = TT5SA69489;
 					};
 				};
 			};
@@ -647,11 +643,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Zhu Zheng (R5RMP6G3GQ)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = ansi;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -663,6 +672,9 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -676,16 +688,31 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Zhu Zheng (R5RMP6G3GQ)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = ansi;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
@@ -700,6 +727,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TT5SA69489;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -710,8 +738,8 @@
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_BUNDLE_IDENTIFIER = "la.4321.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
@@ -723,6 +751,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TT5SA69489;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -733,8 +762,8 @@
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_BUNDLE_IDENTIFIER = "la.4321.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
