@@ -230,6 +230,7 @@
 
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
+        NSString *SongEmbeddedLyrics = [iTunesCurrentTrack lyrics];
         
         if(SongTitle == nil) {
             self.CurrentSongLyrics = @"";
@@ -237,9 +238,16 @@
             self.CurrentSongLyrics = [NSString stringWithFormat:@"%@ - %@",SongTitle,SongArtist];
         }
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
-        
-        
-        if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
+
+        if([SongEmbeddedLyrics length] != 0){
+            self.SongLyrics = SongEmbeddedLyrics;
+            CurrentLyric = 0;
+            LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
+            [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
+
+            [self Anylize];
+        }
+        else if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
         {
             self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
 
