@@ -10,16 +10,18 @@
 
 @interface KeyValue_SearchLyrics : NSObject{
     NSString *ID;
+    NSString *AccessKey;
     NSString *LyricsTitle;
     NSString *LyricsArtist;
 }
 
 
 @property (readwrite, copy) NSString *ID;
+@property (readwrite, copy) NSString *AccessKey;
 @property (readwrite, copy) NSString *LyricsTitle;
 @property (readwrite, copy) NSString *LyricsArtist;
 
 
--(id)initWithID:(NSString*)nID initWithTitle:(NSString*)nLyricsTitle initWithArtist:(NSString*)nLyricsArtist;
+-(id)initWithID:(NSString*)nID initWithAccessKey:(NSString *)AccessKey initWithTitle:(NSString*)nLyricsTitle initWithArtist:(NSString*)nLyricsArtist;
 
 @end

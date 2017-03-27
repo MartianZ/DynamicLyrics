@@ -8,6 +8,8 @@
 
 #import "MainController.h"
 #import "NCChineseConverter.h"
+#import "KugouLyrics.h"
+
 @implementation MainController
 
 @synthesize iTunesCurrentTrack;
@@ -155,16 +157,11 @@
     @autoreleasepool {
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
+        double SongTime = [iTunesCurrentTrack duration];
     
-        GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
-    
-        self.SongLyrics = [QianQianLyrics getLyricsByTitle:[_convertManager big5ToGb:SongTitle] getLyricsByArtist:[_convertManager big5ToGb:SongArtist]];
-    
-        //self.SongLyrics = [[NCChineseConverter sharedInstance] convert:self.SongLyrics withDict:NCChineseConverterDictTypezh2TW];
+        self.SongLyrics = [KugouLyrics getLyricsByTitle:SongTitle getLyricsByArtist:SongArtist getLyricsBySongDuration:SongTime];
 
         if (!self.SongLyrics) {
-            [_convertManager release];
-            
             return;
         }
         self.SongLyrics = [self translate:self.SongLyrics];
@@ -174,8 +171,6 @@
         [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
         
         [self postingThread:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", @"", @"ServerSongArtist", @"", @"ServerSongTitle", nil]];
-    
-        [_convertManager release];
     }
 }
 
@@ -238,11 +233,11 @@
         }
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
         
+        NSString *lrc = [userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
         
-        if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
+        if (lrc.length > 0)
         {
-            self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
-
+            self.SongLyrics = lrc;
             CurrentLyric = 0;
             LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
             [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
@@ -254,11 +249,7 @@
             //搜索歌词
             CurrentLyric = 0;
             [NSThread detachNewThreadSelector:@selector(SearchBestLyrics:) toTarget:self withObject:tmpDict];
-            
-            
         }
-
-        
     }
     else
     {

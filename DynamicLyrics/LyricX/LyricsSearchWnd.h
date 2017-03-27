@@ -7,8 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "GB_BIG_Converter.h"
-#import "QianQianLyrics.h"
+#import "KugouLyrics.h"
 #import "KeyValue_SearchLyrics.h"
 
 @interface LyricsSearchWnd : NSWindowController {
@@ -16,14 +15,15 @@
     @private
     IBOutlet NSTextField *IB_Text_Artist;
     IBOutlet NSTextField *IB_Text_Title;
+    IBOutlet NSTextField *IB_Text_Duration;
     IBOutlet NSArrayController *IB_Array_Controller;
-    IBOutlet NSComboBox *IB_ComboBox_Server;
     IBOutlet NSTableView *IB_TableView;
 }
 
-- (id)initWithArtist:(NSString *)artist initWithTitle:(NSString *)title;
+- (id)initWithArtist:(NSString *)artist initWithTitle:(NSString *)title initWithSongDuration:(double)duration;
 
 @property (nonatomic, retain) NSString* SongTitle;
 @property (nonatomic, retain) NSString* SongArtist;
+@property (nonatomic, assign) double SongDuration;
 
 @end

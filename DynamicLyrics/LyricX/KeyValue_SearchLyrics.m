@@ -12,6 +12,7 @@
 
 
 @synthesize ID;
+@synthesize AccessKey;
 @synthesize LyricsTitle;
 @synthesize LyricsArtist;
 
@@ -25,9 +26,10 @@
     return self;
 }
 
--(id)initWithID:(NSString *)nID initWithTitle:(NSString *)nLyricsTitle initWithArtist:(NSString *)nLyricsArtist
+-(id)initWithID:(NSString*)nID initWithAccessKey:(NSString *)AccessKey initWithTitle:(NSString*)nLyricsTitle initWithArtist:(NSString*)nLyricsArtist
 {
     self.ID = nID;
+    self.AccessKey = AccessKey;
     self.LyricsArtist = nLyricsArtist;
     self.LyricsTitle = nLyricsTitle;
     return self;
