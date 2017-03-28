@@ -13,6 +13,7 @@
     NSString *AccessKey;
     NSString *LyricsTitle;
     NSString *LyricsArtist;
+    NSString *LyricsDuration;
 }
 
 
@@ -20,8 +21,9 @@
 @property (readwrite, copy) NSString *AccessKey;
 @property (readwrite, copy) NSString *LyricsTitle;
 @property (readwrite, copy) NSString *LyricsArtist;
+@property (readwrite, copy) NSString *LyricsDuration;
 
 
--(id)initWithID:(NSString*)nID initWithAccessKey:(NSString *)AccessKey initWithTitle:(NSString*)nLyricsTitle initWithArtist:(NSString*)nLyricsArtist;
+-(id)initWithID:(NSString*)nID initWithAccessKey:(NSString *)nLyricsAccessKey initWithTitle:(NSString*)nLyricsTitle initWithArtist:(NSString*)nLyricsArtist initWithDuration:(NSString*)nLyricsDuration;
 
 @end

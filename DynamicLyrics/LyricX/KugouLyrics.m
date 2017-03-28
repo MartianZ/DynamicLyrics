@@ -95,7 +95,8 @@ fail:
             NSString *ID = [dict objectForKey:@"id"];
             NSString *song = [dict objectForKey:@"song"];
             NSString *accesskey = [dict objectForKey:@"accesskey"];
-            KeyValue_SearchLyrics* keyValue_SearchLyrics = [[KeyValue_SearchLyrics alloc] initWithID:ID initWithAccessKey:accesskey initWithTitle:song initWithArtist:singer];
+            NSString *duration = [dict objectForKey:@"duration"];
+            KeyValue_SearchLyrics* keyValue_SearchLyrics = [[KeyValue_SearchLyrics alloc] initWithID:ID initWithAccessKey:accesskey initWithTitle:song initWithArtist:singer initWithDuration:duration];
             [array_controller addObject:keyValue_SearchLyrics];
             [keyValue_SearchLyrics release];
         }
