@@ -7,7 +7,7 @@
 //
 
 #import "MainController.h"
-
+#import "NCChineseConverter.h"
 @implementation MainController
 
 @synthesize iTunesCurrentTrack;
@@ -78,13 +78,29 @@
 
 -(void)checkUpdate
 {
-    NSString* result = [RequestSender sendRequest:@"http://api.4321.la/analytics-maclyrics.php?ver=20120701"];
+    NSString* result = [RequestSender sendRequest:@"http://martianlaboratory.com/analytics/dynamiclyrics/20140113"];
     
     if ([result isEqualToString:@"Update"])
     {
         //NSRunAlertPanel(@"软件发布新版本", @"软件检测到已经您当前的版本已经过期，新版本已经发布，请在软件中运行“检查更新”下载新版本！", @"确定", nil, nil);
         NSRunAlertPanel(NSLocalizedString(@"SoftwareUpdateTitle", nil), NSLocalizedString(@"SoftwareUpdate", nil), @"OK", nil, nil);
     }
+}
+
+- (NSString *)translate:(NSString *)s
+{
+    if ([userDefaults boolForKey:@Pref_translatorEnable])
+    {
+        if ([[userDefaults stringForKey:@Pref_translatorLang] isEqualToString:@"台湾正体"])
+            return [[NCChineseConverter sharedInstance] convert:s withDict:NCChineseConverterDictTypezh2TW];
+        if ([[userDefaults stringForKey:@Pref_translatorLang] isEqualToString:@"港澳繁体"])
+            return [[NCChineseConverter sharedInstance] convert:s withDict:NCChineseConverterDictTypezh2HK];
+        if ([[userDefaults stringForKey:@Pref_translatorLang] isEqualToString:@"新马繁体"])
+            return [[NCChineseConverter sharedInstance] convert:s withDict:NCChineseConverterDictTypezh2SG];
+        
+    }
+    return s;
+    
 }
 
 
@@ -120,12 +136,17 @@
     if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
     {
         self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+        self.SongLyrics = [self translate:self.SongLyrics];
+
         if ([[iTunesCurrentTrack name] isEqualToString:SongTitle])
         {
+            
             [self Anylize];  //如果搜索的歌曲是当前正在播放的歌曲，重新加载歌词
             CurrentLyric = 0;
         }
-        
+        NSLog(@"%@", [[note userInfo] objectForKey:@"ServerSongArtist"]);
+        [self performSelectorOnMainThread:@selector(postingThread:) withObject:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", [[note userInfo] objectForKey:@"ServerSongTitle"], @"ServerSongTitle", [[note userInfo] objectForKey:@"ServerSongArtist"], @"ServerSongArtist", nil] waitUntilDone:NO];
+
     }
 }
 
@@ -139,18 +160,60 @@
     
         self.SongLyrics = [QianQianLyrics getLyricsByTitle:[_convertManager big5ToGb:SongTitle] getLyricsByArtist:[_convertManager big5ToGb:SongArtist]];
     
-        
+        //self.SongLyrics = [[NCChineseConverter sharedInstance] convert:self.SongLyrics withDict:NCChineseConverterDictTypezh2TW];
+
         if (!self.SongLyrics) {
+            [_convertManager release];
+            
             return;
         }
-        
+        self.SongLyrics = [self translate:self.SongLyrics];
+
         [userDefaults setValue:[NSString stringWithString:self.SongLyrics] forKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]];
     
         [self performSelectorOnMainThread:@selector(Anylize) withObject:nil waitUntilDone:YES];
-
+        
+        [self postingThread:[NSDictionary dictionaryWithObjectsAndKeys:SongTitle, @"title", SongArtist, @"artist", self.SongLyrics, @"lyrics", @"", @"ServerSongArtist", @"", @"ServerSongTitle", nil]];
     
         [_convertManager release];
     }
+}
+
+- (void) postingThread:(NSDictionary*)tmpDict //post the lyrics to server in order to analyze a better lyrics solution in future
+{
+    NSLog(@"%@", [tmpDict objectForKey:@"ServerSongTitle"]);
+    NSString *post = nil;
+    NSLog(@"%@", [tmpDict objectForKey:@"title"]);
+    
+    
+    
+    post = [[NSString alloc] initWithFormat:@"title=%@&artist=%@&content=%@&servertitle=%@&serverartist=%@", [tmpDict objectForKey:@"title"], [tmpDict objectForKey:@"artist"], [tmpDict objectForKey:@"lyrics"], [tmpDict objectForKey:@"ServerSongTitle"], [tmpDict objectForKey:@"ServerSongArtist"]];
+    
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%lu", [postData length]];
+
+    
+    NSString *urlString = @"http://martianlaboratory.com/lrc/";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    [request setTimeoutInterval:5];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+
+    [request setHTTPBody:postData];
+    
+    NSHTTPURLResponse* urlResponse = nil;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:NULL];
+    NSString *result = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] autorelease];
+
+    [request release];
+    NSLog(@"%@", result);
+    
+
 }
 
 - (void) WorkingThread:(NSMutableDictionary*)tmpDict
@@ -168,13 +231,18 @@
         NSString *SongTitle = [iTunesCurrentTrack name];
         NSString *SongArtist = [iTunesCurrentTrack artist];
         
-        self.CurrentSongLyrics = [NSString stringWithFormat:@"%@ - %@",SongTitle,SongArtist];
+        if(SongTitle == nil) {
+            self.CurrentSongLyrics = @"";
+        }else{
+            self.CurrentSongLyrics = [NSString stringWithFormat:@"%@ - %@",SongTitle,SongArtist];
+        }
         [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
         
         
         if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
         {
             self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+
             CurrentLyric = 0;
             LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
             [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
@@ -228,13 +296,16 @@
                 }
                 
                 NSString* lyric = [[NSString alloc]initWithFormat:@"%@",[NSString stringWithString:[[lyrics objectAtIndex:CurrentLyric] objectForKey:@"Content"]]];
+                
+                NSString* nextLyric = !(CurrentLyric < Total - 1) ? @"" : [[NSString alloc]initWithFormat:@"%@",[NSString stringWithString:[[lyrics objectAtIndex:CurrentLyric + 1] objectForKey:@"Content"]]];
+                
                 if (![self.CurrentSongLyrics isEqualToString:lyric])
                 {
                     self.CurrentSongLyrics = lyric;
-                    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
+                    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:self.CurrentSongLyrics, @"Lyrics", nextLyric, @"NextLyrics", nil]];
                     
                 }
-                [lyric release];
+                [nextLyric release];
             }
             @catch (NSException *exception) {
             }
@@ -279,7 +350,6 @@
 @autoreleasepool {
     NSString *RegEx = @"^((\\[\\d+:\\d+\\.\\d+\\])+)(.*?)$";
     [lyrics removeAllObjects];
-    
     NSArray *matchArray = nil;
     matchArray = [self.SongLyrics arrayOfCaptureComponentsMatchedByRegex:RegEx options:RKLMultiline | RKLCaseless range:NSMakeRange(0UL, [self.SongLyrics length]) error:nil];
     
@@ -313,7 +383,13 @@
     //This thread now will only handle the playing position and will no longer handle either the song name or the lyrics
     
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    NewiTunesApplication *iTunesNEW = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    OldiTunesApplication *iTunesOLD = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    //Dirty code QAQ
 
+    NSDictionary *iTunesVersionDictionary = [NSDictionary dictionaryWithContentsOfFile:@"/Applications/iTunes.app/Contents/version.plist"];
+    long long iTunesVersion = [[iTunesVersionDictionary objectForKey:@"SourceVersion"] longLongValue];
+    
     while (![iTunes isRunning])
     {
         //if iTunes is not running, we should wait for it rather than launch it
@@ -332,13 +408,20 @@
             //exit(0); //现在不通过Helper结束DynamicLyrics了，因为SandBox的缘故，我又懒得弄NSConnection，直接自己退出=。=
         }
         if ([iTunes isRunning] && [iTunes playerState] == iTunesEPlSPlaying) {
-            PlayerPosition = [iTunes playerPosition];
-            if ((currentPlayerPosition / 1000) != PlayerPosition)
-                currentPlayerPosition = PlayerPosition * 1000;
+            if (iTunesVersion >= 1103042001000000)
+            {
+                PlayerPosition = [iTunesNEW playerPosition];
+                
+            } else
+            {
+                PlayerPosition = [iTunesOLD playerPosition];
+            }
             
+            if ((currentPlayerPosition / 1000) != PlayerPosition && currentPlayerPosition % 1000 < 900)
+                currentPlayerPosition = PlayerPosition * 1000;
             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
             
-            
+
             [dict setObject:@"iTunesPosition" forKey:@"Type"];
             [dict setObject:[NSString stringWithFormat:@"%lu",currentPlayerPosition] forKey:@"currentPlayerPosition"];
             [self performSelectorOnMainThread:@selector(WorkingThread:) withObject:dict waitUntilDone:YES];

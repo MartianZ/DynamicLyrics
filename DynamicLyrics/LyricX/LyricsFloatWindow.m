@@ -20,19 +20,33 @@
         self.opaque = NO;
         self.hasShadow = NO;
         self.hidesOnDeactivate = NO;
-        self.IgnoresMouseEvents = YES;
+        self.ignoresMouseEvents = YES;
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@Pref_Attach_LyricsWindow_To_All_Spaces]) {
             [self setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
         }
         lyricsView = [[LyricsView alloc] initWithFrame:NSScreen.mainScreen.frame];
-        [self.contentView addSubview:lyricsView];
-        //[self center];
-                 
+        [self setContentView:lyricsView];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@WhetherDisableWhenSnapshot]) {
+            [self setSharingType:NSWindowSharingNone];
+        }
+        nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(hideLyricsWindow:) name:@NC_Hide_DesktopLyrics object:nil];
+        [nc addObserver:self selector:@selector(showLyricsWindow:) name:@NC_Show_DesktopLyrics object:nil];
+
     }
     return self;
 }
 
+-(void)hideLyricsWindow:(NSNotification *)note
+{
+    NSLog(@"HIDE");
+    [self orderOut:self];
+}
 
-
+-(void)showLyricsWindow:(NSNotification *)note
+{
+    NSLog(@"SHOW");
+    [self orderBack:self];
+}
 
 @end

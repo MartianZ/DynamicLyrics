@@ -3,3 +3,5 @@
 "CurrentDelay" = "当前延迟：";
 "SoftwareUpdateTitle" = "软件更新提示";
 "SoftwareUpdate" = "软件检测到已经您当前的版本已经过期，新版本已经发布，请在软件中运行“检查更新”下载新版本！";
+"Donate" = "DynamicLyrics由MartianZ为您开发，很荣幸看到我开发的软件能够帮助到您。\n\nDynamicLyrics是一款免费、开源软件，但是需要消耗时间去制作，同时软件的后台服务器也需要资金去维护，如果您喜欢我的作品，请考虑捐赠以支持我后续的开发。\n\n具体捐赠方式可单击“捐赠”菜单查看。十分感谢您的慷慨！";
+"Donate us" = "捐赠";

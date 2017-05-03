@@ -73,7 +73,7 @@
     
     [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithString:lrc] forKey:[NSString stringWithFormat:@"%@%@",self.SongArtist,self.SongTitle]];
 
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.SongTitle,@"SongTitle",self.SongArtist,@"SongArtist", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.SongTitle,@"SongTitle",self.SongArtist,@"SongArtist",[key_value LyricsTitle],@"ServerSongTitle",[key_value LyricsArtist],@"ServerSongArtist", nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLyricsChanged" object:nil userInfo:dict];
     

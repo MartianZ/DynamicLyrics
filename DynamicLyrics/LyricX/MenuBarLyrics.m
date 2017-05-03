@@ -24,12 +24,15 @@
         _queue = [[NSOperationQueue alloc] init]; 
         [_queue setMaxConcurrentOperationCount:1];
         NSStatusBar *bar = [NSStatusBar systemStatusBar];
-        _statusItem = [[bar _statusItemWithLength:0 withPriority:INT_MIN] retain];
+        _statusItem = [[bar _statusItemWithLength:0 withPriority:0] retain];
         //[_statusItem setTitle:@"LyricsX!"];
         [bar removeStatusItem:_statusItem];
-        [bar _insertStatusItem:_statusItem withPriority:INT_MIN];
+        if([bar respondsToSelector:@selector(_insertStatusItem:withPriority:)])
+            [bar _insertStatusItem:_statusItem withPriority:0];
         [_statusItem setLength:NSVariableStatusItemLength];
-        [_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+        NSImage *image = [NSImage imageNamed:@"StatusIcon"];
+        [image setTemplate:YES];
+        [_statusItem setImage:image];
         [_statusItem setHighlightMode:YES];
         [_statusItem setMenu:AppMenu];
         nc = [NSNotificationCenter defaultCenter];
@@ -52,14 +55,16 @@
 -(void) showSmoothTitle:(NSString *)title
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
+    
     for (float alpha = 0.3; alpha < 1.01; alpha+=0.02)
     {
         
-        NSColor *color = [NSColor colorWithCalibratedWhite:0 alpha:alpha];
-        
+        NSColor *color = [NSColor colorWithCalibratedWhite:white alpha:alpha];
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
-        [d setObject:[NSFont fontWithName: @"Helvetica" size: 15] forKey:NSFontAttributeName];
+        [d setObject:[NSFont fontWithName: @"Lucida Grande" size: 15] forKey:NSFontAttributeName];
         
         NSAttributedString *shadowTitle = [[NSAttributedString alloc] initWithString:title attributes:d];
         
@@ -79,9 +84,13 @@
     long sT = ([sleepTime longValue] - 800)*1000;
     if (sT < 0) return;
     usleep((unsigned int)sT);
+    
+    NSString *style = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    CGFloat white = (style && [style isEqualToString:@"Dark"]) ? 1 : 0;
+
     for (float alpha = 0.7; alpha > 0; alpha-=0.02)
     {
-        NSColor *color = [NSColor colorWithCalibratedWhite:0 alpha:alpha];
+        NSColor *color = [NSColor colorWithCalibratedWhite:white alpha:alpha];
         NSMutableDictionary *d = [NSMutableDictionary dictionary];
         [d setObject:color forKey:NSForegroundColorAttributeName];
         [d setObject:[NSFont fontWithName: @"Helvetica" size: 15] forKey:NSFontAttributeName];
@@ -112,7 +121,7 @@
 		if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics]) {
 			[_queue cancelAllOperations];
 			[_statusItem setAttributedTitle:nil];
-			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 			
 			[pool release];
 			return;
@@ -128,7 +137,7 @@
     if ([ud boolForKey:@Pref_Enable_MenuBar_Lyrics] || forceUpdate) {
 		if ([self.CurrentSongLyrics isEqualToString:@""]) {
 			[_statusItem setAttributedTitle:nil];
-			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+			[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
 		}else{
 			[_statusItem setImage:nil];
 			NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(showSmoothTitle:) object:self.CurrentSongLyrics];
@@ -137,7 +146,7 @@
 		}
     } else {
 		[_statusItem setAttributedTitle:nil];
-		[_statusItem setImage:[NSImage imageNamed:@"StatusIcon.png"]];
+		[_statusItem setImage:[NSImage imageNamed:@"StatusIcon"]];
     }
     
     [pool release];
