@@ -37,7 +37,7 @@
     [super windowDidLoad];
     [self.window center];
     [IB_Text_Artist setStringValue:self.SongArtist];
-    [IB_Text_Title setStringValue:self.SongTitle];
+    [IB_Text_Title setStringValue:[self.SongTitle getRidOfUnusedIndexNumber]];
     
     [IB_TableView setTarget:self];
     [IB_TableView setDoubleAction:@selector(TableViewDoubleClick:)];
@@ -49,7 +49,6 @@
 
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file
 }
-
 
 -(IBAction)SearchLyrics:(id)sender
 {

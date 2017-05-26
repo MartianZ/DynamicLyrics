@@ -8,6 +8,8 @@
 
 #import "MainController.h"
 #import "NCChineseConverter.h"
+#import "NSString+Title.h"
+
 @implementation MainController
 
 @synthesize iTunesCurrentTrack;
@@ -153,7 +155,7 @@
 - (void) SearchBestLyrics:(NSMutableDictionary*)tmpDict
 {
     @autoreleasepool {
-        NSString *SongTitle = [iTunesCurrentTrack name];
+        NSString *SongTitle = [[iTunesCurrentTrack name] getRidOfUnusedIndexNumber];
         NSString *SongArtist = [iTunesCurrentTrack artist];
     
         GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];

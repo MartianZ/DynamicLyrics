@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013E943B1ED7C68700FDF85F /* NSString+Title.m in Sources */ = {isa = PBXBuildFile; fileRef = 013E943A1ED7C68700FDF85F /* NSString+Title.m */; };
 		020038E7158F89C700F478DE /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020038E6158F89C700F478DE /* ServiceManagement.framework */; };
 		02135B511586F99F001480AD /* LyricsSearchWnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02135B531586F99F001480AD /* LyricsSearchWnd.xib */; };
 		02147716159EC55800B92431 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02147715159EC55800B92431 /* Sparkle.framework */; };
@@ -100,6 +101,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		013E94391ED7C68700FDF85F /* NSString+Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Title.h"; sourceTree = "<group>"; };
+		013E943A1ED7C68700FDF85F /* NSString+Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Title.m"; sourceTree = "<group>"; };
 		020038E6158F89C700F478DE /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		02135B521586F99F001480AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LyricsSearchWnd.xib; sourceTree = "<group>"; };
 		02135B541586F9A4001480AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/LyricsSearchWnd.xib"; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 			children = (
 				028861AD152BD60D00DA6B91 /* LyricsSearchWnd.h */,
 				028861AE152BD60D00DA6B91 /* LyricsSearchWnd.m */,
+				013E94391ED7C68700FDF85F /* NSString+Title.h */,
+				013E943A1ED7C68700FDF85F /* NSString+Title.m */,
 				02135B531586F99F001480AD /* LyricsSearchWnd.xib */,
 				CFDEFD0818AB5C1B00FA2A11 /* EditLyricsWindowController.h */,
 				CFDEFD0918AB5C1B00FA2A11 /* EditLyricsWindowController.m */,
@@ -458,7 +463,8 @@
 				ORGANIZATIONNAME = Martian;
 				TargetAttributes = {
 					02710E89152A839F006D4BFF = {
-						DevelopmentTeam = TT5SA69489;
+						DevelopmentTeam = 3694WFKXDB;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -557,6 +563,7 @@
 				02710EC7152A9B28006D4BFF /* MainController.m in Sources */,
 				CAB4BDA319F170FD00A42734 /* NCChineseConverter.m in Sources */,
 				02710ED9152AA87F006D4BFF /* QianQianLyrics.m in Sources */,
+				013E943B1ED7C68700FDF85F /* NSString+Title.m in Sources */,
 				CAB4BDA419F170FD00A42734 /* NSString+NCAddition.m in Sources */,
 				02710EDC152AA8A6006D4BFF /* RequestSender.m in Sources */,
 				02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */,
@@ -730,7 +737,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1477;
-				DEVELOPMENT_TEAM = TT5SA69489;
+				DEVELOPMENT_TEAM = 3694WFKXDB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -743,6 +750,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "la.4321.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
@@ -755,7 +763,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1477;
-				DEVELOPMENT_TEAM = TT5SA69489;
+				DEVELOPMENT_TEAM = 3694WFKXDB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -768,6 +776,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "la.4321.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};

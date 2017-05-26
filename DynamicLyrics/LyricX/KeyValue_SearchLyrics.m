@@ -7,12 +7,13 @@
 //
 
 #import "KeyValue_SearchLyrics.h"
+#import "NSString+Title.h"
 
 @implementation KeyValue_SearchLyrics
 
 
 @synthesize ID;
-@synthesize LyricsTitle;
+@synthesize LyricsTitle = _LyricsTitle;
 @synthesize LyricsArtist;
 
 - (id)init
@@ -31,6 +32,14 @@
     self.LyricsArtist = nLyricsArtist;
     self.LyricsTitle = nLyricsTitle;
     return self;
+}
+
+- (NSString *)LyricsTitle {
+    return [_LyricsTitle getRidOfUnusedIndexNumber];
+}
+
+- (void)setLyricsTitle:(NSString *)LyricsTitle {
+    _LyricsTitle = LyricsTitle;
 }
 
 @end

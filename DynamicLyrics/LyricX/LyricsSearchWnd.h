@@ -10,6 +10,7 @@
 #import "GB_BIG_Converter.h"
 #import "QianQianLyrics.h"
 #import "KeyValue_SearchLyrics.h"
+#import "NSString+Title.h"
 
 @interface LyricsSearchWnd : NSWindowController {
     
