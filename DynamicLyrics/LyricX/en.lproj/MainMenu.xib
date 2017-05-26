@@ -160,12 +160,6 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="856"/>
-                            <menuItem title="Retry To Get Right Lyrics!" id="854">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="retryToGetRightLyrics:" target="768" id="XBf-dQ-l4Q"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Hide Wrong Lyrics!" id="MWi-O2-Aww">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -194,6 +188,12 @@
                             </menuItem>
                         </items>
                     </menu>
+                </menuItem>
+                <menuItem title="Retry To Get Right Lyrics!" id="bhF-A2-miT">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="retryToGetRightLyrics:" target="768" id="Rbt-AQ-BdC"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="816"/>
                 <menuItem title="Preferences..." id="759">

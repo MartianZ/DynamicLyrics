@@ -160,9 +160,6 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="852"/>
-                            <menuItem title="尝试重新下载正确的歌词!" id="JpE-YX-RDQ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
                             <menuItem title="隐藏错误的歌词!" id="853">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -191,6 +188,12 @@
                             </menuItem>
                         </items>
                     </menu>
+                </menuItem>
+                <menuItem title="尝试重新下载正确的歌词!" id="JpE-YX-RDQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="retryToGetRightLyrics:" target="768" id="kcu-0v-IKb"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="816"/>
                 <menuItem title="偏好设置..." id="759">
