@@ -34,12 +34,4 @@
     return self;
 }
 
-- (NSString *)LyricsTitle {
-    return [_LyricsTitle getRidOfUnusedIndexNumber];
-}
-
-- (void)setLyricsTitle:(NSString *)LyricsTitle {
-    _LyricsTitle = LyricsTitle;
-}
-
 @end

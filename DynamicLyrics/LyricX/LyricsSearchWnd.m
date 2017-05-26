@@ -23,7 +23,7 @@
     if (self){
         if (!title)
             return self;
-        self.SongTitle = title;
+        self.SongTitle = [title getRidOfUnusedIndexNumber];
         self.SongArtist = artist;
         self.window.level = NSFloatingWindowLevel;
         [self.window makeKeyAndOrderFront:self];
@@ -37,7 +37,7 @@
     [super windowDidLoad];
     [self.window center];
     [IB_Text_Artist setStringValue:self.SongArtist];
-    [IB_Text_Title setStringValue:[self.SongTitle getRidOfUnusedIndexNumber]];
+    [IB_Text_Title setStringValue:self.SongTitle];
     
     [IB_TableView setTarget:self];
     [IB_TableView setDoubleAction:@selector(TableViewDoubleClick:)];

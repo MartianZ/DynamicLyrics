@@ -16,7 +16,7 @@
     NSString *removedTitle = self;
     
     for (NSString *separator in separators) {
-        removedTitle = [self getRidOfUnusedIndexNumberSeparatedByString:separator];
+        removedTitle = [removedTitle getRidOfUnusedIndexNumberSeparatedByString:separator];
     }
     
     return removedTitle;
