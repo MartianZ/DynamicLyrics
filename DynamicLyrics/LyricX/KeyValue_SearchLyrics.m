@@ -7,12 +7,13 @@
 //
 
 #import "KeyValue_SearchLyrics.h"
+#import "NSString+Title.h"
 
 @implementation KeyValue_SearchLyrics
 
 
 @synthesize ID;
-@synthesize LyricsTitle;
+@synthesize LyricsTitle = _LyricsTitle;
 @synthesize LyricsArtist;
 
 - (id)init

@@ -9,6 +9,7 @@
 #import "QianQianLyrics.h"
 #import "RequestSender.h"
 #import "KeyValue_SearchLyrics.h"
+#import "NSString+Title.h"
 
 @implementation QianQianLyrics
 
@@ -130,6 +131,8 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
         
         [_Title setString:[_Title lowercaseString]];
         
+        
+        
         NSMutableString *_Artist = [NSMutableString stringWithString:[Artist stringByReplacingOccurrencesOfString:@" " withString:@""]];
         for (int i =0; i < 32; i++)
             [_Artist setString:[_Artist stringByReplacingOccurrencesOfString:[NSString stringWithString:[CharToDelete objectAtIndex:i]] withString:@""]];
@@ -200,6 +203,7 @@ FOUNDATION_STATIC_INLINE NSMutableString* SetToHexString(NSString *str)
             [_Title setString:[_Title stringByReplacingOccurrencesOfString:[NSString stringWithString:[CharToDelete objectAtIndex:i]] withString:@""]];
         
         [_Title setString:[_Title lowercaseString]];
+        _Title = [[_Title getRidOfUnusedIndexNumber] mutableCopy];
         
         NSMutableString *_Artist = [NSMutableString stringWithString:[Artist stringByReplacingOccurrencesOfString:@" " withString:@""]];
         for (int i =0; i < 32; i++)

@@ -342,11 +342,23 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
 }
 
 - (IBAction)hideLyric:(id)sender {
-    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:[NSString stringWithFormat:@"%@%@", Controller.iTunesCurrentTrack.artist, Controller.iTunesCurrentTrack.name]];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:[NSString stringWithFormat:@"%@%@", Controller.iTunesCurrentTrack.artist, Controller.iTunesCurrentTrack.name]];
+    
+    [self notifyChangeLyrics];
+    [Controller Anylize];
+}
+
+- (IBAction)retryToGetRightLyrics:(id)sender {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@%@", Controller.iTunesCurrentTrack.artist, Controller.iTunesCurrentTrack.name]];
+    
+    [self notifyChangeLyrics];
+    [Controller loadLyrics];
+}
+
+- (void)notifyChangeLyrics {
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:Controller.iTunesCurrentTrack.name, @"SongTitle", Controller.iTunesCurrentTrack.artist, @"SongArtist", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@NC_LyricsChanged object:self userInfo:dict];
     Controller.SongLyrics = @"";
-    [Controller Anylize];
 }
 
 -(IBAction)importLyric:(id)sender

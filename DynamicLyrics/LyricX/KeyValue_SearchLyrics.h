@@ -10,7 +10,7 @@
 
 @interface KeyValue_SearchLyrics : NSObject{
     NSString *ID;
-    NSString *LyricsTitle;
+    NSString *_LyricsTitle;
     NSString *LyricsArtist;
 }
 

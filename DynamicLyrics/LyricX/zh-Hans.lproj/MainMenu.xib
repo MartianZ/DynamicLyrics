@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="420" customClass="NSFontManager"/>
         <menu id="753">
             <items>
@@ -160,7 +160,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="852"/>
-                            <menuItem title="错误的歌词!" id="853">
+                            <menuItem title="隐藏错误的歌词!" id="853">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="hideLyric:" target="768" id="854"/>
@@ -188,6 +188,12 @@
                             </menuItem>
                         </items>
                     </menu>
+                </menuItem>
+                <menuItem title="尝试重新下载正确的歌词!" id="JpE-YX-RDQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="retryToGetRightLyrics:" target="768" id="kcu-0v-IKb"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="816"/>
                 <menuItem title="偏好设置..." id="759">

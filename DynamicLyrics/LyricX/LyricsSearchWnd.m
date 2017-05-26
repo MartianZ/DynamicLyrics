@@ -23,7 +23,7 @@
     if (self){
         if (!title)
             return self;
-        self.SongTitle = title;
+        self.SongTitle = [title getRidOfUnusedIndexNumber];
         self.SongArtist = artist;
         self.window.level = NSFloatingWindowLevel;
         [self.window makeKeyAndOrderFront:self];
@@ -49,7 +49,6 @@
 
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file
 }
-
 
 -(IBAction)SearchLyrics:(id)sender
 {

@@ -8,6 +8,8 @@
 
 #import "MainController.h"
 #import "NCChineseConverter.h"
+#import "NSString+Title.h"
+
 @implementation MainController
 
 @synthesize iTunesCurrentTrack;
@@ -150,10 +152,10 @@
     }
 }
 
-- (void) SearchBestLyrics:(NSMutableDictionary*)tmpDict
+- (void) SearchBestLyrics
 {
     @autoreleasepool {
-        NSString *SongTitle = [iTunesCurrentTrack name];
+        NSString *SongTitle = [[iTunesCurrentTrack name] getRidOfUnusedIndexNumber];
         NSString *SongArtist = [iTunesCurrentTrack artist];
     
         GB_BIG_Converter* _convertManager = [[GB_BIG_Converter alloc] init];
@@ -216,6 +218,43 @@
 
 }
 
+- (void)loadLyrics {
+    //iTunesSongChanged
+    NSLog(@"%@",[iTunesCurrentTrack name]);
+    LyricsDelay = 0; [lyrics removeAllObjects];
+    [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
+    
+    NSString *SongTitle = [iTunesCurrentTrack name];
+    NSString *SongArtist = [iTunesCurrentTrack artist];
+    
+    if(SongTitle == nil) {
+        self.CurrentSongLyrics = @"";
+    }else{
+        self.CurrentSongLyrics = [NSString stringWithFormat:@"%@ - %@",SongTitle,SongArtist];
+    }
+    [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
+    
+    
+    if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
+    {
+        self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
+        
+        CurrentLyric = 0;
+        LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
+        [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
+        
+        [self Anylize];
+    }
+    else
+    {
+        //搜索歌词
+        CurrentLyric = 0;
+        [NSThread detachNewThreadSelector:@selector(SearchBestLyrics) toTarget:self withObject:nil];
+        
+        
+    }
+}
+
 - (void) WorkingThread:(NSMutableDictionary*)tmpDict
 {
     //this thread should work in main thread
@@ -223,42 +262,7 @@
     @autoreleasepool {
     if ([[tmpDict objectForKey:@"Type"] isEqualToString:@"iTunesSongChanged"])
     {
-        //iTunesSongChanged
-        NSLog(@"%@",[iTunesCurrentTrack name]);
-        LyricsDelay = 0; [lyrics removeAllObjects];
-        [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
-
-        NSString *SongTitle = [iTunesCurrentTrack name];
-        NSString *SongArtist = [iTunesCurrentTrack artist];
-        
-        if(SongTitle == nil) {
-            self.CurrentSongLyrics = @"";
-        }else{
-            self.CurrentSongLyrics = [NSString stringWithFormat:@"%@ - %@",SongTitle,SongArtist];
-        }
-        [nc postNotificationName:@"LyricsChanged" object:self userInfo:[NSDictionary dictionaryWithObject:self.CurrentSongLyrics forKey:@"Lyrics"]];
-        
-        
-        if ([userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]])
-        {
-            self.SongLyrics = [NSString stringWithString:[userDefaults valueForKey:[NSString stringWithFormat:@"%@%@",SongArtist,SongTitle]]];
-
-            CurrentLyric = 0;
-            LyricsDelay = [userDefaults floatForKey:[NSString stringWithFormat:@"Delay%@%@",SongArtist,SongTitle]];
-            [currentDelayMenuItem setTitle:[NSString stringWithFormat:@"%@ %.2fs",NSLocalizedString(@"CurrentDelay", nil),0 - LyricsDelay]];
-
-            [self Anylize];
-        }
-        else
-        {
-            //搜索歌词
-            CurrentLyric = 0;
-            [NSThread detachNewThreadSelector:@selector(SearchBestLyrics:) toTarget:self withObject:tmpDict];
-            
-            
-        }
-
-        
+        [self loadLyrics];
     }
     else
     {

@@ -32,6 +32,7 @@
 }
 
 - (void)Anylize;
+- (void)loadLyrics;
 - (void)iTunesPlayerInfo:(NSNotification *)note;
 - (void)WorkingThread:(NSMutableDictionary*)tmpDict;
 - (id)initWithMenu:(NSMenu *)AppMenu initWithDelayItem:(NSMenuItem *)delayMenuItem;
