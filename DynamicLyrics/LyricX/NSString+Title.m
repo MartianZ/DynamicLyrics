@@ -11,7 +11,7 @@
 @implementation NSString (Title)
 
 - (NSString *)getRidOfUnusedIndexNumber{
-    NSArray *separators = @[@" ", @"-", @"_"];
+    NSArray *separators = @[@" ", @"-", @"_", @"."];
     
     NSString *removedTitle = self;
     
@@ -26,6 +26,7 @@
     NSArray *words = [self componentsSeparatedByString:separator];
     
     if (words.count > 1) {
+        //简易判断头部是否为标号的快速方法
         if ([words[0] integerValue] != 0 || [words[0] isEqualToString:@"0"] || [words[0] isEqualToString:@"00"]) {
             NSMutableArray *removedIndexWords = [words mutableCopy];
             [removedIndexWords removeObjectAtIndex:0];
