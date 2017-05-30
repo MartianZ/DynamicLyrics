@@ -31,7 +31,6 @@
 		02710EA5152A839F006D4BFF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02710EA3152A839F006D4BFF /* MainMenu.xib */; };
 		02710EC7152A9B28006D4BFF /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EC6152A9B28006D4BFF /* MainController.m */; };
 		02710ED6152AA0FF006D4BFF /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02710ED5152AA0FF006D4BFF /* ScriptingBridge.framework */; };
-		02710ED9152AA87F006D4BFF /* QianQianLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710ED8152AA87F006D4BFF /* QianQianLyrics.m */; };
 		02710EDC152AA8A6006D4BFF /* RequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EDB152AA8A5006D4BFF /* RequestSender.m */; };
 		02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EDE152AA8B7006D4BFF /* KeyValue_SearchLyrics.m */; };
 		02710EE2152AA9DE006D4BFF /* BingTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02710EE1152AA9DE006D4BFF /* BingTranslator.m */; };
@@ -47,6 +46,7 @@
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
 		02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Lyrics.png */; };
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
+		B145C9DC1E88AE9B00CD7962 /* KugouLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = B145C9DB1E88AE9B00CD7962 /* KugouLyrics.m */; };
 		CA49F83E188535AD006B6E81 /* DynamicLyrics.icns in Resources */ = {isa = PBXBuildFile; fileRef = CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */; };
 		CA49F842188535D2006B6E81 /* StatusIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F841188535D2006B6E81 /* StatusIcon@2x.png */; };
 		CA49F844188536DA006B6E81 /* StatusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F843188536DA006B6E81 /* StatusIcon.png */; };
@@ -54,7 +54,6 @@
 		CA508EF2188558D30050F1BE /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; };
 		CA508EF3188558D70050F1BE /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CA5124CE18840FAD0085C1C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA5124CD18840FAD0085C1C8 /* Credits.rtf */; };
-		CAA3BC0E1904D6FA00110A30 /* GeCiMeLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */; };
 		CAB4BD9B19F1706900A42734 /* zh2HK.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9819F1706900A42734 /* zh2HK.txt */; };
 		CAB4BD9C19F1706900A42734 /* zh2SG.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9919F1706900A42734 /* zh2SG.txt */; };
 		CAB4BD9D19F1706900A42734 /* zh2TW.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB4BD9A19F1706900A42734 /* zh2TW.txt */; };
@@ -144,8 +143,6 @@
 		02710EC6152A9B28006D4BFF /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		02710ED0152A9B8A006D4BFF /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		02710ED5152AA0FF006D4BFF /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		02710ED7152AA87F006D4BFF /* QianQianLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QianQianLyrics.h; sourceTree = "<group>"; };
-		02710ED8152AA87F006D4BFF /* QianQianLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QianQianLyrics.m; sourceTree = "<group>"; };
 		02710EDA152AA8A5006D4BFF /* RequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSender.h; sourceTree = "<group>"; };
 		02710EDB152AA8A5006D4BFF /* RequestSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSender.m; sourceTree = "<group>"; };
 		02710EDD152AA8B7006D4BFF /* KeyValue_SearchLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValue_SearchLyrics.h; sourceTree = "<group>"; };
@@ -172,14 +169,14 @@
 		02BB8A37159CA9E8001334D7 /* Lyrics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyrics.png; sourceTree = "<group>"; };
 		02BB8A3A159CAA9B001334D7 /* Notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notification.png; sourceTree = "<group>"; };
 		02CEF1BC1586FFF200B800A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/Albumfiller.xib"; sourceTree = "<group>"; };
+		B145C9DA1E88AE9B00CD7962 /* KugouLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KugouLyrics.h; sourceTree = "<group>"; };
+		B145C9DB1E88AE9B00CD7962 /* KugouLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KugouLyrics.m; sourceTree = "<group>"; };
 		CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DynamicLyrics.icns; sourceTree = "<group>"; };
 		CA49F841188535D2006B6E81 /* StatusIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusIcon@2x.png"; sourceTree = "<group>"; };
 		CA49F843188536DA006B6E81 /* StatusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusIcon.png; sourceTree = "<group>"; };
 		CA508EE7188545050050F1BE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CA508EF1188558D30050F1BE /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		CA5124CD18840FAD0085C1C8 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		CAA3BC0C1904D6FA00110A30 /* GeCiMeLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeCiMeLyrics.h; sourceTree = "<group>"; };
-		CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeCiMeLyrics.m; sourceTree = "<group>"; };
 		CAB4BD9819F1706900A42734 /* zh2HK.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2HK.txt; sourceTree = "<group>"; };
 		CAB4BD9919F1706900A42734 /* zh2SG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2SG.txt; sourceTree = "<group>"; };
 		CAB4BD9A19F1706900A42734 /* zh2TW.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zh2TW.txt; sourceTree = "<group>"; };
@@ -378,16 +375,14 @@
 				02710EDE152AA8B7006D4BFF /* KeyValue_SearchLyrics.m */,
 				02710EDA152AA8A5006D4BFF /* RequestSender.h */,
 				02710EDB152AA8A5006D4BFF /* RequestSender.m */,
-				CAA3BC0C1904D6FA00110A30 /* GeCiMeLyrics.h */,
-				CAA3BC0D1904D6FA00110A30 /* GeCiMeLyrics.m */,
-				02710ED7152AA87F006D4BFF /* QianQianLyrics.h */,
-				02710ED8152AA87F006D4BFF /* QianQianLyrics.m */,
 				CF8DE6F018A8DCBA00611593 /* TextField.h */,
 				CF8DE6F118A8DCBA00611593 /* TextField.m */,
 				CFDEFD1018AB651F00FA2A11 /* TextView.h */,
 				CFDEFD1118AB651F00FA2A11 /* TextView.m */,
 				02710EC5152A9B28006D4BFF /* MainController.h */,
 				02710EC6152A9B28006D4BFF /* MainController.m */,
+				B145C9DA1E88AE9B00CD7962 /* KugouLyrics.h */,
+				B145C9DB1E88AE9B00CD7962 /* KugouLyrics.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -458,7 +453,7 @@
 				ORGANIZATIONNAME = Martian;
 				TargetAttributes = {
 					02710E89152A839F006D4BFF = {
-						DevelopmentTeam = TT5SA69489;
+						DevelopmentTeam = XH264QVU7V;
 					};
 				};
 			};
@@ -556,13 +551,13 @@
 				02710EA2152A839F006D4BFF /* LyricXAppDelegate.m in Sources */,
 				02710EC7152A9B28006D4BFF /* MainController.m in Sources */,
 				CAB4BDA319F170FD00A42734 /* NCChineseConverter.m in Sources */,
-				02710ED9152AA87F006D4BFF /* QianQianLyrics.m in Sources */,
 				CAB4BDA419F170FD00A42734 /* NSString+NCAddition.m in Sources */,
 				02710EDC152AA8A6006D4BFF /* RequestSender.m in Sources */,
 				02710EDF152AA8B7006D4BFF /* KeyValue_SearchLyrics.m in Sources */,
 				CF8DE6F218A8DCBA00611593 /* TextField.m in Sources */,
 				02710EE2152AA9DE006D4BFF /* BingTranslator.m in Sources */,
 				02710EE5152AAB7F006D4BFF /* RegexKitLite.m in Sources */,
+				B145C9DC1E88AE9B00CD7962 /* KugouLyrics.m in Sources */,
 				025B0777152B14F400E250BF /* MenuBarLyrics.m in Sources */,
 				025B0789152B1E8600E250BF /* GB_BIG_Converter.m in Sources */,
 				027C9E88152B23DA00A75EB2 /* LyricsView.m in Sources */,
@@ -574,7 +569,6 @@
 				02353CD5152C0B8600214998 /* AlbumModel.m in Sources */,
 				028E17A8153051C6006CE85B /* VerticalButtonWindow.m in Sources */,
 				028E17AC15305F02006CE85B /* DouBanAPI.m in Sources */,
-				CAA3BC0E1904D6FA00110A30 /* GeCiMeLyrics.m in Sources */,
 				0239024C154F8EE200869A2D /* AppPrefsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,7 +724,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1477;
-				DEVELOPMENT_TEAM = TT5SA69489;
+				DEVELOPMENT_TEAM = XH264QVU7V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -739,7 +733,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "la.4321.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -755,7 +749,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1477;
-				DEVELOPMENT_TEAM = TT5SA69489;
+				DEVELOPMENT_TEAM = XH264QVU7V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -764,7 +758,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricX/LyricX-Prefix.pch";
 				INFOPLIST_FILE = "LyricX/LyricX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "la.4321.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

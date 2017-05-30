@@ -238,7 +238,7 @@ OSStatus myHotKeyHandler(EventHandlerCallRef inHandlerCallRef, EventRef inEvent,
 -(IBAction)OpenLyricsSearchWindow:(id)sender
 {  
     //i think put the init code in app delegate may be a good idea
-    SearchWindow = [[LyricsSearchWnd alloc] initWithArtist:Controller.iTunesCurrentTrack.artist initWithTitle:Controller.iTunesCurrentTrack.name];
+    SearchWindow = [[LyricsSearchWnd alloc] initWithArtist:Controller.iTunesCurrentTrack.artist initWithTitle:Controller.iTunesCurrentTrack.name initWithSongDuration:Controller.iTunesCurrentTrack.duration];
 }
 
 -(IBAction)OpenEditLyricsWindow:(id)sender

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "iTunes.h"
-#import "QianQianLyrics.h"
 #import "BingTranslator.h"
 #import "RegexKitLite.h"
 #import "MenuBarLyrics.h"
