@@ -46,6 +46,7 @@
 		02BA4D8F1591A93400BB03CD /* ico512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 02BA4D8E1591A93400BB03CD /* ico512.icns */; };
 		02BB8A38159CA9E8001334D7 /* Lyrics.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A37159CA9E8001334D7 /* Lyrics.png */; };
 		02BB8A3B159CAA9B001334D7 /* Notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BB8A3A159CAA9B001334D7 /* Notification.png */; };
+		4DC051581EEEC28B00937708 /* DynamicLyricsHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = EF68C6D7169BF788006B9128 /* DynamicLyricsHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B145C9DC1E88AE9B00CD7962 /* KugouLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = B145C9DB1E88AE9B00CD7962 /* KugouLyrics.m */; };
 		CA49F83E188535AD006B6E81 /* DynamicLyrics.icns in Resources */ = {isa = PBXBuildFile; fileRef = CA49F83D188535AD006B6E81 /* DynamicLyrics.icns */; };
 		CA49F842188535D2006B6E81 /* StatusIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA49F841188535D2006B6E81 /* StatusIcon@2x.png */; };
@@ -93,6 +94,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
+				4DC051581EEEC28B00937708 /* DynamicLyricsHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
